@@ -4,8 +4,8 @@ import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 import { ventures } from '../lib/ventures';
 
 export const metadata: Metadata = {
-  title: 'Ventures',
-  description: 'Explore the companies and creative ventures being built by OCTA SAR.',
+  title: 'Төслүүд',
+  description: 'OCTA SAR-ийн бүтээн хөгжүүлж буй компани, бүтээлч төслүүдтэй танилцана уу.',
 };
 
 export default function VenturesPage() {
@@ -13,11 +13,11 @@ export default function VenturesPage() {
     <main>
       <SiteHeader />
       <section className="inner-hero inner-hero--compact shell">
-        <p className="eyebrow"><span /> OCTA SAR portfolio</p>
-        <h1>Built with<br /><em>intent.</em></h1>
+        <p className="eyebrow"><span /> OCTA SAR-ийн төслүүд</p>
+        <h1>Зорилгоос төрсөн<br /><em>бүтээл.</em></h1>
         <div className="inner-hero__foot">
-          <p>Focused ventures at the intersection of meaningful human needs, cultural insight and technology.</p>
-          <span>{ventures.length.toString().padStart(2, '0')} active venture</span>
+          <p>Хүний утга учиртай хэрэгцээ, соёлын нарийн мэдрэмж, технологийн боломжийг нэгтгэсэн цөөн бөгөөд төвлөрсөн төсөл.</p>
+          <span>{ventures.length.toString().padStart(2, '0')} идэвхтэй төсөл</span>
         </div>
       </section>
 
@@ -38,10 +38,10 @@ export default function VenturesPage() {
             </div>
           </Link>
         ))}
-        <div className="venture-row venture-row--future" aria-label="Future venture placeholder">
-          <div className="venture-row__meta"><span>02—08</span><span>Future orbits</span></div>
-          <div><p>Across the studio</p><h2>Next</h2></div>
-          <div className="venture-row__end"><p>Content, film, art and technology ventures will join the portfolio here.</p></div>
+        <div className="venture-row venture-row--future" aria-label="Цаашдын төслүүдийн хэсэг">
+          <div className="venture-row__meta"><span>02—08</span><span>Дараагийн тойргууд</span></div>
+          <div><p>OCTA SAR-ийн хэмжээнд</p><h2>Дараагийнх</h2></div>
+          <div className="venture-row__end"><p>Контент, кино, урлаг, технологийн дараагийн төслүүд энэ багцад нэмэгдэнэ.</p></div>
         </div>
       </section>
       <SiteFooter />

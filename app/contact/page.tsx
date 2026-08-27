@@ -3,8 +3,8 @@ import { InvestorForm } from '../components/InvestorForm';
 import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
-  title: 'Investor contact',
-  description: 'Start a private investor or strategic partnership conversation with OCTA SAR.',
+  title: 'Хөрөнгө оруулагчид',
+  description: 'OCTA SAR-тай хөрөнгө оруулалт болон стратегийн түншлэлийн хаалттай яриа эхлүүлнэ үү.',
 };
 
 export default function ContactPage() {
@@ -13,20 +13,20 @@ export default function ContactPage() {
       <SiteHeader light />
       <section className="contact-hero shell">
         <div>
-          <p className="eyebrow"><span /> Investor relations</p>
-          <h1>Let’s explore<br />the right <em>orbit.</em></h1>
+          <p className="eyebrow"><span /> Хөрөнгө оруулагчтай харилцах</p>
+          <h1>Нэг зорилгын<br /><em>тойрогт</em> нэгдье.</h1>
         </div>
-        <p>We welcome thoughtful conversations with investors, operators and strategic partners who care about responsible, long-term company building.</p>
+        <p>Хариуцлагатай, урт хугацааны компанийн хөгжилд итгэдэг хөрөнгө оруулагч, бүтээн байгуулагч удирдагч, стратегийн түнштэй бодит яриа өрнүүлэхэд бид нээлттэй.</p>
       </section>
       <section className="contact-body shell">
         <div className="contact-note">
-          <p className="section-label">Before you write</p>
-          <h2>Tell us what aligns.</h2>
-          <p>Choose the venture or relationship you’re interested in. We’ll share the appropriate public or confidential material after an initial review.</p>
+          <p className="section-label">Холбогдохын өмнө</p>
+          <h2>Хамтын зорилгоо хуваалцаарай.</h2>
+          <p>Сонирхож буй төсөл эсвэл хамтын ажиллагааны чиглэлээ сонгоно уу. Анхан шатны танилцалтын дараа тохирох нээлттэй болон нууц материалыг хуваалцана.</p>
           <dl>
-            <div><dt>Response target</dt><dd>Within 2 business days</dd></div>
-            <div><dt>Location</dt><dd>Ulaanbaatar, Mongolia</dd></div>
-            <div><dt>Confidentiality</dt><dd>Sensitive data shared privately</dd></div>
+            <div><dt>Хариу өгөх хугацаа</dt><dd>Ажлын 2 өдрийн дотор</dd></div>
+            <div><dt>Байршил</dt><dd>Улаанбаатар, Монгол Улс</dd></div>
+            <div><dt>Нууцлал</dt><dd>Эмзэг мэдээллийг зөвхөн хаалттай сувгаар</dd></div>
           </dl>
         </div>
         <InvestorForm />

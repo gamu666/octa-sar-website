@@ -4,24 +4,24 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://octa-sar.ftrga1030.chatgpt.site'),
   title: {
-    default: 'OCTA SAR — Ideas into enduring ventures',
+    default: 'OCTA SAR — Утга учиртай санааг үнэ цэнтэй бүтээл болгоно',
     template: '%s — OCTA SAR',
   },
   description:
-    'OCTA SAR builds thoughtful ventures across technology, culture, film and creative work — from Mongolia to the world.',
+    'OCTA SAR нь технологи, соёл, кино, уран бүтээл, хүний харилцааны огтлолцолд шинэ төсөл санаачлан хөгжүүлдэг бие даасан компани.',
   openGraph: {
     type: 'website',
     siteName: 'OCTA SAR',
-    title: 'OCTA SAR — Ideas into enduring ventures',
+    title: 'OCTA SAR — Утга учиртай санааг үнэ цэнтэй бүтээл болгоно',
     description:
-      'OCTA SAR builds thoughtful ventures across technology, culture, film and creative work — from Mongolia to the world.',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'OCTA SAR — Ideas into enduring ventures' }],
+      'Технологи, соёл, кино, уран бүтээл, хүний харилцааны огтлолцолд шинэ төсөл санаачлан хөгжүүлнэ.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'OCTA SAR — Утга учиртай санааг үнэ цэнтэй бүтээл болгоно' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OCTA SAR — Ideas into enduring ventures',
+    title: 'OCTA SAR — Утга учиртай санааг үнэ цэнтэй бүтээл болгоно',
     description:
-      'OCTA SAR builds thoughtful ventures across technology, culture, film and creative work — from Mongolia to the world.',
+      'Технологи, соёл, кино, уран бүтээл, хүний харилцааны огтлолцолд шинэ төсөл санаачлан хөгжүүлнэ.',
     images: ['/og.png'],
   },
 };
@@ -30,7 +30,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="mn">
       <body>{children}</body>
     </html>
   );

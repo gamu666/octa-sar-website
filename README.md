@@ -1,17 +1,19 @@
-# OCTA SAR website
+# OCTA SAR вэбсайт
 
-Small investor-oriented corporate site for OCTA SAR, built with the official OpenAI Sites starter.
+OCTA SAR-ийн компанийн танилцуулга болон хөрөнгө оруулалтын төслүүдэд зориулсан жижиг, төвлөрсөн сайт.
 
-## Routes
+## Хуудасны бүтэц
 
-- `/` — company positioning and current venture
-- `/about` — philosophy and operating principles
-- `/ventures` — portfolio index
-- `/ventures/manai-cercle` — reusable venture detail template
-- `/contact` — investor enquiry flow
+- `/` — компанийн байршуулалт ба одоогийн төсөл
+- `/about` — үзэл баримтлал, үйл ажиллагааны зарчим
+- `/ventures` — төслийн багц
+- `/ventures/manai-cercle` — дахин ашиглах боломжтой төслийн дэлгэрэнгүй загвар
+- `/contact` — хөрөнгө оруулагчийн хүсэлт
 
-Venture content is kept in `app/lib/ventures.ts`. Add a record there to extend the portfolio; the shared detail route renders the standard investor narrative.
+Төслийн агуулга `app/lib/ventures.ts` файлд төвлөрсөн. Шинэ төсөл нэмэхэд ижил хөрөнгө оруулагчийн өгүүлэмж бүхий дэлгэрэнгүй хуудас автоматаар үүснэ.
 
-## Before public launch
+## Одоогийн төлөв
 
-Confirm the investor email used by `app/components/InvestorForm.tsx`, replace the CSS-built mark with the approved production logo asset if available, connect the analytics event hook, and review all venture claims against founder-approved evidence.
+- Сайтын хандалт owner-only буюу хувийн хэвээр.
+- Хэрэглэгчийн өгсөн растер логог үндсэн тэмдгийн эх болгон ашиглаж, `OCTA SAR` нэрийг сайт дээр тусад нь харуулсан.
+- Нийтэд нээхийн өмнө хөрөнгө оруулагчийн цахим шуудан, аналитик, хууль зүйн мэдээллийг баталгаажуулна.

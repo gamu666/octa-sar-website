@@ -3,15 +3,15 @@ import Link from 'next/link';
 import { Mark, SiteFooter, SiteHeader } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
-  title: 'Philosophy',
-  description: 'Why OCTA SAR exists and how we build enduring ventures from Mongolia.',
+  title: 'Үзэл баримтлал',
+  description: 'OCTA SAR яагаад оршдог, Монголоос үнэ цэнтэй шинэ компаниудыг хэрхэн бүтээдэг тухай.',
 };
 
 const principles = [
-  ['01', 'Begin with human truth', 'We look for real tension in how people live, connect and create—not a fashionable category in search of a problem.'],
-  ['02', 'Earn trust by design', 'Trust is product infrastructure. We build it deliberately into the experience, business and way we communicate.'],
-  ['03', 'Think beyond the launch', 'A sharp first product matters. So does the discipline to turn it into an enduring, responsible company.'],
-  ['04', 'Local depth, global standard', 'We begin with Mongolian context and build with the clarity, craft and ambition to travel further.'],
+  ['01', 'Хүний бодит хэрэгцээнээс эхэлнэ', 'Бид моодонд орсон салбараас асуудал хайдаггүй. Харин хүмүүсийн амьдрал, харилцаа, бүтээлд бодитоор тулгарч буй зөрчил, дутагдлыг олж хардаг.'],
+  ['02', 'Итгэлцлийг суурь болгоно', 'Итгэлцэл бол нэмэлт хамгаалалт бус, бүтээгдэхүүний үндсэн дэд бүтэц. Бид үүнийг хэрэглээний туршлага, бизнесийн загвар, харилцаа бүрд санаатайгаар шингээнэ.'],
+  ['03', 'Нээлтээс цаадахыг харна', 'Чанартай анхны бүтээгдэхүүн чухал. Түүнийг урт настай, хариуцлагатай компани болгох сахилга бат түүнээс дутахгүй чухал.'],
+  ['04', 'Монголын гүнээс, дэлхийн түвшинд', 'Бид Монголын ахуй, хэрэгцээнээс эхэлж, хаана ч өрсөлдөхүйц тодорхой сэтгэлгээ, нарийн хийц, том зорилгоор бүтээнэ.'],
 ];
 
 export default function AboutPage() {
@@ -19,26 +19,26 @@ export default function AboutPage() {
     <main>
       <SiteHeader />
       <section className="inner-hero shell">
-        <p className="eyebrow"><span /> About OCTA SAR</p>
-        <h1>One studio.<br />Many <em>orbits.</em></h1>
+        <p className="eyebrow"><span /> OCTA SAR-ийн тухай</p>
+        <h1>Нэгэн төв.<br />Олон <em>тойрог.</em></h1>
         <div className="inner-hero__foot">
-          <p>We are an independent company creating focused ventures across technology, culture, film and creative work.</p>
-          <span>Est. Ulaanbaatar</span>
+          <p>Бид технологи, соёл, кино, уран бүтээлийн салбарт тодорхой зорилготой шинэ төсөл бүтээдэг бие даасан компани.</p>
+          <span>Улаанбаатарт үүсгэн байгуулав</span>
         </div>
       </section>
 
       <section className="about-origin shell">
         <div className="about-origin__mark"><Mark /></div>
         <div>
-          <p className="section-label">Why we exist</p>
-          <h2>Original companies can emerge from overlooked contexts.</h2>
-          <p>OCTA SAR exists to give those ideas the strategy, design, technology and patient attention they need to become real businesses.</p>
+          <p className="section-label">Бидний орших шалтгаан</p>
+          <h2>Үнэ цэнтэй шинэ компани бусдын анзаараагүй хэрэгцээнээс төрдөг.</h2>
+          <p>Тийм санааг бодит бизнес болгоход шаардлагатай стратеги, загварчлал, технологи, тууштай анхаарлыг нэг дор төвлөрүүлэхийн төлөө OCTA SAR оршдог.</p>
         </div>
       </section>
 
       <section className="principles shell">
         <div className="section-heading">
-          <div><p className="section-label">How we build</p><h2>Our operating<br />principles.</h2></div>
+          <div><p className="section-label">Бид хэрхэн бүтээдэг вэ</p><h2>Баримтлах<br />зарчмууд.</h2></div>
         </div>
         <div className="principle-list">
           {principles.map(([index, title, text]) => (
@@ -50,9 +50,9 @@ export default function AboutPage() {
       </section>
 
       <section className="page-cta shell">
-        <p className="section-label">The work</p>
-        <h2>See what we’re<br />building now.</h2>
-        <Link className="button button--light" href="/ventures">Explore ventures <span>↗</span></Link>
+        <p className="section-label">Бидний ажил</p>
+        <h2>Одоо бүтээж буй<br />төслүүдтэй танилцаарай.</h2>
+        <Link className="button button--light" href="/ventures">Төслүүдийг үзэх <span>↗</span></Link>
       </section>
       <SiteFooter />
     </main>

@@ -32,8 +32,8 @@ export default async function VentureDetailPage({ params }: PageProps) {
       <SiteHeader />
       <section className="project-hero shell">
         <div className="project-hero__meta">
-          <Link href="/ventures">← All ventures</Link>
-          <span>Venture {venture.index}</span>
+          <Link href="/ventures">← Бүх төсөл</Link>
+          <span>Төсөл {venture.index}</span>
           <span className="status"><i /> {venture.status}</span>
         </div>
         <p className="venture-kicker">{venture.label}</p>
@@ -45,13 +45,13 @@ export default async function VentureDetailPage({ params }: PageProps) {
       </section>
 
       <section className="project-intro shell">
-        <p className="section-label">The proposition</p>
+        <p className="section-label">Үндсэн санаа</p>
         <h2>{venture.summary}</h2>
       </section>
 
       <section className="project-section shell">
         <div className="project-section__title">
-          <span>01</span><p className="section-label">The problem</p>
+          <span>01</span><p className="section-label">Шийдэх асуудал</p>
         </div>
         <div className="problem-list">
           {venture.problem.map((problem, index) => (
@@ -62,13 +62,13 @@ export default async function VentureDetailPage({ params }: PageProps) {
 
       <section className="solution-panel">
         <div className="shell">
-          <div className="project-section__title"><span>02</span><p className="section-label">Our answer</p></div>
+          <div className="project-section__title"><span>02</span><p className="section-label">Бидний шийдэл</p></div>
           <h2>{venture.solution}</h2>
         </div>
       </section>
 
       <section className="project-section shell">
-        <div className="project-section__title"><span>03</span><p className="section-label">Product flow</p></div>
+        <div className="project-section__title"><span>03</span><p className="section-label">Бүтээгдэхүүний явц</p></div>
         <div className="flow-grid">
           {venture.flow.map((item) => (
             <article key={item.step}><span>{item.step}</span><h3>{item.title}</h3><p>{item.detail}</p></article>
@@ -78,19 +78,19 @@ export default async function VentureDetailPage({ params }: PageProps) {
 
       <section className="evidence-section shell">
         <div className="evidence-copy">
-          <p className="section-label">Market &amp; validation</p>
-          <h2>Evidence before noise.</h2>
-          <p>Public pages show only the thesis. Verified market sizing, research, pilot results and cohort data will be added as they become investor-ready.</p>
+          <p className="section-label">Зах зээл ба нотолгоо</p>
+          <h2>Таамгаас өмнө нотолгоо.</h2>
+          <p>Энэ хаалттай хуудсанд төслийн үндсэн чиглэлийг л харуулна. Зах зээлийн баталгаажсан тооцоо, судалгаа, туршилтын үр дүн, хэрэглэгчийн бүлгийн өгөгдлийг хөрөнгө оруулагчидтай зохих түвшинд хуваалцана.</p>
         </div>
         <div className="evidence-grid">
-          <article><span>Market</span><strong>Research in progress</strong><p>TAM / SAM / SOM shared in the private deck.</p></article>
-          <article><span>Traction</span><strong>Pre-launch</strong><p>Pilot KPIs published after a meaningful cohort.</p></article>
-          <article><span>Data room</span><strong>By request</strong><p>Assumptions, evidence and model shared under NDA.</p></article>
+          <article><span>Зах зээл</span><strong>Судалж, баталгаажуулж байна</strong><p>Нийт, зорилтот, бодитоор хүрэх зах зээлийн тооцоог хаалттай танилцуулгад багтаана.</p></article>
+          <article><span>Хэрэглээний нотолгоо</span><strong>Нээлтийн өмнөх шат</strong><p>Утга бүхий туршилтын бүлэг бүрдсэний дараа гол үзүүлэлтүүдийг тайлагнана.</p></article>
+          <article><span>Нарийвчилсан материал</span><strong>Хүсэлтээр</strong><p>Таамаглал, нотолгоо, санхүүгийн загварыг нууцлалын гэрээний дараа хуваалцана.</p></article>
         </div>
       </section>
 
       <section className="project-section shell">
-        <div className="project-section__title"><span>04</span><p className="section-label">Business model</p></div>
+        <div className="project-section__title"><span>04</span><p className="section-label">Орлогын загвар</p></div>
         <div className="model-grid">
           {venture.businessModel.map((item) => (
             <article key={item.title}><h3>{item.title}</h3><p>{item.detail}</p></article>
@@ -99,7 +99,7 @@ export default async function VentureDetailPage({ params }: PageProps) {
       </section>
 
       <section className="project-section shell">
-        <div className="project-section__title"><span>05</span><p className="section-label">Roadmap</p></div>
+        <div className="project-section__title"><span>05</span><p className="section-label">Хөгжлийн зураглал</p></div>
         <div className="roadmap">
           {venture.roadmap.map((item) => (
             <article key={item.phase}><span>{item.phase}</span><h3>{item.title}</h3><p>{item.detail}</p></article>
@@ -109,21 +109,21 @@ export default async function VentureDetailPage({ params }: PageProps) {
 
       <section className="people-section shell">
         <div>
-          <p className="section-label">Team &amp; partners</p>
-          <h2>Built by a focused founding team, with specialist partners introduced as the venture matures.</h2>
+          <p className="section-label">Баг ба хамтрагчид</p>
+          <h2>Төвлөрсөн үүсгэн байгуулагчдын баг төслийг удирдаж, хөгжлийн шат бүрд мэргэшсэн хамтрагчдыг нэгтгэнэ.</h2>
         </div>
-        <p>Founder bios, relevant track record and confirmed advisors belong here after permission is secured. No unconfirmed names are published.</p>
+        <p>Үүсгэн байгуулагчдын товч намтар, холбогдох туршлага, зөвлөхүүдийн мэдээллийг зөвшөөрөл авсны дараа энд байршуулна. Баталгаажаагүй нэр, хамтын ажиллагааг нийтлэхгүй.</p>
       </section>
 
       <section className="investment-cta shell">
         <div>
-          <p className="section-label">Private investor conversation</p>
-          <h2>Help build Mongolia’s trusted connection layer.</h2>
+          <p className="section-label">Хөрөнгө оруулагчтай хийх хаалттай яриа</p>
+          <h2>Монголын итгэлцэлд суурилсан харилцааны дэд бүтцийг хамтдаа бүтээе.</h2>
         </div>
         <div>
-          <p>The raise structure, use of funds and milestones are shared directly with aligned investors. No confidential terms are published here.</p>
+          <p>Хөрөнгө оруулалтын бүтэц, хөрөнгийн зарцуулалт, хүрэх гол үр дүнг зорилго нийлэх хөрөнгө оруулагчидтай шууд хуваалцана. Нууц нөхцөлийг энэ хуудсанд нийтлэхгүй.</p>
           <Link className="button button--light" href="/contact?venture=manai-cercle" data-analytics-event="request_deck_project">
-            Request the deck <span>↗</span>
+            Танилцуулга хүсэх <span>↗</span>
           </Link>
         </div>
       </section>

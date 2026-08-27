@@ -8,68 +8,68 @@ export default function Home() {
 
       <section className="hero shell">
         <div className="hero__copy">
-          <p className="eyebrow"><span /> Independent venture studio · Ulaanbaatar</p>
-          <h1>We turn<br />meaningful ideas<br />into <em>enduring ventures.</em></h1>
+          <p className="eyebrow"><span /> Бие даасан бүтээн байгуулагч компани · Улаанбаатар</p>
+          <h1>Утга учиртай<br />санааг <em>үнэ цэнтэй</em><br />бүтээл болгоно.</h1>
           <p className="hero__lede">
-            OCTA SAR creates and grows products at the intersection of technology,
-            culture, film and human connection.
+            OCTA SAR нь технологи, соёл, кино, уран бүтээл болон хүний харилцааны
+            огтлолцолд шинэ төсөл санаачлан хөгжүүлдэг бие даасан компани.
           </p>
           <div className="hero__actions">
             <Link className="button button--light" href="#ventures">
-              Explore ventures <span>↗</span>
+              Төслүүдтэй танилцах <span>↗</span>
             </Link>
-            <Link className="text-link" href="#contact">Request investor deck <span>→</span></Link>
+            <Link className="text-link" href="#contact">Хөрөнгө оруулалтын танилцуулга авах <span>→</span></Link>
           </div>
         </div>
         <div className="hero__symbol">
-          <p>One orbit.<br />Many possibilities.</p>
+          <p>Нэгэн тойрог.<br />Олон боломж.</p>
           <Mark />
           <span className="orbit-note">08 / ∞</span>
         </div>
       </section>
 
       <section className="manifesto shell" id="philosophy">
-        <p className="section-label">Our point of view</p>
+        <p className="section-label">Бидний итгэл үнэмшил</p>
         <p className="manifesto__statement">
-          The next defining companies from Mongolia will not simply copy what exists.
-          They will combine <span>local truth</span> with <span>global ambition.</span>
+          Монголоос төрөх дараагийн нөлөө бүхий компаниуд бэлэн загварыг хуулбарлахгүй.
+          Тэд <span>Монгол ахуйн бодит хэрэгцээг</span> <span>дэлхийн түвшний тэмүүлэлтэй</span> нэгтгэнэ.
         </p>
       </section>
 
       <section className="ventures shell" id="ventures">
         <div className="section-heading">
           <div>
-            <p className="section-label">01 · Current venture</p>
-            <h2>Building what<br />should exist.</h2>
+            <p className="section-label">01 · Одоо хөгжүүлж буй төсөл</p>
+            <h2>Байх учиртайг<br />бүтээнэ.</h2>
           </div>
-          <p>We back focused teams solving human problems with trust, taste and technology.</p>
+          <p>Хүний бодит хэрэгцээг итгэлцэл, мэдрэмж, технологиор шийдэх төвлөрсөн төслүүдийг бид бүтээн хөгжүүлдэг.</p>
         </div>
 
         <Link className="venture-card" href="/ventures/manai-cercle">
           <div className="venture-card__top">
-            <span className="status"><i /> In development</span>
-            <span>Venture 01</span>
+            <span className="status"><i /> Хөгжүүлэлтийн шатанд</span>
+            <span>Төсөл 01</span>
           </div>
           <div className="venture-card__body">
             <div>
-              <p className="venture-kicker">Verified social ecosystem</p>
+              <p className="venture-kicker">Баталгаажуулалттай нийгмийн харилцааны экосистем</p>
               <h3>MANAI<br />CERCLE</h3>
             </div>
             <div className="venture-card__aside">
-              <p>A safer, more intentional way for Mongolians to meet, connect and belong.</p>
+              <p>Монголчууд зорилго нийлэх хүнтэйгээ аюулгүй танилцаж, хүрээллээ тэлэх шинэ орон зай.</p>
               <span className="round-arrow">↗</span>
             </div>
           </div>
           <div className="venture-card__footer">
-            <span>Technology</span><span>Community</span><span>Trust &amp; safety</span>
+            <span>Технологи</span><span>Хамтын нийгэмлэг</span><span>Итгэлцэл ба аюулгүй байдал</span>
           </div>
         </Link>
       </section>
 
       <section className="home-contact shell" id="contact">
-        <p className="section-label">Investor relations</p>
-        <h2>Interested in what<br />we’re building?</h2>
-        <Link className="button button--light" href="/contact">Start a conversation <span>↗</span></Link>
+        <p className="section-label">Хөрөнгө оруулагчид</p>
+        <h2>Бидний бүтээж буй<br />ирээдүйд нэгдмээр байна уу?</h2>
+        <Link className="button button--light" href="/contact">Яриа эхлүүлэх <span>↗</span></Link>
       </section>
 
       <SiteFooter />
