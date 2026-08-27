@@ -80,12 +80,12 @@ export default async function VentureDetailPage({ params }: PageProps) {
         <div className="evidence-copy">
           <p className="section-label">Зах зээл ба нотолгоо</p>
           <h2>Таамгаас өмнө нотолгоо.</h2>
-          <p>Энэ хаалттай хуудсанд төслийн үндсэн чиглэлийг л харуулна. Зах зээлийн баталгаажсан тооцоо, судалгаа, туршилтын үр дүн, хэрэглэгчийн бүлгийн өгөгдлийг хөрөнгө оруулагчидтай зохих түвшинд хуваалцана.</p>
+          <p>Энэ хуудсанд төслийн үндсэн чиглэлийг л харуулна. Зах зээлийн баталгаажсан тооцоо, судалгаа, туршилтын үр дүн, хэрэглэгчийн бүлгийн өгөгдлийг хамтрагч талуудтай зохих түвшинд хуваалцана.</p>
         </div>
         <div className="evidence-grid">
           <article><span>Зах зээл</span><strong>Судалж, баталгаажуулж байна</strong><p>Нийт, зорилтот, бодитоор хүрэх зах зээлийн тооцоог хаалттай танилцуулгад багтаана.</p></article>
           <article><span>Хэрэглээний нотолгоо</span><strong>Нээлтийн өмнөх шат</strong><p>Утга бүхий туршилтын бүлэг бүрдсэний дараа гол үзүүлэлтүүдийг тайлагнана.</p></article>
-          <article><span>Нарийвчилсан материал</span><strong>Хүсэлтээр</strong><p>Таамаглал, нотолгоо, санхүүгийн загварыг нууцлалын гэрээний дараа хуваалцана.</p></article>
+          <article><span>Нарийвчилсан материал</span><strong>Хүсэлтээр</strong><p>Таамаглал, судалгааны нотолгоо, бүтээгдэхүүний дэлгэрэнгүй мэдээллийг тохирох шатанд хуваалцана.</p></article>
         </div>
       </section>
 
@@ -115,15 +115,15 @@ export default async function VentureDetailPage({ params }: PageProps) {
         <p>Үүсгэн байгуулагчдын товч намтар, холбогдох туршлага, зөвлөхүүдийн мэдээллийг зөвшөөрөл авсны дараа энд байршуулна. Баталгаажаагүй нэр, хамтын ажиллагааг нийтлэхгүй.</p>
       </section>
 
-      <section className="investment-cta shell">
+      <section className="collaboration-cta shell">
         <div>
-          <p className="section-label">Хөрөнгө оруулагчтай хийх хаалттай яриа</p>
+          <p className="section-label">Хамтын ажиллагааны яриа</p>
           <h2>Монголын итгэлцэлд суурилсан харилцааны дэд бүтцийг хамтдаа бүтээе.</h2>
         </div>
         <div>
-          <p>Хөрөнгө оруулалтын бүтэц, хөрөнгийн зарцуулалт, хүрэх гол үр дүнг зорилго нийлэх хөрөнгө оруулагчидтай шууд хуваалцана. Нууц нөхцөлийг энэ хуудсанд нийтлэхгүй.</p>
-          <Link className="button button--light" href="/contact?venture=manai-cercle" data-analytics-event="request_deck_project">
-            Танилцуулга хүсэх <span>↗</span>
+          <p>Бүтээгдэхүүн, аюулгүй байдал, хамтын ажиллагааны боломж болон хүрэх үр дүнг зорилго нийлэх түншүүдтэй шууд ярилцана.</p>
+          <Link className="button button--light" href="/contact?venture=manai-cercle" data-analytics-event="start_collaboration_project">
+            Яриа эхлүүлэх <span>↗</span>
           </Link>
         </div>
       </section>

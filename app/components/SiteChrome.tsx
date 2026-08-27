@@ -3,9 +3,7 @@ import Link from 'next/link';
 export function Mark({ compact = false }: { compact?: boolean }) {
   return (
     <span className={compact ? 'mark mark--compact' : 'mark'} aria-hidden="true">
-      <span className="mark__crop">
-        <img src="/brand/octa-sar-source.png" alt="" />
-      </span>
+      <img src="/brand/octa-sar-mark.png" alt="" />
     </span>
   );
 }
@@ -23,14 +21,14 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
             <Link href="/about">Бидний үзэл</Link>
             <Link href="/ventures">Төслүүд</Link>
-            <Link className="nav-cta" href="/contact">Хөрөнгө оруулагчид</Link>
+            <Link className="nav-cta" href="/contact">Хамтран ажиллах</Link>
           </nav>
           <details className="mobile-menu">
             <summary aria-label="Цэс нээх"><span>Цэс</span><i /><i /></summary>
             <nav aria-label="Гар утасны цэс">
               <Link href="/about"><span>01</span> Бидний үзэл</Link>
               <Link href="/ventures"><span>02</span> Төслүүд</Link>
-              <Link href="/contact"><span>03</span> Хөрөнгө оруулагчид</Link>
+              <Link href="/contact"><span>03</span> Хамтран ажиллах</Link>
             </nav>
           </details>
         </div>
@@ -49,7 +47,7 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
       <nav aria-label="Хөлийн цэс">
         <Link href="/about"><span>01</span> Бидний үзэл</Link>
         <Link href="/ventures"><span>02</span> Төслүүд</Link>
-        <Link href="/contact"><span>03</span> Хөрөнгө оруулагчид</Link>
+        <Link href="/contact"><span>03</span> Хамтран ажиллах</Link>
       </nav>
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>

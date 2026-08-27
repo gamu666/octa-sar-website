@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { InvestorForm } from '../components/InvestorForm';
+import { PartnerForm } from '../components/PartnerForm';
 import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
-  title: 'Хөрөнгө оруулагчид',
-  description: 'OCTA SAR-тай хөрөнгө оруулалт болон стратегийн түншлэлийн хаалттай яриа эхлүүлнэ үү.',
+  title: 'Хамтын ажиллагаа',
+  description: 'OCTA SAR-тай бүтээлч болон стратегийн хамтын ажиллагааны яриа эхлүүлнэ үү.',
 };
 
 export default function ContactPage() {
@@ -14,10 +14,10 @@ export default function ContactPage() {
       <section className="contact-hero shell">
         <span className="contact-hero__number" aria-hidden="true">IR</span>
         <div>
-          <p className="eyebrow"><span /> Хөрөнгө оруулагчтай харилцах</p>
+          <p className="eyebrow"><span /> Хамтын ажиллагаа</p>
           <h1>Нэг зорилгын<br /><em>тойрогт</em> нэгдье.</h1>
         </div>
-        <p>Хариуцлагатай, урт хугацааны компанийн хөгжилд итгэдэг хөрөнгө оруулагч, бүтээн байгуулагч удирдагч, стратегийн түнштэй бодит яриа өрнүүлэхэд бид нээлттэй.</p>
+        <p>Урт хугацааны үнэ цэнэ бүтээхэд итгэдэг бүтээгч, байгууллага, мэргэшсэн баг, стратегийн түнштэй бодит яриа өрнүүлэхэд бид нээлттэй.</p>
       </section>
       <section className="contact-body shell">
         <div className="contact-note">
@@ -30,7 +30,7 @@ export default function ContactPage() {
             <div><dt>Нууцлал</dt><dd>Эмзэг мэдээллийг зөвхөн хаалттай сувгаар</dd></div>
           </dl>
         </div>
-        <InvestorForm />
+        <PartnerForm />
       </section>
       <SiteFooter light />
     </main>

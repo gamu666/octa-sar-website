@@ -34,12 +34,15 @@ export default function Home() {
             <Link className="button button--light" href="#ventures">
               Төслүүдтэй танилцах <span>↗</span>
             </Link>
-            <Link className="text-link" href="#contact">Хөрөнгө оруулалтын танилцуулга авах <span>→</span></Link>
+            <Link className="text-link" href="/about">Бидний үзэлтэй танилцах <span>→</span></Link>
           </div>
         </div>
         <div className="hero__symbol">
           <p>Нэгэн тойрог.<br />Олон боломж.</p>
-          <div className="hero__orbit"><Mark /><i /><i /></div>
+          <div className="hero__orbit">
+            <div className="hero__lockup"><Mark /><strong>OCTA SAR</strong></div>
+            <i /><i />
+          </div>
           <span className="orbit-note">08 / ∞</span>
         </div>
         <span className="hero__scroll" aria-hidden="true">Доош үзэх <i /></span>
@@ -116,7 +119,7 @@ export default function Home() {
       </section>
 
       <section className="home-contact shell" id="contact">
-        <p className="section-label">Хөрөнгө оруулагчид</p>
+        <p className="section-label">Хамтын ажиллагаа</p>
         <h2>Бидний бүтээж буй<br />ирээдүйд нэгдмээр байна уу?</h2>
         <Link className="button button--light" href="/contact">Яриа эхлүүлэх <span>↗</span></Link>
       </section>
