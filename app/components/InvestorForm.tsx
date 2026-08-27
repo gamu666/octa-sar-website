@@ -2,29 +2,15 @@
 
 import { FormEvent, useState } from 'react';
 
-const investorEmail = 'hello@octasar.mn';
-
 export function InvestorForm() {
   const [prepared, setPrepared] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const subject = `Хөрөнгө оруулалтын хүсэлт — ${form.get('name') || 'OCTA SAR сайт'}`;
-    const body = [
-      `Нэр: ${form.get('name')}`,
-      `Цахим шуудан: ${form.get('email')}`,
-      `Байгууллага: ${form.get('organisation') || 'Мэдээлээгүй'}`,
-      `Сонирхож буй чиглэл: ${form.get('interest')}`,
-      '',
-      String(form.get('message') || ''),
-    ].join('\n');
-
     window.dispatchEvent(new CustomEvent('octasar:analytics', {
-      detail: { event: 'investor_lead_started', source: 'contact_form' },
+      detail: { event: 'investor_lead_prototype', source: 'contact_form' },
     }));
     setPrepared(true);
-    window.location.href = `mailto:${investorEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -58,11 +44,13 @@ export function InvestorForm() {
         <textarea name="message" required rows={5} placeholder="Ярилцах сэдэв, хамтын зорилгоо товч бичнэ үү." />
       </label>
       <div className="form-submit">
-        <button className="button button--dark" type="submit">Хүсэлтээ бэлтгэх <span>↗</span></button>
-        <p>
+        <button className="button button--dark" type="submit" disabled={prepared}>
+          {prepared ? 'Загвар хүсэлт бэлэн' : 'Хүсэлтийн загвар шалгах'} <span>{prepared ? '✓' : '↗'}</span>
+        </button>
+        <p aria-live="polite">
           {prepared
-            ? 'Таны цахим шуудангийн апп бэлтгэсэн хүсэлттэйгээр нээгдлээ.'
-            : 'Товчийг дарахад бэлтгэсэн хүсэлт таны цахим шуудангийн апп-д нээгдэнэ. Нууц материалыг анхан шатны танилцалтын дараа хуваалцана.'}
+            ? 'UX урсгал зөв ажиллаж байна. Албан ёсны домэйн, цахим шуудан баталгаажмагц бодит илгээлтийн сувгийг холбоно.'
+            : 'Энэ бол хувийн дизайн prototype. Одоогоор мэдээлэл илгээгдэхгүй, хадгалагдахгүй.'}
         </p>
       </div>
     </form>

@@ -10,9 +10,10 @@ export const metadata: Metadata = {
 
 export default function VenturesPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="inner-hero inner-hero--compact shell">
+        <span className="inner-hero__number" aria-hidden="true">01</span>
         <p className="eyebrow"><span /> OCTA SAR-ийн төслүүд</p>
         <h1>Зорилгоос төрсөн<br /><em>бүтээл.</em></h1>
         <div className="inner-hero__foot">

@@ -16,9 +16,10 @@ const principles = [
 
 export default function AboutPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="inner-hero shell">
+        <span className="inner-hero__number" aria-hidden="true">00</span>
         <p className="eyebrow"><span /> OCTA SAR-ийн тухай</p>
         <h1>Нэгэн төв.<br />Олон <em>тойрог.</em></h1>
         <div className="inner-hero__foot">

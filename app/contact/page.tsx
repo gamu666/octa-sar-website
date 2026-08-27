@@ -9,9 +9,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="light-page">
+    <main className="light-page" id="main-content">
       <SiteHeader light />
       <section className="contact-hero shell">
+        <span className="contact-hero__number" aria-hidden="true">IR</span>
         <div>
           <p className="eyebrow"><span /> Хөрөнгө оруулагчтай харилцах</p>
           <h1>Нэг зорилгын<br /><em>тойрогт</em> нэгдье.</h1>
@@ -20,7 +21,7 @@ export default function ContactPage() {
       </section>
       <section className="contact-body shell">
         <div className="contact-note">
-          <p className="section-label">Холбогдохын өмнө</p>
+          <div className="contact-note__label"><p className="section-label">Холбогдохын өмнө</p><span>Хувийн prototype</span></div>
           <h2>Хамтын зорилгоо хуваалцаарай.</h2>
           <p>Сонирхож буй төсөл эсвэл хамтын ажиллагааны чиглэлээ сонгоно уу. Анхан шатны танилцалтын дараа тохирох нээлттэй болон нууц материалыг хуваалцана.</p>
           <dl>

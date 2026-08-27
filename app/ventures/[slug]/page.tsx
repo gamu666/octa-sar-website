@@ -28,7 +28,7 @@ export default async function VentureDetailPage({ params }: PageProps) {
   if (!venture) notFound();
 
   return (
-    <main className="project-page">
+    <main className="project-page" id="main-content">
       <SiteHeader />
       <section className="project-hero shell">
         <div className="project-hero__meta">
