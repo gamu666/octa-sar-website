@@ -15,7 +15,7 @@ body {
   margin: 0;
   background: var(--ink);
   color: var(--paper);
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -406,6 +406,12 @@ section[id] { scroll-margin-top: 112px; }
 .button--dark:disabled { cursor: default; background: var(--accent); border-color: var(--accent); color: var(--ink); transform: none; }
 .button--dark:disabled span { transform: none; }
 .form-submit p { max-width: 360px; margin: 0; color: #797b76; font-size: 11px; line-height: 1.5; }
+.prepared-brief { margin-top: 38px; padding-top: 28px; border-top: 1px solid rgba(17,19,18,.16); }
+.prepared-brief > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.prepared-brief .section-label { margin: 0; }
+.prepared-brief button { border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--ink); padding: 0 0 4px; cursor: pointer; font: inherit; font-size: 11px; }
+.prepared-brief pre { margin: 24px 0 16px; padding: 24px; overflow-x: auto; border: 1px solid rgba(17,19,18,.12); background: rgba(255,255,255,.28); color: #343733; font: 13px/1.65 "Segoe UI", Arial, sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+.prepared-brief > p { margin: 0; color: #797b76; font-size: 11px; line-height: 1.5; }
 .site-footer--light { border-color: rgba(17,19,18,.15); color: #6c6e69; }
 .site-footer--light .mark { color: var(--ink); }
 .site-footer--light .site-footer__brand > p { color: #565853; }
