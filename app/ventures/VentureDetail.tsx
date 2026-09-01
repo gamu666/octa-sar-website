@@ -31,7 +31,7 @@ export function VentureDetail({ venture }: { venture: Venture }) {
         <div className="ap-detail-hero__copy">
           <Link className="ap-back-link" href="/ventures">‹ Бүх төсөл</Link>
           <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
-          <h1 id="project-title">{isRise ? 'Цааснаас систем рүү' : 'Манай Cercle'}</h1>
+          <h1 id="project-title">{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h1>
           <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
         </div>
         <div className="ap-detail-hero__visual"><DetailVisual slug={venture.slug} /></div>

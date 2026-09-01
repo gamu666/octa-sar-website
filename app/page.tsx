@@ -70,8 +70,8 @@ export default function Home() {
 
       <section className="ap-inline-projects" id="projects" aria-labelledby="projects-title">
         <div className="ap-section-heading ap-shell">
-          <p className="ap-eyebrow">Одоо хөгжүүлж буй</p>
-          <h2 id="projects-title">Хоёр шинэ систем.</h2>
+          <p className="ap-eyebrow">OCTA SAR-ийн бүтээлүүд</p>
+          <h2 id="projects-title">Тэргүүлэх төслүүд.</h2>
         </div>
         <div className="ap-project-list">
           {ventures.map((venture) => {
@@ -81,7 +81,7 @@ export default function Home() {
               <article className={`ap-project-unit ap-project-unit--${venture.slug}`} key={venture.slug}>
                 <Reveal className="ap-project-unit__copy">
                   <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
-                  <h2>{isRise ? 'Цааснаас систем рүү' : 'Манай Cercle'}</h2>
+                  <h2>{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
                   <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
                   <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Хамтрах</Link>
                 </Reveal>

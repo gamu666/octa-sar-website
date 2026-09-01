@@ -6,7 +6,7 @@ import { ventures } from '../lib/ventures';
 
 export const metadata: Metadata = {
   title: 'Төслүүд',
-  description: 'OCTA SAR-ийн хөгжүүлж буй MANAI CERCLE болон THE RISE төслүүд.',
+  description: 'OCTA SAR-ийн тэргүүлэх Manai Cercle болон THE RISE төслүүд.',
 };
 
 function ProjectPreview({ slug }: { slug: string }) {
@@ -34,7 +34,7 @@ export default function VenturesPage() {
       <section className="ap-hero ap-hero--compact" aria-labelledby="ventures-title">
         <div className="ap-hero__copy">
           <p className="ap-eyebrow">OCTA SAR-ийн төслүүд</p>
-          <h1 id="ventures-title">Одоо хөгжүүлж буй<br />хоёр систем.</h1>
+          <h1 id="ventures-title">Тэргүүлэх<br />төслүүд.</h1>
           <p>Хэрэглэгчийн туршлагаас үйл ажиллагааны дэд бүтэц хүртэл.</p>
         </div>
       </section>
@@ -44,7 +44,7 @@ export default function VenturesPage() {
           <section className={`ap-project-unit ap-project-unit--${venture.slug}`} key={venture.slug} aria-labelledby={`${venture.slug}-title`}>
             <Reveal className="ap-project-unit__copy">
               <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
-              <h2 id={`${venture.slug}-title`}>{venture.slug === 'the-rise' ? 'Цааснаас систем рүү' : 'Манай Cercle'}</h2>
+              <h2 id={`${venture.slug}-title`}>{venture.slug === 'the-rise' ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
               <p>{venture.slug === 'the-rise' ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
               <Link className="ap-button" href={`/ventures/${venture.slug}`}>Дэлгэрэнгүй</Link>
             </Reveal>

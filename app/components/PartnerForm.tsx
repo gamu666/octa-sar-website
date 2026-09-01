@@ -7,7 +7,7 @@ export function PartnerForm() {
   const searchParams = useSearchParams();
   const selectedVenture = searchParams.get('venture');
   const defaultInterest = selectedVenture === 'manai-cercle'
-    ? 'MANAI CERCLE'
+    ? 'Manai Cercle'
     : selectedVenture === 'the-rise'
       ? 'THE RISE'
       : '';
@@ -65,7 +65,7 @@ export function PartnerForm() {
           <span>Сонирхож буй чиглэл *</span>
           <select name="interest" required defaultValue={defaultInterest}>
             <option value="" disabled>Сонгоно уу</option>
-            <option>MANAI CERCLE</option>
+            <option>Manai Cercle</option>
             <option>THE RISE</option>
             <option>Бүтээлч хамтын ажиллагаа</option>
             <option>Стратегийн түншлэл</option>
