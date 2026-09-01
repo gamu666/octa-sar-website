@@ -5,6 +5,12 @@ import { useSearchParams } from 'next/navigation';
 
 export function PartnerForm() {
   const searchParams = useSearchParams();
+  const selectedVenture = searchParams.get('venture');
+  const defaultInterest = selectedVenture === 'manai-cercle'
+    ? 'MANAI CERCLE'
+    : selectedVenture === 'the-rise'
+      ? 'THE RISE'
+      : '';
   const [brief, setBrief] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -57,9 +63,10 @@ export function PartnerForm() {
         </label>
         <label>
           <span>Сонирхож буй чиглэл *</span>
-          <select name="interest" required defaultValue={searchParams.get('venture') === 'manai-cercle' ? 'MANAI CERCLE' : ''}>
+          <select name="interest" required defaultValue={defaultInterest}>
             <option value="" disabled>Сонгоно уу</option>
             <option>MANAI CERCLE</option>
+            <option>THE RISE</option>
             <option>Бүтээлч хамтын ажиллагаа</option>
             <option>Стратегийн түншлэл</option>
             <option>Технологийн хамтын ажиллагаа</option>
@@ -73,10 +80,10 @@ export function PartnerForm() {
       </label>
       <div className="form-submit">
         <button className="button button--dark" type="submit">
-          Хүсэлтийн бриф бэлдэх <span>↗</span>
+          Бриф бэлдэх <span>↗</span>
         </button>
         <p aria-live="polite">
-          Мэдээлэл илгээгдэхгүй, хадгалагдахгүй. Таны оруулсан мэдээллээр хуулж ашиглах бриф бэлдэнэ.
+          Одоогоор мэдээлэл илгээгдэхгүй. Хуулж ашиглах бриф бэлдэнэ.
         </p>
       </div>
       {brief && (

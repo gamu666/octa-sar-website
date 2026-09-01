@@ -64,72 +64,84 @@ export default function Home() {
     <main id="main-content" className="home-redesign">
       <SiteHeader light />
 
-      <section className="home-hero shell">
-        <p className="home-kicker">Бие даасан бүтээгдэхүүн ба технологийн компани</p>
-        <h1>Санааг<br /><span>бодит болгоно.</span></h1>
-        <p className="home-hero__lede">Монгол хүний бодит хэрэгцээнээс эхэлж, дэлхийн түвшинд хүрэх дижитал бүтээгдэхүүн бүтээнэ.</p>
-        <Link className="home-hero__link" href="#flagships">Бидний бүтээж буй зүйлс <span>↓</span></Link>
-        <div className="home-hero__mark" aria-hidden="true"><Mark /></div>
-        <p className="home-hero__note">Улаанбаатар · 2026</p>
-      </section>
-
-      <section className="flagship-intro shell" id="flagships">
-        <Reveal className="flagship-intro__top"><p className="home-label">Тэргүүлэх төслүүд</p><span>01—02</span></Reveal>
-        <Reveal><h2>Одоо бүтээж буй<br /><span>хоёр шинэ систем.</span></h2></Reveal>
-      </section>
-
-      <section className="showcase showcase--cercle" aria-labelledby="cercle-title">
-        <div className="showcase__inner shell">
-          <Reveal className="showcase__head">
-            <span className="project-index">01</span>
-            <div><p className="project-status"><i /> Хөгжүүлэлтийн шатанд</p><h2 id="cercle-title">Манай<br />Cercle</h2></div>
-            <p className="project-summary">Итгэлцэлд суурилсан шинэ үеийн нийгмийн харилцааны орон зай.</p>
-          </Reveal>
-          <Reveal className="showcase__visual"><CercleVisual /></Reveal>
-          <Reveal className="showcase__foot"><span>Community</span><span>Matching</span><span>Events</span><span>Web + App</span><Link href="/ventures/manai-cercle">Төслийг нээх <b>↗</b></Link></Reveal>
+      <section className="apple-hero apple-unit" aria-labelledby="hero-title">
+        <div className="unit-copy">
+          <p className="unit-eyebrow">Бүтээгдэхүүн · Технологи · Бүтээл</p>
+          <h1 id="hero-title">OCTA SAR</h1>
+          <p className="unit-subhead">Санааг бодит болгоно.</p>
+          <p className="unit-description">Монгол хүний бодит хэрэгцээнээс эхэлсэн<br />дижитал бүтээгдэхүүнүүд.</p>
+          <div className="unit-actions">
+            <Link className="apple-button" href="#flagships">Төслүүдийг үзэх</Link>
+            <Link className="apple-button apple-button--outline" href="/about">Бидний тухай</Link>
+          </div>
+        </div>
+        <div className="hero-product" aria-hidden="true">
+          <span className="hero-glow" />
+          <Mark />
         </div>
       </section>
 
-      <section className="showcase showcase--rise" aria-labelledby="rise-title">
-        <div className="showcase__inner shell">
-          <Reveal className="showcase__head">
-            <span className="project-index">02</span>
-            <div><p className="project-status"><i /> Хөгжүүлэлтийн шатанд</p><h2 id="rise-title">Цааснаас<br />систем рүү.</h2></div>
-            <p className="project-summary">THE RISE-ийн бүртгэл, төлбөр, хяналтыг нэг урсгалд оруулах цахим шилжилт.</p>
-          </Reveal>
-          <Reveal className="showcase__visual"><RiseVisual /></Reveal>
-          <Reveal className="rise-impact"><div><strong>10,000–15,000</strong><span>хуудас / жил</span></div><p>Систем бүрэн нэвтэрсний дараа бууруулах боломжтой гэж тооцсон цаасны хэрэглээ.</p><small>Төлөвлөсөн нөлөө · Бодит үр дүн биш</small></Reveal>
-          <Reveal className="showcase__foot"><span>Бүртгэл</span><span>Төлбөр</span><span>Automation</span><span>Web + App</span><Link href="/contact?venture=the-rise">Төслийн талаар <b>↗</b></Link></Reveal>
-        </div>
+      <section className="project-unit project-unit--cercle apple-unit" id="flagships" aria-labelledby="cercle-title">
+        <Reveal className="unit-copy unit-copy--light">
+          <p className="unit-eyebrow"><i /> Хөгжүүлэлтийн шатанд · Төсөл 01</p>
+          <h2 id="cercle-title">Манай Cercle</h2>
+          <p className="unit-subhead">Зөв хүнээ. Зөв орчноос.</p>
+          <div className="unit-actions">
+            <Link className="apple-button" href="/ventures/manai-cercle">Дэлгэрэнгүй</Link>
+            <Link className="apple-button apple-button--outline apple-button--light" href="/contact?venture=manai-cercle">Хамтрах</Link>
+          </div>
+        </Reveal>
+        <Reveal className="unit-product"><CercleVisual /></Reveal>
       </section>
 
-      <section className="selected shell" id="selected-work" aria-labelledby="selected-title">
-        <Reveal className="selected__heading"><p className="home-label">Сонгосон ажлууд</p><h2 id="selected-title">Төвлөрсөн санаа.<br /><span>Цэвэр гүйцэтгэл.</span></h2><p>Website, digital identity болон туршилтын бүтээгдэхүүнүүд.</p></Reveal>
-        <div className="work-grid">
-          <Reveal className="work-tile work-tile--hunnu">
-            <div className="work-tile__meta"><span>Website</span><span>2026</span></div>
+      <section className="project-unit project-unit--rise apple-unit" aria-labelledby="rise-title">
+        <Reveal className="unit-copy">
+          <p className="unit-eyebrow"><i /> Хөгжүүлэлтийн шатанд · Төсөл 02</p>
+          <h2 id="rise-title">Цааснаас систем рүү</h2>
+          <p className="unit-subhead">THE RISE-ийн үйл ажиллагааны цахим шилжилт.</p>
+          <div className="unit-actions">
+            <Link className="apple-button apple-button--green" href="/contact?venture=the-rise">Төслийн талаар</Link>
+            <a className="apple-text-link" href="#rise-impact">Төлөвлөсөн нөлөө <span>›</span></a>
+          </div>
+        </Reveal>
+        <Reveal className="unit-product"><RiseVisual /></Reveal>
+        <Reveal className="impact-strip" id="rise-impact">
+          <div><strong>10,000–15,000</strong><span>хуудас / жил</span></div>
+          <p>Систем бүрэн нэвтэрсний дараа бууруулах боломжтой гэж тооцсон цаасны хэрэглээ.</p>
+          <small>Төлөвлөсөн нөлөө · Бодит үр дүн биш</small>
+        </Reveal>
+      </section>
+
+      <section className="work-section" id="selected-work" aria-labelledby="selected-title">
+        <h2 className="work-section__title" id="selected-title">Сонгосон ажлууд</h2>
+        <div className="apple-grid">
+          <Reveal className="apple-tile apple-tile--hunnu">
+            <div className="tile-copy tile-copy--light"><p>Website · 2026</p><h3>Hunnu Tattoo Studio</h3><span>Брэндийн мэдрэмжийг web-д.</span><a href="#contact">Дэлгэрэнгүй ›</a></div>
             <div className="hunnu-preview"><div className="hunnu-nav"><b>HUNNU</b><span>STUDIO&nbsp;&nbsp; ARTISTS&nbsp;&nbsp; CONTACT</span></div><div><small>ULAANBAATAR · MONGOLIA</small><strong>Skin holds<br />the story.</strong><i /></div></div>
-            <div className="work-tile__title"><h3>Hunnu Tattoo Studio</h3><span>↗</span></div>
           </Reveal>
-          <Reveal className="work-tile work-tile--octa">
-            <div className="work-tile__meta"><span>Digital identity</span><span>2026</span></div>
+          <Reveal className="apple-tile apple-tile--octa">
+            <div className="tile-copy"><p>Digital identity · 2026</p><h3>OCTA SAR</h3><span>Нэг тэмдэг. Олон боломж.</span><Link href="/about">Бидний тухай ›</Link></div>
             <div className="octa-preview"><Mark /><span>08 / ∞</span></div>
-            <div className="work-tile__title"><h3>OCTA SAR</h3><span>↗</span></div>
           </Reveal>
-          <Reveal className="work-tile work-tile--next">
-            <div className="work-tile__meta"><span>Web & Product</span><span>Удахгүй</span></div>
-            <div className="next-preview"><span>+</span><p>Дараагийн<br />бүтээлүүд</p></div>
-            <div className="work-tile__title"><h3>2026 Collection</h3><span>→</span></div>
+          <Reveal className="apple-tile apple-tile--next">
+            <div className="tile-copy"><p>Web & Product · 2026</p><h3>Дараагийн бүтээлүүд</h3><span>Шинэ санаанууд хөгжүүлэлтийн шатанд.</span><a href="#contact">Хамтдаа бүтээх ›</a></div>
+            <div className="next-preview"><span>+</span></div>
+          </Reveal>
+          <Reveal className="apple-tile apple-tile--about">
+            <div className="tile-copy"><p>OCTA SAR</p><h3>Хүний амьдралд ойр технологи.</h3><span>Сайн бүтээгдэхүүн төвөгтэй харагдах албагүй.</span><Link href="/about">Бидний үзэл ›</Link></div>
+            <div className="about-rings" aria-hidden="true"><i /><i /><i /></div>
           </Reveal>
         </div>
       </section>
 
-      <section className="home-about shell">
-        <Reveal><p className="home-label">OCTA SAR-ийн тухай</p><h2>Технологийг хүний<br /><span>амьдралд ойртуулна.</span></h2></Reveal>
-        <Reveal className="home-about__aside"><p>Сайн бүтээгдэхүүн төвөгтэй харагдах албагүй. Бид хэрэгцээг ойлгож, санааг цэгцэлж, хэрэглэгчид танил мэт санагдах шинэ туршлага бүтээнэ.</p><Link href="/about">Бидний үзэл <span>↗</span></Link></Reveal>
+      <section className="contact-unit apple-unit" id="contact">
+        <Reveal className="unit-copy">
+          <p className="unit-eyebrow">OCTA SAR-тай хамтрах</p>
+          <h2>Сайн санаа байна уу?</h2>
+          <p className="unit-subhead">Ярианаас эхэлье.</p>
+          <div className="unit-actions"><Link className="apple-button" href="/contact">Яриа эхлүүлэх</Link></div>
+        </Reveal>
       </section>
-
-      <section className="home-contact-new shell" id="contact"><Reveal><p className="home-label">Хамтдаа бүтээе</p><h2>Сайн санаа байна уу?</h2><Link href="/contact">Яриа эхлүүлэх <span>↗</span></Link></Reveal></section>
       <SiteFooter light />
     </main>
   );

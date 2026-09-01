@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Reveal } from '../../components/Reveal';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
 import { getVenture, ventures } from '../../lib/ventures';
 
@@ -22,112 +23,128 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+function DetailVisual({ slug }: { slug: string }) {
+  const isCercle = slug === 'manai-cercle';
+  return (
+    <div className={`ap-detail-visual ap-detail-visual--${slug}`} aria-hidden="true">
+      <div className="ap-detail-browser">
+        <div className="ap-detail-browser__bar"><i /><i /><i /><span>{isCercle ? 'manai cercle' : 'THE RISE · system'}</span></div>
+        <div className="ap-detail-browser__body">
+          <small>{isCercle ? 'ТАНЫ ХҮРЭЭЛЭЛ' : 'ҮЙЛ АЖИЛЛАГААНЫ НЭГДСЭН ОРЧИН'}</small>
+          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв орчноос.</> : <>Цааснаас<br />систем рүү.</>}</strong>
+          <div className="ap-detail-widgets"><i /><i /><i /></div>
+        </div>
+      </div>
+      <div className="ap-detail-phone"><span /><b>{isCercle ? 'cercle' : 'THE RISE'}</b><small>{isCercle ? '86% нийцэл' : 'Миний хуваарь'}</small><i /><i /></div>
+    </div>
+  );
+}
+
 export default async function VentureDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const venture = getVenture(slug);
   if (!venture) notFound();
+  const isRise = venture.slug === 'the-rise';
 
   return (
-    <main className="project-page" id="main-content">
-      <SiteHeader />
-      <section className="project-hero shell">
-        <div className="project-hero__meta">
-          <Link href="/ventures">← Бүх төсөл</Link>
-          <span>Төсөл {venture.index}</span>
-          <span className="status"><i /> {venture.status}</span>
+    <main className={`apple-page apple-project apple-project--${venture.slug}`} id="main-content">
+      <SiteHeader light />
+
+      <section className="ap-detail-hero" aria-labelledby="project-title">
+        <div className="ap-detail-hero__copy">
+          <Link className="ap-back-link" href="/ventures">‹ Бүх төсөл</Link>
+          <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
+          <h1 id="project-title">{isRise ? 'Цааснаас систем рүү' : 'Манай Cercle'}</h1>
+          <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
         </div>
-        <p className="venture-kicker">{venture.label}</p>
-        <h1>{venture.name}</h1>
-        <div className="project-hero__foot">
-          <p>{venture.oneLiner}</p>
-          <div>{venture.sectors.map((sector) => <span key={sector}>{sector}</span>)}</div>
-        </div>
+        <div className="ap-detail-hero__visual"><DetailVisual slug={venture.slug} /></div>
       </section>
 
-      <section className="project-intro shell">
-        <p className="section-label">Үндсэн санаа</p>
+      <section className="ap-overview ap-shell">
+        <p className="ap-eyebrow">Үндсэн санаа</p>
         <h2>{venture.summary}</h2>
+        <div className="ap-pills">{venture.sectors.map((sector) => <span key={sector}>{sector}</span>)}</div>
       </section>
 
-      <section className="project-section shell">
-        <div className="project-section__title">
-          <span>01</span><p className="section-label">Шийдэх асуудал</p>
+      <section className="ap-feature-section">
+        <div className="ap-section-heading ap-shell">
+          <p className="ap-eyebrow">Шийдэх асуудал</p>
+          <h2>Өнөөдрийн зөрүү.</h2>
         </div>
-        <div className="problem-list">
+        <div className="ap-card-grid ap-shell">
           {venture.problem.map((problem, index) => (
-            <article key={problem}><span>0{index + 1}</span><p>{problem}</p></article>
+            <Reveal className="ap-card ap-card--problem" key={problem}>
+              <span>0{index + 1}</span>
+              <p>{problem}</p>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="solution-panel">
-        <div className="shell">
-          <div className="project-section__title"><span>02</span><p className="section-label">Бидний шийдэл</p></div>
+      <section className="ap-solution">
+        <Reveal className="ap-solution__copy ap-shell">
+          <p className="ap-eyebrow">Шийдэл</p>
           <h2>{venture.solution}</h2>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="project-section shell">
-        <div className="project-section__title"><span>03</span><p className="section-label">Бүтээгдэхүүний явц</p></div>
-        <div className="flow-grid">
+      <section className="ap-feature-section">
+        <div className="ap-section-heading ap-shell">
+          <p className="ap-eyebrow">Бүтээгдэхүүний урсгал</p>
+          <h2>Гурван алхам.</h2>
+        </div>
+        <div className="ap-card-grid ap-card-grid--three ap-shell">
           {venture.flow.map((item) => (
-            <article key={item.step}><span>{item.step}</span><h3>{item.title}</h3><p>{item.detail}</p></article>
+            <Reveal className="ap-card ap-card--step" key={item.step}>
+              <span>{item.step}</span><h3>{item.title}</h3><p>{item.detail}</p>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="evidence-section shell">
-        <div className="evidence-copy">
-          <p className="section-label">Зах зээл ба нотолгоо</p>
-          <h2>Таамгаас өмнө нотолгоо.</h2>
-          <p>Энэ хуудсанд төслийн үндсэн чиглэлийг л харуулна. Зах зээлийн баталгаажсан тооцоо, судалгаа, туршилтын үр дүн, хэрэглэгчийн бүлгийн өгөгдлийг хамтрагч талуудтай зохих түвшинд хуваалцана.</p>
-        </div>
-        <div className="evidence-grid">
-          <article><span>Зах зээл</span><strong>Судалж, баталгаажуулж байна</strong><p>Нийт, зорилтот, бодитоор хүрэх зах зээлийн тооцоог хаалттай танилцуулгад багтаана.</p></article>
-          <article><span>Хэрэглээний нотолгоо</span><strong>Нээлтийн өмнөх шат</strong><p>Утга бүхий туршилтын бүлэг бүрдсэний дараа гол үзүүлэлтүүдийг тайлагнана.</p></article>
-          <article><span>Нарийвчилсан материал</span><strong>Хүсэлтээр</strong><p>Таамаглал, судалгааны нотолгоо, бүтээгдэхүүний дэлгэрэнгүй мэдээллийг тохирох шатанд хуваалцана.</p></article>
-        </div>
-      </section>
+      {venture.plannedImpact && (
+        <section className="ap-impact ap-shell">
+          <div><strong>{venture.plannedImpact.value}</strong><span>{venture.plannedImpact.unit}</span></div>
+          <p>{venture.plannedImpact.detail}</p>
+          <small>Төлөвлөсөн нөлөө · Бодит үр дүн биш</small>
+        </section>
+      )}
 
-      <section className="project-section shell">
-        <div className="project-section__title"><span>04</span><p className="section-label">Орлогын загвар</p></div>
-        <div className="model-grid">
-          {venture.businessModel.map((item) => (
-            <article key={item.title}><h3>{item.title}</h3><p>{item.detail}</p></article>
+      <section className="ap-feature-section ap-feature-section--soft">
+        <div className="ap-section-heading ap-shell">
+          <p className="ap-eyebrow">{isRise ? 'Системийн бүтэц' : 'Бизнесийн бүтэц'}</p>
+          <h2>{isRise ? 'Нэг өгөгдөл. Гурван орчин.' : 'Урт хугацаанд ажиллах загвар.'}</h2>
+        </div>
+        <div className="ap-card-grid ap-card-grid--three ap-shell">
+          {venture.businessModel.map((item, index) => (
+            <Reveal className="ap-card" key={item.title}>
+              <span>0{index + 1}</span><h3>{item.title}</h3><p>{item.detail}</p>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="project-section shell">
-        <div className="project-section__title"><span>05</span><p className="section-label">Хөгжлийн зураглал</p></div>
-        <div className="roadmap">
+      <section className="ap-roadmap ap-shell">
+        <div className="ap-section-heading">
+          <p className="ap-eyebrow">Хөгжлийн зураглал</p>
+          <h2>Дараагийн алхам.</h2>
+        </div>
+        <div className="ap-roadmap__list">
           {venture.roadmap.map((item) => (
             <article key={item.phase}><span>{item.phase}</span><h3>{item.title}</h3><p>{item.detail}</p></article>
           ))}
         </div>
       </section>
 
-      <section className="people-section shell">
-        <div>
-          <p className="section-label">Баг ба хамтрагчид</p>
-          <h2>Төвлөрсөн үүсгэн байгуулагчдын баг төслийг удирдаж, хөгжлийн шат бүрд мэргэшсэн хамтрагчдыг нэгтгэнэ.</h2>
-        </div>
-        <p>Үүсгэн байгуулагчдын товч намтар, холбогдох туршлага, зөвлөхүүдийн мэдээллийг зөвшөөрөл авсны дараа энд байршуулна. Баталгаажаагүй нэр, хамтын ажиллагааг нийтлэхгүй.</p>
+      <section className="ap-callout ap-callout--project">
+        <Reveal className="ap-callout__copy">
+          <p className="ap-eyebrow">Хамтын ажиллагаа</p>
+          <h2>Хамтдаа дараагийн алхмыг бүтээе.</h2>
+          <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Яриа эхлүүлэх</Link>
+        </Reveal>
       </section>
 
-      <section className="collaboration-cta shell">
-        <div>
-          <p className="section-label">Хамтын ажиллагааны яриа</p>
-          <h2>Монголын итгэлцэлд суурилсан харилцааны дэд бүтцийг хамтдаа бүтээе.</h2>
-        </div>
-        <div>
-          <p>Бүтээгдэхүүн, аюулгүй байдал, хамтын ажиллагааны боломж болон хүрэх үр дүнг зорилго нийлэх түншүүдтэй шууд ярилцана.</p>
-          <Link className="button button--light" href="/contact?venture=manai-cercle" data-analytics-event="start_collaboration_project">
-            Яриа эхлүүлэх <span>↗</span>
-          </Link>
-        </div>
-      </section>
-      <SiteFooter />
+      <SiteFooter light />
     </main>
   );
 }

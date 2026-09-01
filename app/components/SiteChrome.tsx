@@ -19,16 +19,16 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             <span>OCTA SAR</span>
           </Link>
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
-            <Link href="/about">Бидний үзэл</Link>
-            <Link href="/ventures">Төслүүд</Link>
-            <Link className="nav-cta" href="/contact">Хамтран ажиллах</Link>
+            <Link href="/about">OCTA SAR</Link>
+            <Link href="/about#projects">Төслүүд</Link>
+            <Link className="nav-cta" href="/contact">Хамтрах</Link>
           </nav>
           <details className="mobile-menu">
             <summary aria-label="Цэс нээх"><span>Цэс</span><i /><i /></summary>
             <nav aria-label="Гар утасны цэс">
-              <Link href="/about"><span>01</span> Бидний үзэл</Link>
-              <Link href="/ventures"><span>02</span> Төслүүд</Link>
-              <Link href="/contact"><span>03</span> Хамтран ажиллах</Link>
+              <Link href="/about"><span>01</span> OCTA SAR</Link>
+              <Link href="/about#projects"><span>02</span> Төслүүд</Link>
+              <Link href="/contact"><span>03</span> Хамтрах</Link>
             </nav>
           </details>
         </div>
@@ -42,16 +42,16 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
     <footer className={`site-footer shell${light ? ' site-footer--light' : ''}`}>
       <div className="site-footer__brand">
         <Link className="brand" href="/"><Mark compact /><span>OCTA SAR</span></Link>
-        <p>Утга учиртай санааг<br />үнэ цэнтэй бүтээл болгоно.</p>
+        <p>Санааг бодит болгоно.</p>
       </div>
       <nav aria-label="Хөлийн цэс">
-        <Link href="/about"><span>01</span> Бидний үзэл</Link>
-        <Link href="/ventures"><span>02</span> Төслүүд</Link>
-        <Link href="/contact"><span>03</span> Хамтран ажиллах</Link>
+        <Link href="/about"><span>01</span> OCTA SAR</Link>
+        <Link href="/about#projects"><span>02</span> Төслүүд</Link>
+        <Link href="/contact"><span>03</span> Хамтрах</Link>
       </nav>
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>
-        <span>Хувийн танилцуулгын орчин</span>
+        <span>Монголд бүтээв</span>
         <span>© 2026 OCTA SAR</span>
       </div>
     </footer>
