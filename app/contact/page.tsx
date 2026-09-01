@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { PartnerForm } from '../components/PartnerForm';
 import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 
@@ -31,7 +32,9 @@ export default function ContactPage() {
             <div><dt>Нууцлал</dt><dd>Хаалттай сувгаар</dd></div>
           </dl>
         </aside>
-        <PartnerForm />
+        <Suspense fallback={<div className="contact-form" aria-hidden="true" />}>
+          <PartnerForm />
+        </Suspense>
       </section>
 
       <SiteFooter light />

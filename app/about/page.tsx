@@ -4,6 +4,8 @@ import { Reveal } from '../components/Reveal';
 import { Mark, SiteFooter, SiteHeader } from '../components/SiteChrome';
 import { ventures } from '../lib/ventures';
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export const metadata: Metadata = {
   title: 'OCTA SAR-ийн тухай',
   description: 'OCTA SAR хүний бодит хэрэгцээнээс эхэлсэн дижитал бүтээгдэхүүнүүдийг хэрхэн бүтээдэг тухай.',
@@ -106,7 +108,7 @@ export default function AboutPage() {
                 <span className="ap-web-lights"><i /><i /><i /></span>
                 <span className="ap-web-address">hunnutattoo.com</span>
               </div>
-              <img className="ap-web-site-shot" src="/work/hunnu-website-booking.png" alt="" />
+              <img className="ap-web-site-shot" src={`${assetBase}/work/hunnu-website-booking.png`} alt="" />
             </div>
           </Reveal>
 
@@ -122,7 +124,7 @@ export default function AboutPage() {
                 <span className="ap-web-lights"><i /><i /><i /></span>
                 <span className="ap-web-address">gamu666.github.io/dudu-prime</span>
               </div>
-              <img className="ap-web-site-shot" src="/work/dudu-prime-home.png" alt="" />
+              <img className="ap-web-site-shot" src={`${assetBase}/work/dudu-prime-home.png`} alt="" />
             </div>
           </Reveal>
 

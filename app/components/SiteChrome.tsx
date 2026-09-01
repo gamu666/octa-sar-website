@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export function Mark({ compact = false }: { compact?: boolean }) {
   return (
     <span className={compact ? 'mark mark--compact' : 'mark'} aria-hidden="true">
-      <img src="/brand/octa-sar-mark.png" alt="" />
+      <img src={`${assetBase}/brand/octa-sar-mark.png`} alt="" />
     </span>
   );
 }

@@ -1,27 +1,7 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { Reveal } from '../../components/Reveal';
-import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
-import { getVenture, ventures } from '../../lib/ventures';
-
-type PageProps = { params: Promise<{ slug: string }> };
-
-export function generateStaticParams() {
-  return ventures.map((venture) => ({ slug: venture.slug }));
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const venture = getVenture(slug);
-  if (!venture) return {};
-  return {
-    title: venture.name,
-    description: venture.oneLiner,
-    openGraph: { title: `${venture.name} — OCTA SAR`, description: venture.oneLiner, images: [] },
-    twitter: { card: 'summary', title: `${venture.name} — OCTA SAR`, description: venture.oneLiner, images: [] },
-  };
-}
+import { Reveal } from '../components/Reveal';
+import { SiteFooter, SiteHeader } from '../components/SiteChrome';
+import type { Venture } from '../lib/ventures';
 
 function DetailVisual({ slug }: { slug: string }) {
   const isCercle = slug === 'manai-cercle';
@@ -40,10 +20,7 @@ function DetailVisual({ slug }: { slug: string }) {
   );
 }
 
-export default async function VentureDetailPage({ params }: PageProps) {
-  const { slug } = await params;
-  const venture = getVenture(slug);
-  if (!venture) notFound();
+export function VentureDetail({ venture }: { venture: Venture }) {
   const isRise = venture.slug === 'the-rise';
 
   return (
