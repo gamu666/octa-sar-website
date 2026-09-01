@@ -70,7 +70,7 @@ export default function Home() {
 
       <section className="ap-inline-projects" id="projects" aria-labelledby="projects-title">
         <div className="ap-section-heading ap-shell">
-          <p className="ap-eyebrow">OCTA SAR-ийн бүтээлүүд</p>
+          <p className="ap-eyebrow">Хөгжүүлэлтийн шатанд</p>
           <h2 id="projects-title">Тэргүүлэх төслүүд.</h2>
         </div>
         <div className="ap-project-list">
