@@ -48,7 +48,7 @@ export default function Home() {
           <p className="unit-description">Дижитал бүтээгдэхүүн, веб систем, брэндийн шийдэл.</p>
           <div className="unit-actions">
             <Link className="apple-button" href="#projects">Тэргүүлэх төслүүд</Link>
-            <Link className="apple-button apple-button--outline" href="#selected-work">Сонгосон ажлууд</Link>
+            <Link className="apple-button apple-button--outline" href="#selected-work">Захиалгат ажлууд</Link>
           </div>
         </div>
         <div className="hero-product" aria-hidden="true">
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="ap-selected-work" id="selected-work" aria-labelledby="selected-work-title">
         <div className="ap-section-heading ap-shell">
           <p className="ap-eyebrow">Web · Identity · Product</p>
-          <h2 id="selected-work-title">Сонгосон ажлууд.</h2>
+          <h2 id="selected-work-title">Захиалгат ажлууд.</h2>
         </div>
         <div className="ap-work-grid">
           <Reveal className="ap-work-tile ap-work-tile--featured ap-work-tile--hunnu">
