@@ -43,10 +43,9 @@ export default function Home() {
           <span className="hero-atmosphere__grid" />
         </div>
         <div className="unit-copy">
-          <p className="unit-eyebrow">Бүтээгдэхүүн · Технологи · Бүтээл</p>
-          <h1 id="hero-title">OCTA SAR</h1>
-          <p className="unit-subhead">Санааг бодит болгоно.</p>
-          <p className="unit-description">Монгол хүний бодит хэрэгцээнээс эхэлсэн<br />дижитал бүтээгдэхүүнүүд.</p>
+          <p className="unit-eyebrow">OCTA SAR · ULAANBAATAR</p>
+          <h1 id="hero-title">Санааг бодит болгоно.</h1>
+          <p className="unit-description">Монгол хүний бодит хэрэгцээнээс эхэлсэн дижитал бүтээгдэхүүнүүд.</p>
           <div className="unit-actions">
             <Link className="apple-button" href="#projects">Төслүүдийг үзэх</Link>
             <Link className="apple-button apple-button--outline" href="#about">Бидний тухай</Link>
