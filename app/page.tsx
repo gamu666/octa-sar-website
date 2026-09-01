@@ -83,7 +83,7 @@ export default function Home() {
                   <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
                   <h2>{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
                   <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв хүрээллээс'}</p>
-                  <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Холбоо барих</Link>
+                  <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Дэлгэрэнгүй</Link>
                 </Reveal>
                 <Reveal className="ap-project-unit__visual"><InlineProjectPreview slug={venture.slug} /></Reveal>
                 {venture.plannedImpact && (
