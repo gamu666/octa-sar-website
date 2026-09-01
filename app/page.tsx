@@ -60,28 +60,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-intro ap-shell" id="about" aria-labelledby="about-title">
-        <Reveal className="about-intro__lead">
+      <section className="ap-statement ap-shell" id="about" aria-labelledby="about-title">
+        <Reveal>
           <p className="ap-eyebrow">Бидний тухай</p>
-          <h2 id="about-title">Технологи өөрөө зорилго биш. Асуудлыг энгийн болгох хэрэгсэл.</h2>
-          <p className="about-intro__summary">OCTA SAR санаанаас эхлээд хэрэглэгчид хүрэх хүртэлх стратеги, дизайн, хөгжүүлэлтийг нэг урсгалд авч явна. Үр дүнд нь гоё харагдахаас гадна бодитоор ажиллах бүтээгдэхүүн бий болно.</p>
-        </Reveal>
-        <Reveal className="about-intro__principles">
-          <article>
-            <span>01</span>
-            <h3>Зөв асуудал</h3>
-            <p>Юуг, хэнд зориулж бүтээхээ эхлээд тодорхойлно.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Энгийн туршлага</h3>
-            <p>Хэрэглэгчийн алхам бүрийг ойлгомжтой, хэрэгтэй байлгана.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Бодит хэрэгжилт</h3>
-            <p>Дизайныг найдвартай ажиллах бүтээгдэхүүн болгон хөгжүүлнэ.</p>
-          </article>
+          <h2 id="about-title">Хүний амьдралд ойр технологи.</h2>
+          <p>OCTA SAR нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.</p>
         </Reveal>
       </section>
 
