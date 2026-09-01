@@ -21,16 +21,16 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             <span>OCTA SAR</span>
           </Link>
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
-            <Link href="/about">OCTA SAR</Link>
-            <Link href="/about#projects">Төслүүд</Link>
-            <Link className="nav-cta" href="/contact">Хамтрах</Link>
+            <Link href="/#about">OCTA SAR</Link>
+            <Link href="/#projects">Төслүүд</Link>
+            <Link className="nav-cta" href="/#contact">Хамтрах</Link>
           </nav>
           <details className="mobile-menu">
             <summary aria-label="Цэс нээх"><span>Цэс</span><i /><i /></summary>
             <nav aria-label="Гар утасны цэс">
-              <Link href="/about"><span>01</span> OCTA SAR</Link>
-              <Link href="/about#projects"><span>02</span> Төслүүд</Link>
-              <Link href="/contact"><span>03</span> Хамтрах</Link>
+              <Link href="/#about"><span>01</span> OCTA SAR</Link>
+              <Link href="/#projects"><span>02</span> Төслүүд</Link>
+              <Link href="/#contact"><span>03</span> Хамтрах</Link>
             </nav>
           </details>
         </div>
@@ -47,9 +47,9 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
         <p>Санааг бодит болгоно.</p>
       </div>
       <nav aria-label="Хөлийн цэс">
-        <Link href="/about"><span>01</span> OCTA SAR</Link>
-        <Link href="/about#projects"><span>02</span> Төслүүд</Link>
-        <Link href="/contact"><span>03</span> Хамтрах</Link>
+        <Link href="/#about"><span>01</span> OCTA SAR</Link>
+        <Link href="/#projects"><span>02</span> Төслүүд</Link>
+        <Link href="/#contact"><span>03</span> Хамтрах</Link>
       </nav>
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>
