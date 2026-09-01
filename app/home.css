@@ -417,7 +417,7 @@
 
 @media (max-width: 900px) {
   .home-redesign .site-header--light { height: 52px; }
-  .home-redesign .site-header--light .mobile-menu summary { color: var(--apple-ink); }
+  .home-redesign .site-header--light .desktop-nav { display: flex; gap: 14px; font-size: 10px; }
   .apple-unit { min-height: 660px; }
   .unit-copy { padding-top: 45px; }
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
@@ -436,6 +436,9 @@
 }
 
 @media (max-width: 620px) {
+  .home-redesign .site-header--light .mark { --mark-size: 30px; }
+  .home-redesign .site-header--light .brand { gap: 7px; font-size: 11px; }
+  .home-redesign .site-header--light .desktop-nav { gap: 9px; font-size: 9px; }
   .apple-unit { min-height: 650px; margin-bottom: 10px; }
   .unit-copy { width: calc(100% - 28px); padding-top: 44px; }
   .unit-copy h1, .unit-copy h2 { font-size: 40px; line-height: 1.08; }

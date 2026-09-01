@@ -305,24 +305,42 @@
 .apple-page .site-footer--light,
 .home-redesign .site-footer--light {
   width: 100%;
-  min-height: 260px;
-  padding: 54px max(24px, calc((100% - 1120px) / 2)) 26px;
+  min-height: 0;
+  padding: 34px max(24px, calc((100% - 1120px) / 2)) 22px;
+  grid-template-columns: 1fr auto;
+  gap: 30px 64px;
+  align-items: center;
   border-color: var(--ap-line);
   background: var(--ap-bg);
   color: var(--ap-muted);
   font-size: 11px;
 }
-.apple-page .site-footer--light .site-footer__brand > p { margin-top: 34px; color: var(--ap-muted); font-family: inherit; font-size: 14px; font-style: normal; }
+.apple-page .site-footer--light .site-footer__brand { display: flex; align-items: center; gap: 24px; }
+.apple-page .site-footer--light .site-footer__brand > p { margin: 0; color: var(--ap-muted); font-family: inherit; font-size: 13px; font-style: normal; }
 .apple-page .site-footer--light nav,
-.apple-page .site-footer--light nav a { border-color: var(--ap-line); }
+.apple-page .site-footer--light nav a { border: 0; }
+.apple-page .site-footer--light nav { flex-direction: row; gap: 30px; border: 0; }
+.apple-page .site-footer--light nav a { padding: 0; display: block; color: #515156; font-size: 12px; }
+.apple-page .site-footer--light nav a:hover { padding-left: 0; color: var(--ap-ink); }
+.apple-page .site-footer--light nav a span { display: none; }
+.apple-page .site-footer--light .site-footer__meta {
+  height: auto;
+  padding-top: 18px;
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--ap-line);
+  text-align: left;
+}
+.apple-page .site-footer--light .site-footer__meta span:nth-child(2) { margin-top: 0; color: var(--ap-muted); }
 
 .apple-page .reveal { opacity: 1; transform: translateY(10px); transition: transform .7s cubic-bezier(.2,.72,.22,1); }
 .apple-page .reveal.is-visible { transform: translateY(0); }
 
 @media (max-width: 900px) {
   .apple-page .site-header--light { height: 52px; }
-  .apple-page .site-header--light .mobile-menu summary { color: var(--ap-ink); }
-  .apple-page .site-header--light .mobile-menu nav { top: 50px; }
+  .apple-page .site-header--light .desktop-nav { display: flex; gap: 14px; font-size: 10px; }
   .ap-hero { min-height: 680px; }
   .ap-hero__copy { padding-top: 72px; }
   .ap-brand-stage { height: 350px; }
@@ -345,6 +363,15 @@
 @media (max-width: 620px) {
   .ap-shell { width: min(100% - 32px, 520px); }
   .apple-page .site-header--light .site-header__inner { width: calc(100% - 32px); }
+  .apple-page .site-header--light .mark { --mark-size: 30px; }
+  .apple-page .site-header--light .brand { gap: 7px; font-size: 11px; }
+  .apple-page .site-header--light .desktop-nav { gap: 9px; font-size: 9px; }
+  .apple-page .site-footer--light,
+  .home-redesign .site-footer--light { padding: 28px 16px 20px; grid-template-columns: 1fr; gap: 24px; }
+  .apple-page .site-footer--light .site-footer__brand { justify-content: space-between; gap: 16px; }
+  .apple-page .site-footer--light nav { width: 100%; justify-content: space-between; gap: 10px; }
+  .apple-page .site-footer--light nav a { font-size: 11px; }
+  .apple-page .site-footer--light .site-footer__meta { padding-top: 16px; grid-column: 1; font-size: 10px; }
   .ap-hero { min-height: 580px; }
   .ap-hero__copy { width: calc(100% - 32px); padding-top: 56px; }
   .ap-hero__copy h1 { font-size: clamp(38px, 11vw, 52px); }
@@ -415,9 +442,11 @@
   .ap-contact { padding-block: 80px 100px; }
   .apple-page .contact-form { padding: 28px 20px; border-radius: 20px; }
   .apple-page .site-footer--light,
-  .home-redesign .site-footer--light { min-height: 390px; padding: 46px 20px 24px; gap: 36px; }
+  .home-redesign .site-footer--light { min-height: 0; padding: 28px 16px 20px; gap: 24px; }
   .apple-page .site-footer--light .site-footer__brand > p,
-  .home-redesign .site-footer--light .site-footer__brand > p { margin-top: 24px; }
+  .home-redesign .site-footer--light .site-footer__brand > p { margin-top: 0; }
+  .apple-page .site-footer--light .site-footer__meta,
+  .home-redesign .site-footer--light .site-footer__meta { min-height: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

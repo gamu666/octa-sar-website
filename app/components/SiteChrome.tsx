@@ -25,14 +25,6 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             <Link href="/#projects">Төслүүд</Link>
             <Link className="nav-cta" href="/#contact">Холбоо барих</Link>
           </nav>
-          <details className="mobile-menu">
-            <summary aria-label="Цэс нээх"><span>Цэс</span><i /><i /></summary>
-            <nav aria-label="Гар утасны цэс">
-              <Link href="/#about"><span>01</span> OCTA SAR</Link>
-              <Link href="/#projects"><span>02</span> Төслүүд</Link>
-              <Link href="/#contact"><span>03</span> Холбоо барих</Link>
-            </nav>
-          </details>
         </div>
       </header>
     </>
@@ -53,7 +45,6 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
       </nav>
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>
-        <span>Монголд бүтээв</span>
         <span>© 2026 OCTA SAR</span>
       </div>
     </footer>

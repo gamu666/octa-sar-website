@@ -188,8 +188,11 @@ section[id] { scroll-margin-top: 112px; }
 @media (max-width: 900px) {
   .shell { width: min(100% - 40px, 720px); }
   .site-header { height: 80px; }
-  .desktop-nav { display: none; }
-  .mobile-menu { display: block; position: relative; z-index: 2; }
+  .site-header__inner { gap: 16px; }
+  .site-header .brand { flex-shrink: 0; }
+  .desktop-nav { margin-left: auto; display: flex; gap: 14px; font-size: 10px; white-space: nowrap; }
+  .site-header .nav-cta { padding-left: 14px; }
+  .mobile-menu { display: none; }
   .mobile-menu summary { width: 64px; height: 38px; display: grid; grid-template-columns: 1fr 17px; align-items: center; column-gap: 9px; position: relative; list-style: none; cursor: pointer; color: #c9c9c2; font-size: 9px; text-transform: uppercase; letter-spacing: .14em; }
   .mobile-menu summary::-webkit-details-marker { display: none; }
   .mobile-menu summary i { grid-column: 2; width: 17px; height: 1px; display: block; background: currentColor; transition: transform .25s ease, width .25s ease; }
