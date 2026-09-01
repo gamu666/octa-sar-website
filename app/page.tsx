@@ -37,6 +37,11 @@ export default function Home() {
       <SiteHeader light />
 
       <section className="apple-hero apple-unit" aria-labelledby="hero-title">
+        <div className="hero-atmosphere" aria-hidden="true">
+          <span className="hero-atmosphere__blue" />
+          <span className="hero-atmosphere__violet" />
+          <span className="hero-atmosphere__grid" />
+        </div>
         <div className="unit-copy">
           <p className="unit-eyebrow">Бүтээгдэхүүн · Технологи · Бүтээл</p>
           <h1 id="hero-title">OCTA SAR</h1>
@@ -49,7 +54,10 @@ export default function Home() {
         </div>
         <div className="hero-product" aria-hidden="true">
           <span className="hero-glow" />
-          <Mark />
+          <span className="hero-orbit hero-orbit--outer" />
+          <span className="hero-orbit hero-orbit--inner" />
+          <div className="hero-mark-shell"><Mark /></div>
+          <span className="hero-floor" />
         </div>
       </section>
 
