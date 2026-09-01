@@ -63,7 +63,7 @@ export default function Home() {
       <section className="ap-statement ap-shell" id="about" aria-labelledby="about-title">
         <Reveal>
           <p className="ap-eyebrow">Бидний тухай</p>
-          <h2 id="about-title">Хүний амьдралд ойр технологи.</h2>
+          <h2 id="about-title">Санаанаас бодит бүтээгдэхүүн хүртэл.</h2>
           <p>OCTA SAR нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.</p>
         </Reveal>
       </section>
