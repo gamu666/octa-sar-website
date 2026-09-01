@@ -117,7 +117,7 @@ export default function Home() {
                 <span className="ap-web-lights"><i /><i /><i /></span>
                 <span className="ap-web-address">hunnutattoo.com</span>
               </div>
-              <img className="ap-web-site-shot" src={`${assetBase}/work/hunnu-website-booking-sharp.png`} alt="" />
+              <img className="ap-web-site-shot" src={`${assetBase}/work/hunnu-website-booking-hd.jpg`} alt="" />
             </div>
           </Reveal>
 
@@ -133,7 +133,7 @@ export default function Home() {
                 <span className="ap-web-lights"><i /><i /><i /></span>
                 <span className="ap-web-address">gamu666.github.io/dudu-prime</span>
               </div>
-              <img className="ap-web-site-shot" src={`${assetBase}/work/dudu-prime-home-sharp.png`} alt="" />
+              <img className="ap-web-site-shot" src={`${assetBase}/work/dudu-prime-home-hd.jpg`} alt="" />
             </div>
           </Reveal>
 

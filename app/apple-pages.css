@@ -191,7 +191,7 @@
 .ap-web-lights i { width: 6px; aspect-ratio: 1; display: block; border-radius: 50%; background: #4b4b4f; }
 .ap-web-lights i:first-child { background: #bd2733; }
 .ap-web-address { justify-self: center; color: #9a9a9f; font-size: 7px; font-weight: 500; letter-spacing: .02em; }
-.ap-web-site-shot { width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast; }
+.ap-web-site-shot { width: 100%; height: auto; display: block; image-rendering: auto; }
 .ap-work-tile--identity { background: #edf2f8; }
 .ap-identity-stage { width: 100%; height: 380px; position: absolute; left: 0; bottom: 0; display: grid; place-items: center; }
 .ap-identity-stage::before { content: ''; width: 70%; aspect-ratio: 1.5; position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(124,158,194,.45), rgba(168,182,210,.16) 46%, transparent 72%); filter: blur(20px); }
@@ -334,6 +334,9 @@
   text-align: left;
 }
 .apple-page .site-footer--light .site-footer__meta span:nth-child(2) { margin-top: 0; color: var(--ap-muted); }
+.apple-page .site-footer--light .site-footer__socials { margin-inline: auto; display: flex; align-items: center; gap: 22px; }
+.apple-page .site-footer--light .site-footer__socials a { color: #515156; transition: color .2s ease; }
+.apple-page .site-footer--light .site-footer__socials a:hover { color: var(--ap-ink); }
 
 .apple-page .reveal { opacity: 1; transform: translateY(10px); transition: transform .7s cubic-bezier(.2,.72,.22,1); }
 .apple-page .reveal.is-visible { transform: translateY(0); }
@@ -371,7 +374,8 @@
   .apple-page .site-footer--light .site-footer__brand { justify-content: space-between; gap: 16px; }
   .apple-page .site-footer--light nav { width: 100%; justify-content: space-between; gap: 10px; }
   .apple-page .site-footer--light nav a { font-size: 11px; }
-  .apple-page .site-footer--light .site-footer__meta { padding-top: 16px; grid-column: 1; font-size: 10px; }
+  .apple-page .site-footer--light .site-footer__meta { padding-top: 16px; grid-column: 1; display: grid; grid-template-columns: 1fr auto; gap: 12px 18px; font-size: 10px; }
+  .apple-page .site-footer--light .site-footer__socials { margin: 0; grid-column: 1 / -1; grid-row: 1; gap: 20px; font-size: 11px; }
   .ap-hero { min-height: 580px; }
   .ap-hero__copy { width: calc(100% - 32px); padding-top: 56px; }
   .ap-hero__copy h1 { font-size: clamp(38px, 11vw, 52px); }
