@@ -233,6 +233,8 @@
 .hero-orbit--outer { width: min(650px, 52vw); aspect-ratio: 1; }
 .hero-orbit--inner { width: min(540px, 44vw); aspect-ratio: 1; border-color: rgba(255, 255, 255, .09); }
 .hero-floor { display: none; }
+.home-redesign #about { padding-block: 58px 64px; }
+.home-redesign .ap-inline-projects { padding-top: 72px; }
 .project-unit { min-height: 900px; }
 .project-unit .unit-copy { padding-top: 48px; }
 .project-unit .unit-copy--light { color: #f5f5f7; }
@@ -456,6 +458,8 @@
   .hero-orbit--inner { width: 315px; }
   .hero-atmosphere__blue { width: 600px; left: -105px; top: -200px; }
   .hero-atmosphere__violet { right: -410px; top: -80px; }
+  .home-redesign #about { padding-block: 48px 58px; }
+  .home-redesign .ap-inline-projects { padding-top: 58px; }
   .project-unit { min-height: 760px; }
   .project-unit--rise { min-height: 930px; }
   .unit-product { width: calc(100% - 10px); height: 420px; top: 315px; }

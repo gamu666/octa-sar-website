@@ -45,10 +45,10 @@ export default function Home() {
         <div className="unit-copy">
           <p className="unit-eyebrow">OCTA SAR · ULAANBAATAR</p>
           <h1 id="hero-title">Санааг бодит болгоно.</h1>
-          <p className="unit-description">Монгол хүний бодит хэрэгцээнээс эхэлсэн дижитал бүтээгдэхүүнүүд.</p>
+          <p className="unit-description">Дижитал бүтээгдэхүүн, веб систем, брэндийн шийдэл.</p>
           <div className="unit-actions">
-            <Link className="apple-button" href="#projects">Төслүүдийг үзэх</Link>
-            <Link className="apple-button apple-button--outline" href="#about">Бидний тухай</Link>
+            <Link className="apple-button" href="#projects">Тэргүүлэх төслүүд</Link>
+            <Link className="apple-button apple-button--outline" href="#selected-work">Сонгосон ажлууд</Link>
           </div>
         </div>
         <div className="hero-product" aria-hidden="true">
