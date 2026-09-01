@@ -233,7 +233,7 @@
 .hero-orbit--outer { width: min(650px, 52vw); aspect-ratio: 1; }
 .hero-orbit--inner { width: min(540px, 44vw); aspect-ratio: 1; border-color: rgba(255, 255, 255, .09); }
 .hero-floor { display: none; }
-.home-redesign #about { padding-block: 72px 76px; }
+.home-redesign #about { padding-block: 44px 70px; }
 .home-redesign .ap-inline-projects { padding-top: 72px; }
 .project-unit { min-height: 900px; }
 .project-unit .unit-copy { padding-top: 48px; }
@@ -458,7 +458,7 @@
   .hero-orbit--inner { width: 315px; }
   .hero-atmosphere__blue { width: 600px; left: -105px; top: -200px; }
   .hero-atmosphere__violet { right: -410px; top: -80px; }
-  .home-redesign #about { padding-block: 62px 66px; }
+  .home-redesign #about { padding-block: 48px 62px; }
   .home-redesign .ap-inline-projects { padding-top: 58px; }
   .project-unit { min-height: 760px; }
   .project-unit--rise { min-height: 930px; }
