@@ -17,7 +17,7 @@
   backdrop-filter: saturate(180%) blur(20px);
 }
 .home-redesign .site-header--light .site-header__inner { max-width: 1040px; }
-.home-redesign .site-header--light .mark { --mark-size: 19px; }
+.home-redesign .site-header--light .mark { --mark-size: 27px; }
 .home-redesign .site-header--light .brand { gap: 8px; font-size: 11px; letter-spacing: .025em; }
 .home-redesign .site-header--light .desktop-nav { gap: 34px; color: #333336; font-size: 11px; }
 .home-redesign .site-header--light .desktop-nav a::after { display: none; }

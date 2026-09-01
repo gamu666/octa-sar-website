@@ -18,7 +18,7 @@ export function PartnerForm() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const preparedBrief = [
-      'OCTA SAR · Хамтын ажиллагааны хүсэлт',
+      'OCTA SAR · Холбоо барих хүсэлт',
       '',
       `Нэр: ${data.get('name')}`,
       `Цахим шуудан: ${data.get('email')}`,

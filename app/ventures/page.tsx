@@ -17,7 +17,7 @@ function ProjectPreview({ slug }: { slug: string }) {
         <div className="ap-browser__bar"><i /><i /><i /><span>{isCercle ? 'manai cercle' : 'THE RISE · dashboard'}</span></div>
         <div className="ap-browser__screen">
           <small>{isCercle ? 'ТАНЫ ХҮРЭЭЛЭЛ' : 'ҮЙЛ АЖИЛЛАГААНЫ СИСТЕМ'}</small>
-          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв орчноос.</> : <>Нэг урсгал.<br />Нэг систем.</>}</strong>
+          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв хүрээллээс</> : <>Нэг урсгал.<br />Нэг систем.</>}</strong>
           <div className="ap-ui-blocks"><i /><i /><i /></div>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function VenturesPage() {
             <Reveal className="ap-project-unit__copy">
               <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
               <h2 id={`${venture.slug}-title`}>{venture.slug === 'the-rise' ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
-              <p>{venture.slug === 'the-rise' ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
+              <p>{venture.slug === 'the-rise' ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв хүрээллээс'}</p>
               <Link className="ap-button" href={`/ventures/${venture.slug}`}>Дэлгэрэнгүй</Link>
             </Reveal>
             <Reveal className="ap-project-unit__visual"><ProjectPreview slug={venture.slug} /></Reveal>
@@ -55,7 +55,7 @@ export default function VenturesPage() {
 
       <section className="ap-small-cta ap-shell">
         <p>Шинэ бүтээгдэхүүн эсвэл системийн санаа байна уу?</p>
-        <Link href="/contact">Хамтрах <span>›</span></Link>
+        <Link href="/contact">Холбоо барих <span>›</span></Link>
       </section>
       <SiteFooter light />
     </main>

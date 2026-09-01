@@ -22,7 +22,7 @@ function InlineProjectPreview({ slug }: { slug: string }) {
         <div className="ap-detail-browser__bar"><i /><i /><i /><span>{isCercle ? 'manai cercle' : 'THE RISE · system'}</span></div>
         <div className="ap-detail-browser__body">
           <small>{isCercle ? 'ТАНЫ ХҮРЭЭЛЭЛ' : 'ҮЙЛ АЖИЛЛАГААНЫ НЭГДСЭН ОРЧИН'}</small>
-          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв орчноос.</> : <>Цааснаас<br />систем рүү.</>}</strong>
+          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв хүрээллээс</> : <>Цааснаас<br />систем рүү.</>}</strong>
           <div className="ap-detail-widgets"><i /><i /><i /></div>
         </div>
       </div>
@@ -82,8 +82,8 @@ export default function Home() {
                 <Reveal className="ap-project-unit__copy">
                   <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
                   <h2>{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
-                  <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
-                  <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Хамтрах</Link>
+                  <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв хүрээллээс'}</p>
+                  <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Холбоо барих</Link>
                 </Reveal>
                 <Reveal className="ap-project-unit__visual"><InlineProjectPreview slug={venture.slug} /></Reveal>
                 {venture.plannedImpact && (
@@ -188,10 +188,10 @@ export default function Home() {
 
       <section className="ap-callout" id="contact">
         <Reveal className="ap-callout__copy">
-          <p className="ap-eyebrow">OCTA SAR-тай хамтрах</p>
+          <p className="ap-eyebrow">OCTA SAR-тай холбоо барих</p>
           <h2>Сайн санаа байна уу?</h2>
           <p>Ярианаас эхэлье.</p>
-          <Link className="ap-button" href="/contact">Яриа эхлүүлэх</Link>
+          <Link className="ap-button" href="/contact">Холбоо барих</Link>
         </Reveal>
       </section>
 

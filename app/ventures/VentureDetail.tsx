@@ -11,7 +11,7 @@ function DetailVisual({ slug }: { slug: string }) {
         <div className="ap-detail-browser__bar"><i /><i /><i /><span>{isCercle ? 'manai cercle' : 'THE RISE · system'}</span></div>
         <div className="ap-detail-browser__body">
           <small>{isCercle ? 'ТАНЫ ХҮРЭЭЛЭЛ' : 'ҮЙЛ АЖИЛЛАГААНЫ НЭГДСЭН ОРЧИН'}</small>
-          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв орчноос.</> : <>Цааснаас<br />систем рүү.</>}</strong>
+          <strong>{isCercle ? <>Зөв хүнээ.<br />Зөв хүрээллээс</> : <>Цааснаас<br />систем рүү.</>}</strong>
           <div className="ap-detail-widgets"><i /><i /><i /></div>
         </div>
       </div>
@@ -32,7 +32,7 @@ export function VentureDetail({ venture }: { venture: Venture }) {
           <Link className="ap-back-link" href="/ventures">‹ Бүх төсөл</Link>
           <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
           <h1 id="project-title">{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h1>
-          <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв орчноос.'}</p>
+          <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв хүрээллээс'}</p>
         </div>
         <div className="ap-detail-hero__visual"><DetailVisual slug={venture.slug} /></div>
       </section>
@@ -115,9 +115,9 @@ export function VentureDetail({ venture }: { venture: Venture }) {
 
       <section className="ap-callout ap-callout--project">
         <Reveal className="ap-callout__copy">
-          <p className="ap-eyebrow">Хамтын ажиллагаа</p>
+          <p className="ap-eyebrow">Холбоо барих</p>
           <h2>Хамтдаа дараагийн алхмыг бүтээе.</h2>
-          <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Яриа эхлүүлэх</Link>
+          <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Холбоо барих</Link>
         </Reveal>
       </section>
 

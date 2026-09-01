@@ -4,8 +4,8 @@ import { PartnerForm } from '../components/PartnerForm';
 import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
-  title: 'Хамтрах',
-  description: 'OCTA SAR-тай бүтээгдэхүүн, технологи, бүтээлч хамтын ажиллагааны яриа эхлүүлнэ үү.',
+  title: 'Холбоо барих',
+  description: 'OCTA SAR-тай бүтээгдэхүүн, дизайн, технологийн шийдлийн талаар холбоо барина уу.',
 };
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
 
       <section className="ap-hero ap-hero--contact" aria-labelledby="contact-title">
         <div className="ap-hero__copy">
-          <p className="ap-eyebrow">OCTA SAR-тай хамтрах</p>
+          <p className="ap-eyebrow">OCTA SAR-тай холбоо барих</p>
           <h1 id="contact-title">Сайн санаа байна уу?</h1>
           <p>Ярианаас эхэлье.</p>
         </div>
