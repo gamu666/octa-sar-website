@@ -123,17 +123,36 @@ export default function Home() {
 
           <Reveal className="ap-work-tile ap-work-tile--featured ap-work-tile--dudu">
             <div className="ap-work-copy ap-work-copy--light">
-              <p>Website · 2026</p>
+              <p>Real estate platform · 2026</p>
               <h3>Dudu Prime</h3>
-              <span>Хайлт, ангилал, холбоо барилтыг нэг урсгалд.</span>
+              <span>Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг нэг урсгалд.</span>
               <a className="ap-work-link" href="https://gamu666.github.io/dudu-prime/" target="_blank" rel="noreferrer">Live сайтыг үзэх ›</a>
             </div>
-            <div className="ap-web-stage ap-web-stage--dudu" aria-hidden="true">
-              <div className="ap-web-browserbar">
-                <span className="ap-web-lights"><i /><i /><i /></span>
-                <span className="ap-web-address">gamu666.github.io/dudu-prime</span>
+            <div className="ap-dudu-showcase">
+              <div className="ap-web-stage ap-web-stage--dudu" aria-hidden="true">
+                <div className="ap-web-browserbar">
+                  <span className="ap-web-lights"><i /><i /><i /></span>
+                  <span className="ap-web-address">dudu-prime · home</span>
+                </div>
+                <img className="ap-web-site-shot" src={`${assetBase}/work/dudu-prime-hero-2026.png`} alt="" />
               </div>
-              <img className="ap-web-site-shot" src={`${assetBase}/work/dudu-prime-home-hd.jpg`} alt="" />
+              <div className="ap-dudu-showcase__grid" aria-hidden="true">
+                <figure className="ap-dudu-panel">
+                  <figcaption>Хайлт · Ангилал · Харьцуулалт</figcaption>
+                  <img src={`${assetBase}/work/dudu-prime-listings-2026.png`} alt="" />
+                </figure>
+                <figure className="ap-dudu-panel">
+                  <figcaption>Зарын дэлгэрэнгүй · Галерей · Агент</figcaption>
+                  <img src={`${assetBase}/work/dudu-prime-detail-2026.png`} alt="" />
+                </figure>
+              </div>
+              <ul className="ap-dudu-features" aria-label="Dudu Prime үндсэн боломжууд">
+                <li>Ухаалаг хайлт</li>
+                <li>Газрын зураг</li>
+                <li>Хадгалсан зар</li>
+                <li>Харьцуулалт</li>
+                <li>Quick view</li>
+              </ul>
             </div>
           </Reveal>
 

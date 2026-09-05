@@ -192,6 +192,13 @@
 .ap-web-lights i:first-child { background: #bd2733; }
 .ap-web-address { justify-self: center; color: #9a9a9f; font-size: 7px; font-weight: 500; letter-spacing: .02em; }
 .ap-web-site-shot { width: 100%; height: auto; display: block; image-rendering: auto; }
+.ap-dudu-showcase { display: grid; gap: 16px; }
+.ap-dudu-showcase__grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 16px; }
+.ap-dudu-panel { aspect-ratio: 16 / 10; margin: 0; position: relative; overflow: hidden; border: 1px solid rgba(226,165,58,.2); border-radius: clamp(12px, 1.5vw, 20px); background: #eef0f3; box-shadow: 0 24px 60px rgba(1,7,16,.34); }
+.ap-dudu-panel figcaption { padding: 9px 13px; position: absolute; left: 14px; top: 14px; z-index: 2; border: 1px solid rgba(255,255,255,.44); border-radius: 999px; background: rgba(8,18,31,.78); color: #fff; font-size: 10px; font-weight: 650; letter-spacing: .015em; backdrop-filter: blur(14px); }
+.ap-dudu-panel img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; }
+.ap-dudu-features { margin: 2px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+.ap-dudu-features li { padding: 9px 13px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: #c6d0dd; font-size: 11px; font-weight: 550; }
 .ap-work-tile--identity { background: #edf2f8; }
 .ap-identity-stage { width: 100%; height: 380px; position: absolute; left: 0; bottom: 0; display: grid; place-items: center; }
 .ap-identity-stage::before { content: ''; width: 70%; aspect-ratio: 1.5; position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(124,158,194,.45), rgba(168,182,210,.16) 46%, transparent 72%); filter: blur(20px); }
@@ -424,6 +431,12 @@
   .ap-work-tile--featured .ap-work-copy > span { margin-top: 12px; }
   .ap-work-tile--featured .ap-work-link { margin-top: 15px; }
   .ap-web-browserbar { height: 25px; padding-inline: 9px; grid-template-columns: 38px 1fr 38px; }
+  .ap-dudu-showcase { gap: 10px; }
+  .ap-dudu-showcase__grid { grid-template-columns: 1fr; gap: 10px; }
+  .ap-dudu-panel { aspect-ratio: 4 / 3; }
+  .ap-dudu-panel figcaption { left: 10px; top: 10px; font-size: 9px; }
+  .ap-dudu-features { gap: 6px; }
+  .ap-dudu-features li { padding: 7px 10px; font-size: 10px; }
   .ap-web-address { font-size: 6px; }
   .ap-identity-stage .mark { --mark-size: min(235px, 58vw); }
   .ap-small-cta { min-height: 190px; flex-direction: column; justify-content: center; text-align: center; }
