@@ -46,8 +46,8 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>
         <div className="site-footer__socials" role="navigation" aria-label="Сошиал сувгууд">
-          <a href="https://www.instagram.com/octa.sar/" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href="https://www.facebook.com/octa.sar/" target="_blank" rel="noreferrer">Facebook ↗</a>
+          <a href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer">Facebook ↗</a>
         </div>
         <span>© 2026 OCTA SAR</span>
       </div>
