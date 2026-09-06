@@ -120,6 +120,62 @@
 .ap-card > span { color: #86868b; font-size: 12px; font-weight: 600; }
 .ap-card h3 { margin: auto 0 12px; font-size: clamp(25px, 2.3vw, 34px); font-weight: 600; line-height: 1.1; letter-spacing: -.035em; }
 .ap-card p { margin: 0; color: var(--ap-muted); font-size: 15px; line-height: 1.55; }
+.ap-card--principle { min-height: 470px; padding: 22px 28px 30px; position: relative; transition: transform .35s cubic-bezier(.2,.72,.22,1), box-shadow .35s ease; }
+.ap-card--principle:hover { transform: translateY(-3px); box-shadow: 0 26px 70px rgba(29,29,31,.08); }
+.ap-card__meta { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: #86868b; font-size: 10px; font-weight: 650; letter-spacing: .04em; }
+.ap-card__meta span:last-child { text-align: right; }
+.ap-card__copy { margin-top: auto; position: relative; z-index: 3; }
+.ap-card__copy h3 { margin: 0 0 12px; }
+.ap-logo-evolution { height: 220px; margin: 14px -6px 24px; position: relative; overflow: hidden; border: 1px solid rgba(29,29,31,.07); border-radius: 20px; background: #f7f7f9; isolation: isolate; }
+.ap-logo-evolution .mark { --mark-size: 136px; position: absolute; left: 50%; top: 50%; z-index: 3; transform: translate(-50%,-50%); transition: transform .55s cubic-bezier(.2,.72,.22,1), filter .55s ease, opacity .55s ease; }
+.ap-logo-evolution .mark > img { filter: none; }
+.ap-card--principle:hover .ap-logo-evolution .mark { transform: translate(-50%,-50%) scale(1.025); }
+.ap-logo-evolution__grid { position: absolute; inset: 0; z-index: 0; opacity: 0; background-image: linear-gradient(rgba(29,29,31,.055) 1px, transparent 1px), linear-gradient(90deg,rgba(29,29,31,.055) 1px, transparent 1px); background-size: 18px 18px; }
+.ap-logo-evolution__orbit { aspect-ratio: 1; position: absolute; left: 50%; top: 50%; z-index: 1; border: 1px solid rgba(29,29,31,.12); border-radius: 50%; opacity: 0; transform: translate(-50%,-50%); }
+.ap-logo-evolution__orbit--outer { width: 192px; }
+.ap-logo-evolution__orbit--inner { width: 158px; }
+.ap-logo-evolution__axis { position: absolute; z-index: 1; display: block; background: rgba(29,29,31,.13); opacity: 0; }
+.ap-logo-evolution__axis--x { width: 82%; height: 1px; left: 9%; top: 50%; }
+.ap-logo-evolution__axis--y { width: 1px; height: 78%; left: 50%; top: 11%; }
+.ap-logo-evolution__sketch { width: min(96%, 330px); position: absolute; left: 50%; top: 50%; z-index: 4; overflow: visible; opacity: 0; transform: translate(-50%,-50%) rotate(-1deg); }
+.ap-logo-evolution__sketch path { stroke: #54545a; stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; }
+.ap-logo-evolution__sketch path:nth-child(2) { stroke-dasharray: 3 4; opacity: .55; }
+.ap-logo-evolution__sketch path:nth-child(3) { stroke-width: .75; opacity: .42; }
+.ap-logo-evolution__measure { position: absolute; z-index: 5; color: #7b7b81; font-size: 7px; font-weight: 650; letter-spacing: .14em; opacity: 0; }
+.ap-logo-evolution__measure--top { left: 16px; top: 14px; }
+.ap-logo-evolution__measure--side { right: -12px; top: 50%; transform: rotate(90deg); }
+.ap-logo-evolution__flare { width: 210px; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; z-index: 1; border-radius: 50%; opacity: 0; background: radial-gradient(circle,#fff 0,rgba(220,238,255,.9) 12%,rgba(117,180,239,.4) 35%,transparent 70%); filter: blur(8px); transform: translate(-50%,-50%); }
+.ap-logo-evolution--01 { background: linear-gradient(145deg,#faf9f6,#f1f0ed); }
+.ap-logo-evolution--01 .ap-logo-evolution__grid { opacity: .64; background-size: 20px 20px; }
+.ap-logo-evolution--01 .ap-logo-evolution__axis,
+.ap-logo-evolution--01 .ap-logo-evolution__sketch,
+.ap-logo-evolution--01 .ap-logo-evolution__measure--top { opacity: .76; }
+.ap-logo-evolution--01 .mark { opacity: .17; transform: translate(-50%,-50%) rotate(-1.2deg); }
+.ap-logo-evolution--01 .mark > img { filter: grayscale(1) contrast(1.35); }
+.ap-card--principle:hover .ap-logo-evolution--01 .mark { transform: translate(-50%,-50%) rotate(-.6deg) scale(1.015); }
+.ap-logo-evolution--02 { background: linear-gradient(145deg,#f8f9fb,#eef1f5); }
+.ap-logo-evolution--02 .ap-logo-evolution__grid { opacity: .48; }
+.ap-logo-evolution--02 .ap-logo-evolution__axis { opacity: .82; }
+.ap-logo-evolution--02 .ap-logo-evolution__orbit--outer { opacity: .62; }
+.ap-logo-evolution--02 .mark { opacity: .48; }
+.ap-logo-evolution--02 .mark > img { filter: grayscale(1) contrast(1.1); }
+.ap-logo-evolution--02::after { content: ''; width: 50%; position: absolute; inset: 0 0 0 auto; z-index: 4; border-left: 1px solid rgba(0,113,227,.38); background: linear-gradient(90deg,rgba(0,113,227,.045),transparent); }
+.ap-logo-evolution--02 .ap-logo-evolution__measure { opacity: .75; }
+.ap-logo-evolution--03 { background: radial-gradient(circle at 50% 42%,#fff 0,#eef2f7 58%,#e5eaf1 100%); }
+.ap-logo-evolution--03 .ap-logo-evolution__orbit { opacity: .5; border-color: rgba(74,107,145,.22); }
+.ap-logo-evolution--03 .ap-logo-evolution__orbit--outer { width: 198px; box-shadow: 0 18px 45px rgba(62,90,126,.12), inset 0 1px 0 #fff; background: rgba(255,255,255,.28); }
+.ap-logo-evolution--03 .ap-logo-evolution__orbit--inner { opacity: .28; }
+.ap-logo-evolution--03 .mark { opacity: .88; filter: drop-shadow(0 16px 20px rgba(28,41,57,.14)); }
+.ap-logo-evolution--03 .ap-logo-evolution__measure--top { opacity: .65; }
+.ap-logo-evolution--04 { border-color: rgba(255,255,255,.25); background: radial-gradient(circle at 50% 44%,#dff2ff 0,#8fc0eb 24%,#668fbe 55%,#405f8b 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.5); }
+.ap-logo-evolution--04::before { content: ''; position: absolute; inset: 0; z-index: 0; background: repeating-radial-gradient(circle at 50% 50%,transparent 0 34px,rgba(255,255,255,.12) 35px,transparent 36px 56px); opacity: .7; }
+.ap-logo-evolution--04 .ap-logo-evolution__orbit { opacity: .38; border-color: rgba(255,255,255,.5); }
+.ap-logo-evolution--04 .ap-logo-evolution__orbit--outer { width: 204px; }
+.ap-logo-evolution--04 .ap-logo-evolution__orbit--inner { width: 172px; }
+.ap-logo-evolution--04 .ap-logo-evolution__flare { opacity: .94; }
+.ap-logo-evolution--04 .mark { --mark-size: 145px; opacity: .94; filter: drop-shadow(0 0 8px rgba(255,255,255,.96)) drop-shadow(0 0 28px rgba(222,241,255,.82)); }
+.ap-logo-evolution--04 .mark > img { filter: brightness(0) invert(1); }
+.ap-logo-evolution--04 .ap-logo-evolution__measure { color: rgba(255,255,255,.78); opacity: .85; }
 .ap-card--problem { min-height: 260px; }
 .ap-card--problem p { margin-top: auto; color: var(--ap-ink); font-size: 19px; line-height: 1.42; letter-spacing: -.015em; }
 .ap-card--step { min-height: 330px; }
@@ -423,6 +479,10 @@
   .ap-section-heading { margin-bottom: 34px; }
   .ap-card-grid { grid-template-columns: 1fr; }
   .ap-card { min-height: 250px; padding: 26px; border-radius: 20px; }
+  .ap-card--principle { min-height: 430px; padding: 18px 20px 24px; }
+  .ap-logo-evolution { height: 190px; margin: 12px -2px 22px; border-radius: 17px; }
+  .ap-logo-evolution .mark { --mark-size: 120px; }
+  .ap-logo-evolution--04 .mark { --mark-size: 130px; }
   .ap-callout { min-height: 500px; }
   .ap-callout h2 { font-size: 41px; }
   .ap-hero--compact { min-height: 350px; }

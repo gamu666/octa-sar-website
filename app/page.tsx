@@ -13,6 +13,34 @@ const principles = [
   ['04', 'Нягт гүйцэтгэнэ', 'Шийдэл бүрийг ойлгомжтой хэрэглээ, тогтвортой ажиллагаа, нарийн детальтайгаар бодит болгоно.'],
 ];
 
+const evolutionLabels: Record<string, string> = {
+  '01': 'Судалгаа · Ноорог',
+  '02': 'Хэлбэр · Бүтэц',
+  '03': 'Нарийвчлал · Систем',
+  '04': 'Бэлэн дүр · Илэрхийлэл',
+};
+
+function PrincipleVisual({ step }: { step: string }) {
+  return (
+    <div className={`ap-logo-evolution ap-logo-evolution--${step}`} aria-hidden="true">
+      <span className="ap-logo-evolution__grid" />
+      <span className="ap-logo-evolution__orbit ap-logo-evolution__orbit--outer" />
+      <span className="ap-logo-evolution__orbit ap-logo-evolution__orbit--inner" />
+      <span className="ap-logo-evolution__axis ap-logo-evolution__axis--x" />
+      <span className="ap-logo-evolution__axis ap-logo-evolution__axis--y" />
+      <Mark />
+      <svg className="ap-logo-evolution__sketch" viewBox="0 0 320 180" fill="none">
+        <path d="M87 139C48 108 54 50 99 27C146 3 226 17 256 60C286 102 251 151 198 161C157 169 113 160 87 139Z" />
+        <path d="M76 127C45 84 69 38 119 21C169 4 239 26 260 68C279 106 249 147 202 158" />
+        <path d="M54 91C99 82 145 78 267 88M160 16C155 58 156 110 162 164" />
+      </svg>
+      <span className="ap-logo-evolution__measure ap-logo-evolution__measure--top">08 / ∞</span>
+      <span className="ap-logo-evolution__measure ap-logo-evolution__measure--side">FORM 04</span>
+      <span className="ap-logo-evolution__flare" />
+    </div>
+  );
+}
+
 function InlineProjectPreview({ slug }: { slug: string }) {
   const isCercle = slug === 'manai-cercle';
 
@@ -215,10 +243,13 @@ export default function Home() {
         </div>
         <div className="ap-card-grid ap-shell">
           {principles.map(([index, title, text]) => (
-            <Reveal className="ap-card" key={index}>
-              <span>{index}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
+            <Reveal className={`ap-card ap-card--principle ap-card--principle-${index}`} key={index}>
+              <div className="ap-card__meta"><span>{index}</span><span>{evolutionLabels[index]}</span></div>
+              <PrincipleVisual step={index} />
+              <div className="ap-card__copy">
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
             </Reveal>
           ))}
         </div>
