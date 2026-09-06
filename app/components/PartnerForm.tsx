@@ -18,7 +18,7 @@ export function PartnerForm() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const preparedBrief = [
-      'OCTA SAR · Холбоо барих хүсэлт',
+      'НАЙМАН САР · Холбоо барих хүсэлт',
       '',
       `Нэр: ${data.get('name')}`,
       `Цахим шуудан: ${data.get('email')}`,
@@ -29,7 +29,7 @@ export function PartnerForm() {
       String(data.get('message')),
     ].join('\n');
 
-    window.dispatchEvent(new CustomEvent('octasar:analytics', {
+    window.dispatchEvent(new CustomEvent('naimansar:analytics', {
       detail: { event: 'collaboration_lead_prototype', source: 'contact_form' },
     }));
     setBrief(preparedBrief);

@@ -10,7 +10,7 @@ const principles = [
   ['01', 'Хэрэгцээнээс эхэлнэ', 'Бодит амьдралд байгаа асуудлыг олж, хамгийн энгийн зөв шийдлийг хайна.'],
   ['02', 'Итгэлцлийг бүтээнэ', 'Аюулгүй байдал, ойлгомжтой хэрэглээг бүтээгдэхүүний суурь болгоно.'],
   ['03', 'Системээр сэтгэнэ', 'Нэг удаагийн нээлт биш, удаан амьдрах бүтээгдэхүүн ба үйл ажиллагааг хамтад нь төлөвлөнө.'],
-  ['04', 'Монголд ойр байна', 'Эндхийн онцлогоос эхэлж, дэлхийн түвшний чанар, хийцээр гүйцэтгэнэ.'],
+  ['04', 'Нягт гүйцэтгэнэ', 'Шийдэл бүрийг ойлгомжтой хэрэглээ, тогтвортой ажиллагаа, нарийн детальтайгаар бодит болгоно.'],
 ];
 
 function InlineProjectPreview({ slug }: { slug: string }) {
@@ -43,7 +43,7 @@ export default function Home() {
           <span className="hero-atmosphere__grid" />
         </div>
         <div className="unit-copy">
-          <p className="unit-eyebrow">OCTA SAR · ULAANBAATAR</p>
+          <p className="unit-eyebrow">НАЙМАН САР · УЛААНБААТАР</p>
           <h1 id="hero-title">Санааг бодит болгоно.</h1>
           <p className="unit-description">Дижитал бүтээгдэхүүн, веб систем, брэндийн шийдэл.</p>
           <div className="unit-actions">
@@ -64,7 +64,7 @@ export default function Home() {
         <Reveal>
           <p className="ap-eyebrow">Бидний тухай</p>
           <h2 id="about-title">Санаанаас бодит бүтээгдэхүүн хүртэл.</h2>
-          <p>OCTA SAR нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.</p>
+          <p>НАЙМАН САР нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.</p>
         </Reveal>
       </section>
 
@@ -107,17 +107,36 @@ export default function Home() {
         <div className="ap-work-grid">
           <Reveal className="ap-work-tile ap-work-tile--featured ap-work-tile--hunnu">
             <div className="ap-work-copy ap-work-copy--light">
-              <p>Website · 2026</p>
+              <p>Online booking experience · 2026</p>
               <h3>Hunnu Tattoo Studio</h3>
-              <span>Брэнд, үйлчилгээ, цаг захиалгыг нэг урсгалд.</span>
+              <span>Үйлчилгээ, артист, өдөр цаг, санааны зураг, хүсэлт баталгаажуулалтыг нэг веб урсгалд.</span>
               <a className="ap-work-link" href="https://hunnutattoo.com" target="_blank" rel="noreferrer">Live сайтыг үзэх ›</a>
             </div>
-            <div className="ap-web-stage" aria-hidden="true">
-              <div className="ap-web-browserbar">
-                <span className="ap-web-lights"><i /><i /><i /></span>
-                <span className="ap-web-address">hunnutattoo.com</span>
+            <div className="ap-hunnu-showcase">
+              <div className="ap-web-stage" aria-hidden="true">
+                <div className="ap-web-browserbar">
+                  <span className="ap-web-lights"><i /><i /><i /></span>
+                  <span className="ap-web-address">hunnutattoo.com · home</span>
+                </div>
+                <img className="ap-web-site-shot" src={`${assetBase}/work/hunnu-hero-2026.png`} alt="" />
               </div>
-              <img className="ap-web-site-shot" src={`${assetBase}/work/hunnu-website-booking-hd.jpg`} alt="" />
+              <div className="ap-hunnu-showcase__grid" aria-hidden="true">
+                <figure className="ap-hunnu-panel">
+                  <figcaption>Артист · Чиглэл · Танилцуулга</figcaption>
+                  <img src={`${assetBase}/work/hunnu-artists-2026.png`} alt="" />
+                </figure>
+                <figure className="ap-hunnu-panel">
+                  <figcaption>Үйлчилгээ · Өдөр · Цаг · Хүсэлт</figcaption>
+                  <img src={`${assetBase}/work/hunnu-booking-2026.png`} alt="" />
+                </figure>
+              </div>
+              <ul className="ap-hunnu-features" aria-label="Hunnu Tattoo Studio вебийн үндсэн боломжууд">
+                <li>Үйлчилгээ сонгох</li>
+                <li>Артист сонгох</li>
+                <li>Өдөр · цаг</li>
+                <li>Зураг хавсаргах</li>
+                <li>Хүсэлт баталгаажуулах</li>
+              </ul>
             </div>
           </Reveal>
 
@@ -125,7 +144,7 @@ export default function Home() {
             <div className="ap-work-copy ap-work-copy--light">
               <p>Real estate platform · 2026</p>
               <h3>Dudu Prime</h3>
-              <span>Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг нэг урсгалд.</span>
+              <span>Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг агентын нэг веб орчинд.</span>
               <a className="ap-work-link" href="https://gamu666.github.io/dudu-prime/" target="_blank" rel="noreferrer">Live сайтыг үзэх ›</a>
             </div>
             <div className="ap-dudu-showcase">
@@ -159,7 +178,7 @@ export default function Home() {
           <Reveal className="ap-work-tile ap-work-tile--identity">
             <div className="ap-work-copy">
               <p>Digital identity · 2026</p>
-              <h3>OCTA SAR</h3>
+              <h3>НАЙМАН САР</h3>
               <span>Нэг тэмдэг. Олон боломж.</span>
             </div>
             <div className="ap-identity-stage" aria-hidden="true"><Mark /><small>08 / ∞</small></div>
@@ -207,7 +226,7 @@ export default function Home() {
 
       <section className="ap-callout" id="contact">
         <Reveal className="ap-callout__copy">
-          <p className="ap-eyebrow">OCTA SAR-тай холбоо барих</p>
+          <p className="ap-eyebrow">НАЙМАН САР-тай холбоо барих</p>
           <h2>Сайн санаа байна уу?</h2>
           <p>Ярианаас эхэлье.</p>
           <Link className="ap-button" href="/contact">Холбоо барих</Link>

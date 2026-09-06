@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { HomeRedirect } from '../components/HomeRedirect';
 
 export const metadata: Metadata = {
-  title: 'OCTA SAR-ийн тухай',
+  title: 'НАЙМАН САР-ийн тухай',
   robots: { index: false, follow: true },
 };
 

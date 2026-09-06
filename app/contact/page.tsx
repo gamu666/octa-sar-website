@@ -5,7 +5,7 @@ import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
   title: 'Холбоо барих',
-  description: 'OCTA SAR-тай бүтээгдэхүүн, дизайн, технологийн шийдлийн талаар холбоо барина уу.',
+  description: 'НАЙМАН САР-тай бүтээгдэхүүн, дизайн, технологийн шийдлийн талаар холбоо барина уу.',
 };
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
 
       <section className="ap-hero ap-hero--contact" aria-labelledby="contact-title">
         <div className="ap-hero__copy">
-          <p className="ap-eyebrow">OCTA SAR-тай холбоо барих</p>
+          <p className="ap-eyebrow">НАЙМАН САР-тай холбоо барих</p>
           <h1 id="contact-title">Сайн санаа байна уу?</h1>
           <p>Ярианаас эхэлье.</p>
         </div>

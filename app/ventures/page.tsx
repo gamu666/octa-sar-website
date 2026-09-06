@@ -6,7 +6,7 @@ import { ventures } from '../lib/ventures';
 
 export const metadata: Metadata = {
   title: 'Төслүүд',
-  description: 'OCTA SAR-ийн тэргүүлэх Manai Cercle болон THE RISE төслүүд.',
+  description: 'НАЙМАН САР-ийн тэргүүлэх Manai Cercle болон THE RISE төслүүд.',
 };
 
 function ProjectPreview({ slug }: { slug: string }) {
@@ -33,7 +33,7 @@ export default function VenturesPage() {
 
       <section className="ap-hero ap-hero--compact" aria-labelledby="ventures-title">
         <div className="ap-hero__copy">
-          <p className="ap-eyebrow">OCTA SAR-ийн төслүүд</p>
+          <p className="ap-eyebrow">НАЙМАН САР-ийн төслүүд</p>
           <h1 id="ventures-title">Тэргүүлэх<br />төслүүд.</h1>
           <p>Хэрэглэгчийн туршлагаас үйл ажиллагааны дэд бүтэц хүртэл.</p>
         </div>

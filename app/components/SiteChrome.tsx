@@ -16,13 +16,13 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
       <a className="skip-link" href="#main-content">Үндсэн агуулга руу очих</a>
       <header className={`site-header${light ? ' site-header--light' : ''}`}>
         <div className="site-header__inner shell">
-          <Link className="brand" href="/" aria-label="OCTA SAR нүүр хуудас">
+          <Link className="brand" href="/" aria-label="НАЙМАН САР нүүр хуудас">
             <Mark compact />
-            <span>OCTA SAR</span>
+            <span>НАЙМАН САР</span>
           </Link>
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
-            <Link href="/#about">OCTA SAR</Link>
             <Link href="/#projects">Төслүүд</Link>
+            <Link href="/#selected-work">Захиалгат ажил</Link>
             <Link className="nav-cta" href="/#contact">Холбоо барих</Link>
           </nav>
         </div>
@@ -35,12 +35,12 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
   return (
     <footer className={`site-footer shell${light ? ' site-footer--light' : ''}`}>
       <div className="site-footer__brand">
-        <Link className="brand" href="/"><Mark compact /><span>OCTA SAR</span></Link>
+        <Link className="brand" href="/" aria-label="НАЙМАН САР нүүр хуудас"><Mark compact /><span>НАЙМАН САР</span></Link>
         <p>Санааг бодит болгоно.</p>
       </div>
       <nav aria-label="Хөлийн цэс">
-        <Link href="/#about"><span>01</span> OCTA SAR</Link>
-        <Link href="/#projects"><span>02</span> Төслүүд</Link>
+        <Link href="/#projects"><span>01</span> Төслүүд</Link>
+        <Link href="/#selected-work"><span>02</span> Захиалгат ажил</Link>
         <Link href="/#contact"><span>03</span> Холбоо барих</Link>
       </nav>
       <div className="site-footer__meta">
@@ -49,7 +49,7 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
           <a href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer">Instagram ↗</a>
           <a href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer">Facebook ↗</a>
         </div>
-        <span>© 2026 OCTA SAR</span>
+        <span>© 2026 НАЙМАН САР</span>
       </div>
     </footer>
   );

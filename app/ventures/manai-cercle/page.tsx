@@ -7,8 +7,8 @@ const venture = getVenture('manai-cercle')!;
 export const metadata: Metadata = {
   title: venture.name,
   description: venture.oneLiner,
-  openGraph: { title: `${venture.name} — OCTA SAR`, description: venture.oneLiner, images: [] },
-  twitter: { card: 'summary', title: `${venture.name} — OCTA SAR`, description: venture.oneLiner, images: [] },
+  openGraph: { title: `${venture.name} — НАЙМАН САР`, description: venture.oneLiner, images: [] },
+  twitter: { card: 'summary', title: `${venture.name} — НАЙМАН САР`, description: venture.oneLiner, images: [] },
 };
 
 export default function ManaiCerclePage() {
