@@ -1,10 +1,9 @@
 import Link from 'next/link';
+import { CommissionedWorkAccordion } from './components/CommissionedWorkAccordion';
 import { Mark, SiteFooter, SiteHeader } from './components/SiteChrome';
 import { Reveal } from './components/Reveal';
 import { ventures } from './lib/ventures';
 import './home.css';
-
-const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const principles = [
   ['01', 'Хэрэгцээнээс эхэлнэ', 'Бодит амьдралд байгаа асуудлыг олж, хамгийн энгийн зөв шийдлийг хайна.'],
@@ -147,108 +146,7 @@ export default function Home() {
           <p className="ap-eyebrow">Web · Identity · Product</p>
           <h2 id="selected-work-title">Захиалгат ажлууд.</h2>
         </div>
-        <div className="ap-work-grid">
-          <Reveal className="ap-work-tile ap-work-tile--featured ap-work-tile--hunnu">
-            <div className="ap-work-copy ap-work-copy--light">
-              <p>Online booking experience · 2026</p>
-              <h3>Hunnu Tattoo Studio</h3>
-              <span>Үйлчилгээ, артист, өдөр цаг, санааны зураг, хүсэлт баталгаажуулалтыг нэг веб урсгалд.</span>
-              <a className="ap-work-link" href="https://hunnutattoo.com" target="_blank" rel="noreferrer">Live сайтыг үзэх ›</a>
-            </div>
-            <div className="ap-hunnu-showcase">
-              <div className="ap-web-stage" aria-hidden="true">
-                <div className="ap-web-browserbar">
-                  <span className="ap-web-lights"><i /><i /><i /></span>
-                  <span className="ap-web-address">hunnutattoo.com · home</span>
-                </div>
-                <img className="ap-web-site-shot" src={`${assetBase}/work/hunnu-hero-2026.png`} alt="" />
-              </div>
-              <div className="ap-hunnu-showcase__grid" aria-hidden="true">
-                <figure className="ap-hunnu-panel">
-                  <figcaption>Артист · Чиглэл · Танилцуулга</figcaption>
-                  <img src={`${assetBase}/work/hunnu-artists-2026.png`} alt="" />
-                </figure>
-                <figure className="ap-hunnu-panel">
-                  <figcaption>Үйлчилгээ · Өдөр · Цаг · Хүсэлт</figcaption>
-                  <img src={`${assetBase}/work/hunnu-booking-2026.png`} alt="" />
-                </figure>
-              </div>
-              <ul className="ap-hunnu-features" aria-label="Hunnu Tattoo Studio вебийн үндсэн боломжууд">
-                <li>Үйлчилгээ сонгох</li>
-                <li>Артист сонгох</li>
-                <li>Өдөр · цаг</li>
-                <li>Зураг хавсаргах</li>
-                <li>Хүсэлт баталгаажуулах</li>
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal className="ap-work-tile ap-work-tile--featured ap-work-tile--dudu">
-            <div className="ap-work-copy ap-work-copy--light">
-              <p>Real estate platform · 2026</p>
-              <h3>Dudu Prime</h3>
-              <span>Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг агентын нэг веб орчинд.</span>
-              <a className="ap-work-link" href="https://gamu666.github.io/dudu-prime/" target="_blank" rel="noreferrer">Live сайтыг үзэх ›</a>
-            </div>
-            <div className="ap-dudu-showcase">
-              <div className="ap-web-stage ap-web-stage--dudu" aria-hidden="true">
-                <div className="ap-web-browserbar">
-                  <span className="ap-web-lights"><i /><i /><i /></span>
-                  <span className="ap-web-address">dudu-prime · home</span>
-                </div>
-                <img className="ap-web-site-shot" src={`${assetBase}/work/dudu-prime-hero-2026.png`} alt="" />
-              </div>
-              <div className="ap-dudu-showcase__grid" aria-hidden="true">
-                <figure className="ap-dudu-panel">
-                  <figcaption>Хайлт · Ангилал · Харьцуулалт</figcaption>
-                  <img src={`${assetBase}/work/dudu-prime-listings-2026.png`} alt="" />
-                </figure>
-                <figure className="ap-dudu-panel">
-                  <figcaption>Зарын дэлгэрэнгүй · Галерей · Агент</figcaption>
-                  <img src={`${assetBase}/work/dudu-prime-detail-2026.png`} alt="" />
-                </figure>
-              </div>
-              <ul className="ap-dudu-features" aria-label="Dudu Prime үндсэн боломжууд">
-                <li>Ухаалаг хайлт</li>
-                <li>Газрын зураг</li>
-                <li>Хадгалсан зар</li>
-                <li>Харьцуулалт</li>
-                <li>Quick view</li>
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal className="ap-work-tile ap-work-tile--identity">
-            <div className="ap-work-copy">
-              <p>Digital identity · 2026</p>
-              <h3>НАЙМАН САР</h3>
-              <span>Нэг тэмдэг. Олон боломж.</span>
-            </div>
-            <div className="ap-identity-stage" aria-hidden="true"><Mark /><small>08 / ∞</small></div>
-          </Reveal>
-
-          <Reveal className="ap-work-tile ap-work-tile--systems">
-            <div className="ap-work-copy">
-              <p>Web systems · 2026</p>
-              <h3>Жижиг урсгалууд</h3>
-              <span>Өдөр тутмын ажлыг ойлгомжтой болгоно.</span>
-            </div>
-            <div className="ap-system-stage" aria-hidden="true">
-              <div className="ap-system-nav"><i /><b>Overview</b><span>•••</span></div>
-              <div className="ap-system-cards"><i /><i /><i /></div>
-              <div className="ap-system-lines"><i /><i /><i /><i /></div>
-            </div>
-          </Reveal>
-
-          <Reveal className="ap-work-tile ap-work-tile--next">
-            <div className="ap-work-copy">
-              <p>Next · In development</p>
-              <h3>Дараагийн бүтээлүүд</h3>
-              <span>Шинэ санаанууд хөгжүүлэлтийн шатанд.</span>
-            </div>
-            <div className="ap-next-stage" aria-hidden="true"><span>+</span><i /><i /><i /></div>
-          </Reveal>
-        </div>
+        <CommissionedWorkAccordion />
       </section>
 
       <section className="ap-principles" aria-labelledby="principles-title">
