@@ -30,9 +30,24 @@ function PrincipleVisual({ step }: { step: string }) {
       <span className="ap-logo-evolution__axis ap-logo-evolution__axis--y" />
       <Mark />
       <svg className="ap-logo-evolution__sketch" viewBox="0 0 320 180" fill="none">
-        <path d="M87 139C48 108 54 50 99 27C146 3 226 17 256 60C286 102 251 151 198 161C157 169 113 160 87 139Z" />
-        <path d="M76 127C45 84 69 38 119 21C169 4 239 26 260 68C279 106 249 147 202 158" />
-        <path d="M54 91C99 82 145 78 267 88M160 16C155 58 156 110 162 164" />
+        <g className="ap-logo-evolution__rough-outline">
+          <path d="M75 126C52 92 63 52 96 31C128 10 187 8 225 27C264 47 276 85 259 119C242 151 205 165 158 164C119 164 92 151 75 126Z" />
+          <path d="M72 122C49 88 66 47 100 27C137 7 190 9 229 31C266 52 273 90 255 123C237 153 199 168 154 163C116 160 87 146 72 122Z" />
+        </g>
+        <g className="ap-logo-evolution__rough-bars">
+          <path d="M73 111C68 92 70 71 82 55M83 55C76 75 77 104 82 124" />
+          <path d="M99 139C92 110 93 65 101 41M110 32C103 68 104 116 109 146" />
+          <path d="M126 154C121 111 122 59 128 26M139 20C134 63 135 119 138 158" />
+          <path d="M155 161C151 116 152 61 156 20M170 19C167 63 168 116 169 160" />
+          <path d="M187 156C184 116 184 64 184 25M200 29C199 66 199 113 197 151" />
+          <path d="M216 143C218 108 217 69 211 38M227 46C232 77 231 111 226 133" />
+          <path d="M246 119C252 98 250 77 240 59M255 72C261 88 259 105 253 117" />
+        </g>
+        <g className="ap-logo-evolution__rough-moon">
+          <path d="M124 28C124 44 135 54 149 53C163 52 173 40 172 26C166 35 158 40 149 40C139 40 131 35 124 28Z" />
+          <path d="M127 26C127 41 136 50 150 50C160 49 169 41 171 30" />
+        </g>
+        <path className="ap-logo-evolution__guide" d="M53 90C98 84 147 81 267 88M160 13C156 58 157 112 162 168" />
       </svg>
       <span className="ap-logo-evolution__measure ap-logo-evolution__measure--top">08 / ∞</span>
       <span className="ap-logo-evolution__measure ap-logo-evolution__measure--side">FORM 04</span>
