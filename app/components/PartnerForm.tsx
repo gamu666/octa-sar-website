@@ -1,16 +1,8 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 export function PartnerForm() {
-  const searchParams = useSearchParams();
-  const selectedVenture = searchParams.get('venture');
-  const defaultInterest = selectedVenture === 'manai-cercle'
-    ? 'Manai Cercle'
-    : selectedVenture === 'the-rise'
-      ? 'THE RISE'
-      : '';
   const [brief, setBrief] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -23,7 +15,6 @@ export function PartnerForm() {
       `Нэр: ${data.get('name')}`,
       `Цахим шуудан: ${data.get('email')}`,
       `Байгууллага: ${data.get('organisation') || '—'}`,
-      `Сонирхож буй чиглэл: ${data.get('interest')}`,
       '',
       'Зурвас:',
       String(data.get('message')),
@@ -57,21 +48,9 @@ export function PartnerForm() {
           <span>Цахим шуудан *</span>
           <input name="email" type="email" autoComplete="email" required placeholder="name@company.com" />
         </label>
-        <label>
+        <label className="form-grid__wide">
           <span>Байгууллага</span>
           <input name="organisation" autoComplete="organization" placeholder="Байгууллага эсвэл баг" />
-        </label>
-        <label>
-          <span>Сонирхож буй чиглэл *</span>
-          <select name="interest" required defaultValue={defaultInterest}>
-            <option value="" disabled>Сонгоно уу</option>
-            <option>Manai Cercle</option>
-            <option>THE RISE</option>
-            <option>Бүтээлч хамтын ажиллагаа</option>
-            <option>Стратегийн түншлэл</option>
-            <option>Технологийн хамтын ажиллагаа</option>
-            <option>Бусад</option>
-          </select>
         </label>
       </div>
       <label>
