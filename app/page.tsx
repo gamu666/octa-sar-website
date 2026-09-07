@@ -87,7 +87,10 @@ export default function Home() {
         <div className="unit-copy">
           <p className="unit-eyebrow">НАЙМАН САР · УЛААНБААТАР</p>
           <h1 id="hero-title">Санааг бодит болгоно.</h1>
-          <p className="unit-description">Дижитал бүтээгдэхүүн, веб систем, брэндийн шийдэл.</p>
+          <p className="unit-description">
+            Дижитал бүтээгдэхүүн, веб систем, брэндийн шийдэл.
+            <span className="unit-description__support">Дижитал маркетинг, сошиал болон видео контентын нэмэлт дэмжлэг.</span>
+          </p>
           <div className="unit-actions">
             <Link className="apple-button" href="#projects">Тэргүүлэх төслүүд</Link>
             <Link className="apple-button apple-button--outline" href="#selected-work">Захиалгат ажлууд</Link>
@@ -106,7 +109,10 @@ export default function Home() {
         <Reveal>
           <p className="ap-eyebrow">Бидний тухай</p>
           <h2 id="about-title">Санаанаас бодит бүтээгдэхүүн хүртэл.</h2>
-          <p>НАЙМАН САР нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.</p>
+          <p>
+            НАЙМАН САР нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.
+            <span className="ap-statement__support">Шаардлагатай төслүүдэд дижитал маркетинг, сошиал контент, сурталчилгааны богино хэмжээний видео болон Reels контентыг нэмэлтээр хэрэгжүүлнэ.</span>
+          </p>
         </Reveal>
       </section>
 

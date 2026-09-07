@@ -98,6 +98,7 @@
   letter-spacing: -.05em;
 }
 .ap-statement > div > p:last-child { max-width: 700px; margin: 24px auto 0; color: var(--ap-muted); font-size: 19px; line-height: 1.55; }
+.ap-statement__support { display: block; max-width: 660px; margin: 10px auto 0; color: #8b8b91; font-size: .88em; line-height: 1.55; }
 
 .home-redesign .ap-statement h2,
 .home-redesign .ap-section-heading h2 {
