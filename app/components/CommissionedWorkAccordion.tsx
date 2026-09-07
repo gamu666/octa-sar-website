@@ -84,13 +84,16 @@ export function CommissionedWorkAccordion() {
     };
   }, [activeWork]);
 
-  function toggleWork(workId: string) {
+  function toggleWork(workId: string, interactionId: number) {
     if (activeWork === workId) {
       setActiveWork(null);
       return;
     }
 
-    setFrameVersion((version) => version + 1);
+    // A timestamp makes every embed URL unique, including after a full page
+    // refresh. This prevents the browser from restoring an old inner scroll
+    // position for the live website.
+    setFrameVersion(Math.round(interactionId * 1000));
     setActiveWork(workId);
   }
 
@@ -111,7 +114,7 @@ export function CommissionedWorkAccordion() {
               type="button"
               aria-expanded={isOpen}
               aria-controls={panelId}
-              onClick={() => toggleWork(work.id)}
+              onClick={(event) => toggleWork(work.id, event.timeStamp)}
             >
               <span className="work-accordion__index">{work.index}</span>
               <span className="work-accordion__title">
