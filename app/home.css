@@ -16,7 +16,7 @@
   color: var(--apple-ink);
   backdrop-filter: saturate(180%) blur(20px);
 }
-.home-redesign .site-header--light .site-header__inner { max-width: 1040px; }
+.home-redesign .site-header--light .site-header__inner { width: calc(100% - 96px); max-width: 1680px; }
 .home-redesign .site-header--light .mark { --mark-size: 33px; }
 .home-redesign .site-header--light .brand { gap: 9px; font-size: 13px; letter-spacing: .025em; transition: opacity .2s ease, transform .2s ease; }
 .home-redesign .site-header--light .brand:hover { opacity: .72; transform: translateY(-1px); }
@@ -26,6 +26,8 @@
 .home-redesign .site-header--light .desktop-nav a::after { display: none; }
 .home-redesign .site-header--light .nav-cta { padding: 0 14px; border: 0; background: #1d1d1f; color: #fff; }
 .home-redesign .site-header--light .nav-cta:hover { background: #000; color: #fff; }
+.home-redesign .site-header--light .header-icon { color: #1d1d1f; }
+.home-redesign .site-header--light .header-icon:hover { background: rgba(29,29,31,.07); color: #000; }
 
 .apple-unit {
   min-height: 692px;
