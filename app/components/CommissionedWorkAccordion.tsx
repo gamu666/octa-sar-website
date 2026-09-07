@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 const works = [
   {
@@ -27,23 +27,36 @@ const works = [
 
 export function CommissionedWorkAccordion() {
   const [activeWork, setActiveWork] = useState<string | null>(null);
+  const [frameVersion, setFrameVersion] = useState(0);
   const itemRefs = useRef<Record<string, HTMLElement | null>>({});
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!activeWork) return;
 
-    const frame = window.requestAnimationFrame(() => {
+    const scrollToActiveItem = () => {
       const item = itemRefs.current[activeWork];
       if (!item) return;
 
       const headerHeight = document.querySelector<HTMLElement>('.site-header')?.offsetHeight ?? 52;
       const itemTop = window.scrollY + item.getBoundingClientRect().top - headerHeight - 10;
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      window.scrollTo({ top: itemTop, behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
+      window.scrollTo({ top: Math.max(0, itemTop), behavior: 'auto' });
+    };
+
+    scrollToActiveItem();
+    const frame = window.requestAnimationFrame(scrollToActiveItem);
 
     return () => window.cancelAnimationFrame(frame);
   }, [activeWork]);
+
+  function toggleWork(workId: string) {
+    if (activeWork === workId) {
+      setActiveWork(null);
+      return;
+    }
+
+    setFrameVersion((version) => version + 1);
+    setActiveWork(workId);
+  }
 
   return (
     <div className="work-accordion ap-shell">
@@ -62,7 +75,7 @@ export function CommissionedWorkAccordion() {
               type="button"
               aria-expanded={isOpen}
               aria-controls={panelId}
-              onClick={() => setActiveWork(isOpen ? null : work.id)}
+              onClick={() => toggleWork(work.id)}
             >
               <span className="work-accordion__index">{work.index}</span>
               <span className="work-accordion__title">
@@ -90,7 +103,8 @@ export function CommissionedWorkAccordion() {
                     <a href={work.url} target="_blank" rel="noreferrer" aria-label={`${work.name} сайтыг шинэ цонхонд нээх`}>↗</a>
                   </div>
                   <iframe
-                    src={`${work.url}?embed=naiman-sar#top`}
+                    key={`${work.id}-${frameVersion}`}
+                    src={`${work.url}?embed=naiman-sar&view=${frameVersion}`}
                     title={`${work.name} live веб`}
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"

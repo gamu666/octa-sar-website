@@ -234,7 +234,7 @@
 .work-accordion__item { scroll-margin-top: 64px; overflow-anchor: none; border-bottom: 1px solid var(--ap-line); transition: background .35s ease, border-radius .35s ease, padding .35s ease; }
 .work-accordion__item.is-open { margin-block: 12px; padding-inline: 26px; border-bottom-color: transparent; border-radius: 28px; background: #f5f5f7; box-shadow: 0 22px 70px rgba(29,29,31,.055); }
 .work-accordion__trigger { width: 100%; min-height: 124px; padding: 0; display: grid; grid-template-columns: 72px 1fr 54px; gap: 22px; align-items: center; border: 0; background: transparent; color: var(--ap-ink); text-align: left; cursor: pointer; }
-.work-accordion__item.is-open .work-accordion__trigger { position: sticky; top: 52px; z-index: 12; border-bottom: 1px solid rgba(29,29,31,.08); background: rgba(245,245,247,.92); backdrop-filter: saturate(180%) blur(18px); }
+.work-accordion__item.is-open .work-accordion__trigger { border-bottom: 1px solid rgba(29,29,31,.08); }
 .work-accordion__trigger:focus-visible { outline: 2px solid var(--ap-blue); outline-offset: 5px; border-radius: 10px; }
 .work-accordion__index { align-self: start; padding-top: 36px; color: #86868b; font-size: 12px; font-weight: 650; }
 .work-accordion__title { display: flex; flex-direction: column; gap: 6px; }
@@ -562,7 +562,6 @@
   .work-accordion__title strong { font-size: clamp(22px,7vw,29px); }
   .work-accordion__arrow { width: 38px; }
   .work-accordion__arrow svg { width: 18px; }
-  .work-accordion__item.is-open .work-accordion__trigger { top: 52px; }
   .work-accordion__panel { padding: 22px 0 18px; }
   .work-accordion__intro { margin-bottom: 22px; display: block; }
   .work-accordion__intro > p { font-size: 16px; }
