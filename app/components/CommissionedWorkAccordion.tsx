@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const works = [
   {
@@ -27,6 +27,23 @@ const works = [
 
 export function CommissionedWorkAccordion() {
   const [activeWork, setActiveWork] = useState<string | null>(null);
+  const itemRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  useEffect(() => {
+    if (!activeWork) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const item = itemRefs.current[activeWork];
+      if (!item) return;
+
+      const headerHeight = document.querySelector<HTMLElement>('.site-header')?.offsetHeight ?? 52;
+      const itemTop = window.scrollY + item.getBoundingClientRect().top - headerHeight - 10;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: itemTop, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeWork]);
 
   return (
     <div className="work-accordion ap-shell">
@@ -35,7 +52,11 @@ export function CommissionedWorkAccordion() {
         const panelId = `${work.id}-panel`;
 
         return (
-          <article className={`work-accordion__item${isOpen ? ' is-open' : ''}`} key={work.id}>
+          <article
+            className={`work-accordion__item${isOpen ? ' is-open' : ''}`}
+            key={work.id}
+            ref={(node) => { itemRefs.current[work.id] = node; }}
+          >
             <button
               className="work-accordion__trigger"
               type="button"
@@ -69,7 +90,7 @@ export function CommissionedWorkAccordion() {
                     <a href={work.url} target="_blank" rel="noreferrer" aria-label={`${work.name} сайтыг шинэ цонхонд нээх`}>↗</a>
                   </div>
                   <iframe
-                    src={work.url}
+                    src={`${work.url}?embed=naiman-sar#top`}
                     title={`${work.name} live веб`}
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"
