@@ -122,27 +122,52 @@
 }
 .apple-hero--scroll-motion {
   --hero-scroll: 0;
+  --hero-logo-center: 238px;
+  --hero-logo-radius: min(250px, 20vw);
+  --hero-logo-scale: clamp(0, calc((.94 - var(--hero-scroll)) * 1.85), 1);
+  --hero-product-shift: 155px;
   position: sticky;
   top: 52px;
   z-index: 3;
-  clip-path: inset(0 0 calc(var(--hero-scroll) * 100%) 0);
-  will-change: clip-path;
+  -webkit-mask-image:
+    linear-gradient(#000 0 0),
+    radial-gradient(
+      circle calc(var(--hero-logo-radius) * var(--hero-logo-scale))
+      at 50% calc(var(--hero-logo-center) - var(--hero-scroll) * var(--hero-product-shift)),
+      #000 98%, transparent 100%
+    );
+  -webkit-mask-position: top left;
+  -webkit-mask-size: 100% calc((1 - var(--hero-scroll)) * 100%), 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image:
+    linear-gradient(#000 0 0),
+    radial-gradient(
+      circle calc(var(--hero-logo-radius) * var(--hero-logo-scale))
+      at 50% calc(var(--hero-logo-center) - var(--hero-scroll) * var(--hero-product-shift)),
+      #000 98%, transparent 100%
+    );
+  mask-position: top left;
+  mask-size: 100% calc((1 - var(--hero-scroll)) * 100%), 100% 100%;
+  mask-repeat: no-repeat;
+  mask-composite: add;
+  will-change: mask-size, -webkit-mask-size;
+}
+.apple-hero--scroll-motion .unit-copy {
+  translate: 0 calc(var(--hero-scroll) * -460px);
 }
 .apple-hero--scroll-motion .unit-copy > :not(.unit-actions) {
-  filter: opacity(clamp(0, calc(1 - var(--hero-scroll) * 3.2), 1));
-  translate: 0 calc(var(--hero-scroll) * -18px);
+  filter: opacity(clamp(0, calc(1 - var(--hero-scroll) * 2.8), 1));
 }
 .apple-hero--scroll-motion .unit-actions {
-  filter: opacity(clamp(0, calc(1.8 - var(--hero-scroll) * 3.2), 1));
-  translate: 0 calc(var(--hero-scroll) * -12px);
+  filter: opacity(clamp(0, calc(1.65 - var(--hero-scroll) * 2.6), 1));
 }
 .apple-hero--scroll-motion .hero-product {
-  top: calc(-12px - var(--hero-scroll) * 155px);
+  top: calc(-12px - var(--hero-scroll) * var(--hero-product-shift));
 }
 .apple-hero--scroll-motion .hero-mark-shell,
 .apple-hero--scroll-motion .hero-glow,
 .apple-hero--scroll-motion .hero-orbit {
-  scale: clamp(.16, calc(1 - var(--hero-scroll) * .92), 1);
+  scale: var(--hero-logo-scale);
 }
 .apple-hero::before {
   content: '';
@@ -455,6 +480,7 @@
   .unit-copy { padding-top: 45px; }
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
   .apple-hero { min-height: 700px; }
+  .apple-hero--scroll-motion { --hero-logo-center: 223px; --hero-logo-radius: min(220px, 28vw); }
   .hero-product { height: 470px; }
   .hero-mark-shell { width: min(440px, 56vw); }
   .hero-product .mark { --mark-size: min(365px, 46vw); }
@@ -484,6 +510,7 @@
   .unit-actions { margin-top: 17px; gap: 10px; }
   .apple-button { min-height: 38px; padding-inline: 16px; font-size: 13px; }
   .apple-hero { min-height: 670px; }
+  .apple-hero--scroll-motion { --hero-logo-center: 195px; --hero-logo-radius: min(157px, 41vw); --hero-product-shift: 105px; }
   .apple-hero .unit-copy { bottom: 32px; }
   .apple-hero .unit-copy h1 { font-size: clamp(34px, 9.5vw, 42px); }
   .apple-hero .unit-eyebrow { margin-bottom: 7px; font-size: 8px; }
@@ -526,7 +553,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { transform: none; }
-  .apple-hero--scroll-motion { position: relative; top: auto; clip-path: none; }
+  .apple-hero--scroll-motion { position: relative; top: auto; -webkit-mask: none; mask: none; }
+  .apple-hero--scroll-motion .unit-copy,
   .apple-hero--scroll-motion .unit-copy > *,
   .apple-hero--scroll-motion .hero-product,
   .apple-hero--scroll-motion .hero-mark-shell,
