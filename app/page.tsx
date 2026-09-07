@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { CommissionedWorkAccordion } from './components/CommissionedWorkAccordion';
+import { HeroScrollMotion } from './components/HeroScrollMotion';
 import { Mark, SiteFooter, SiteHeader } from './components/SiteChrome';
 import { Reveal } from './components/Reveal';
 import { ventures } from './lib/ventures';
@@ -78,7 +79,8 @@ export default function Home() {
     <main id="main-content" className="home-redesign apple-page">
       <SiteHeader light />
 
-      <section className="apple-hero apple-unit" aria-labelledby="hero-title">
+      <section className="apple-hero apple-hero--scroll-motion apple-unit" aria-labelledby="hero-title">
+        <HeroScrollMotion />
         <div className="hero-atmosphere" aria-hidden="true">
           <span className="hero-atmosphere__blue" />
           <span className="hero-atmosphere__violet" />
