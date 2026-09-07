@@ -178,7 +178,7 @@ export default function Home() {
         <Reveal className="ap-callout__copy">
           <p className="ap-eyebrow">НАЙМАН САР-тай холбоо барих</p>
           <h2>Сайн санаа байна уу?</h2>
-          <p>Ярианаас эхэлье.</p>
+          <p>Ярилцаад шууд эхэлье.</p>
           <Link className="ap-button" href="/contact">Холбоо барих</Link>
         </Reveal>
       </section>

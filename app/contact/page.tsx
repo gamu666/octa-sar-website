@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="ap-hero__copy">
           <p className="ap-eyebrow">НАЙМАН САР-тай холбоо барих</p>
           <h1 id="contact-title">Сайн санаа байна уу?</h1>
-          <p>Ярианаас эхэлье.</p>
+          <p>Ярилцаад шууд эхэлье.</p>
         </div>
       </section>
 
