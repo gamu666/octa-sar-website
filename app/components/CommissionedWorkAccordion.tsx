@@ -33,19 +33,55 @@ export function CommissionedWorkAccordion() {
   useLayoutEffect(() => {
     if (!activeWork) return;
 
+    const root = document.documentElement;
+    const body = document.body;
+    const previousRootScrollBehavior = root.style.scrollBehavior;
+    const previousRootOverflowAnchor = root.style.overflowAnchor;
+    const previousBodyOverflowAnchor = body.style.overflowAnchor;
+
+    // The page normally uses smooth scrolling. While one large live preview is
+    // collapsing and the next is opening, that animation makes the browser aim
+    // at a stale document position. Keep the clicked row fixed until the new
+    // layout has completely settled.
+    root.style.scrollBehavior = 'auto';
+    root.style.overflowAnchor = 'none';
+    body.style.overflowAnchor = 'none';
+
     const scrollToActiveItem = () => {
       const item = itemRefs.current[activeWork];
       if (!item) return;
 
       const headerHeight = document.querySelector<HTMLElement>('.site-header')?.offsetHeight ?? 52;
-      const itemTop = window.scrollY + item.getBoundingClientRect().top - headerHeight - 10;
-      window.scrollTo({ top: Math.max(0, itemTop), behavior: 'auto' });
+      const offset = item.getBoundingClientRect().top - headerHeight - 10;
+
+      if (Math.abs(offset) > 1) {
+        window.scrollBy({ top: offset, behavior: 'auto' });
+      }
     };
 
     scrollToActiveItem();
     const frame = window.requestAnimationFrame(scrollToActiveItem);
 
-    return () => window.cancelAnimationFrame(frame);
+    // Cross-origin iframes can finish their first layout a little later. These
+    // bounded corrections prevent both 01 and 02 from losing their heading.
+    const correctionTimers = [60, 220, 520, 900].map((delay) =>
+      window.setTimeout(scrollToActiveItem, delay),
+    );
+
+    const restoreTimer = window.setTimeout(() => {
+      root.style.scrollBehavior = previousRootScrollBehavior;
+      root.style.overflowAnchor = previousRootOverflowAnchor;
+      body.style.overflowAnchor = previousBodyOverflowAnchor;
+    }, 950);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      correctionTimers.forEach(window.clearTimeout);
+      window.clearTimeout(restoreTimer);
+      root.style.scrollBehavior = previousRootScrollBehavior;
+      root.style.overflowAnchor = previousRootOverflowAnchor;
+      body.style.overflowAnchor = previousBodyOverflowAnchor;
+    };
   }, [activeWork]);
 
   function toggleWork(workId: string) {
