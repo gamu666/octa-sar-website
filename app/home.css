@@ -129,6 +129,9 @@
   position: sticky;
   top: 52px;
   z-index: 3;
+  /* The masked hero stays fixed over the page while it fades out. Let pointer
+     input pass through the invisible part so content below remains usable. */
+  pointer-events: none;
   -webkit-mask-image:
     linear-gradient(#000 0 0),
     radial-gradient(
@@ -160,6 +163,7 @@
 }
 .apple-hero--scroll-motion .unit-actions {
   filter: opacity(clamp(0, calc(1.65 - var(--hero-scroll) * 2.6), 1));
+  pointer-events: auto;
 }
 .apple-hero--scroll-motion .hero-product {
   top: calc(-12px - var(--hero-scroll) * var(--hero-product-shift));
