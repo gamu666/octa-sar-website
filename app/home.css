@@ -121,9 +121,14 @@
     linear-gradient(180deg, #8db9df 0%, #729fcf 42%, #536f9a 100%);
 }
 .hero-scroll-stage {
-  min-height: calc(128svh - 52px);
+  min-height: calc(190svh - 52px);
   position: relative;
   background: var(--apple-white);
+}
+.home-redesign > .ap-statement {
+  position: relative;
+  z-index: 1;
+  margin-top: -100svh;
 }
 .apple-hero--scroll-motion {
   --hero-scroll: 0;
@@ -481,7 +486,8 @@
   .unit-copy { padding-top: 45px; }
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
   .apple-hero { min-height: calc(84svh - 52px); }
-  .hero-scroll-stage { min-height: calc(122svh - 52px); }
+  .hero-scroll-stage { min-height: calc(184svh - 52px); }
+  .home-redesign > .ap-statement { margin-top: -94svh; }
   .apple-hero--scroll-motion { --hero-copy-shift: 28px; --hero-exit-lift: 110px; --hero-exit-compress-y: .24; height: calc(84svh - 52px); }
   .hero-product { height: 470px; }
   .hero-mark-shell { width: min(440px, 56vw); }
@@ -512,7 +518,8 @@
   .unit-actions { margin-top: 17px; gap: 10px; }
   .apple-button { min-height: 38px; padding-inline: 16px; font-size: 13px; }
   .apple-hero { min-height: calc(84svh - 52px); }
-  .hero-scroll-stage { min-height: calc(116svh - 52px); }
+  .hero-scroll-stage { min-height: calc(176svh - 52px); }
+  .home-redesign > .ap-statement { margin-top: -86svh; }
   .apple-hero--scroll-motion { --hero-copy-shift: 20px; --hero-product-shift: 24px; --hero-exit-lift: 82px; --hero-exit-compress-y: .2; height: calc(84svh - 52px); }
   .apple-hero .unit-copy { bottom: clamp(20px, 4svh, 34px); }
   .apple-hero .unit-copy h1 { font-size: clamp(34px, 9.5vw, 42px); }
@@ -557,6 +564,7 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { transform: none; }
   .hero-scroll-stage { min-height: 0; }
+  .home-redesign > .ap-statement { margin-top: 0; }
   .apple-hero--scroll-motion { position: relative; top: auto; opacity: 1; scale: 1; }
   .apple-hero--scroll-motion .unit-copy,
   .apple-hero--scroll-motion .unit-copy > *,

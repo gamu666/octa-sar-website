@@ -18,9 +18,15 @@ export function HeroScrollMotion() {
       const distance = Math.max(1, stage.offsetHeight - hero.offsetHeight);
       const rawProgress = Math.min(1, Math.max(0, (headerHeight - stage.getBoundingClientRect().top) / distance));
 
+      // Keep the hero still while the About copy first rises into the white
+      // space. Only the second part of the gesture dismisses the blue scene.
+      const exitStart = 0.68;
+      const exitEnd = 1;
+      const exitProgress = Math.min(1, Math.max(0, (rawProgress - exitStart) / (exitEnd - exitStart)));
+
       // Smoothstep gives the transition the precise ease-in/ease-out character
       // used by platform motion without disconnecting it from the user's scroll.
-      target = rawProgress * rawProgress * (3 - 2 * rawProgress);
+      target = exitProgress * exitProgress * (3 - 2 * exitProgress);
 
       if (!frame) frame = window.requestAnimationFrame(render);
     };
