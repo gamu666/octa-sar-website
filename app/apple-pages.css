@@ -500,7 +500,11 @@
 }
 .apple-page .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-.home-redesign .ap-statement__reveal { transform: none; }
+.home-redesign .ap-statement__reveal {
+  transform: none;
+  translate: 0 var(--about-counter-y, 0px);
+  will-change: translate;
+}
 .home-redesign .ap-statement__reveal > * {
   opacity: 0;
   transform: translateY(58px) scale(.992);
@@ -682,5 +686,6 @@
   .apple-page .reveal,
   .work-accordion__panel { animation: none; transform: none; }
   .apple-page .reveal,
+  .home-redesign .ap-statement__reveal { translate: none; }
   .home-redesign .ap-statement__reveal > * { opacity: 1; transform: none; filter: none; transition: none; }
 }
