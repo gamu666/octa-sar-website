@@ -114,64 +114,53 @@
 .apple-text-link span { font-size: 22px; vertical-align: -1px; }
 
 .apple-hero {
-  min-height: 692px;
+  min-height: calc(100svh - 52px);
   color: #fff;
   background:
     radial-gradient(circle at 50% 30%, rgba(219, 241, 255, .54) 0, rgba(133, 194, 244, .3) 20%, transparent 43%),
     linear-gradient(180deg, #8db9df 0%, #729fcf 42%, #536f9a 100%);
 }
+.hero-scroll-stage {
+  min-height: calc(128svh - 52px);
+  position: relative;
+  background: var(--apple-white);
+}
 .apple-hero--scroll-motion {
   --hero-scroll: 0;
-  --hero-logo-center: 238px;
-  --hero-logo-radius: min(250px, 20vw);
-  --hero-logo-scale: clamp(0, calc((.94 - var(--hero-scroll)) * 1.85), 1);
-  --hero-product-shift: 155px;
+  --hero-copy-shift: 76px;
+  --hero-product-shift: 38px;
+  width: 100%;
+  height: calc(100svh - 52px);
+  margin-bottom: 0;
   position: sticky;
   top: 52px;
   z-index: 3;
   /* The masked hero stays fixed over the page while it fades out. Let pointer
      input pass through the invisible part so content below remains usable. */
   pointer-events: none;
-  -webkit-mask-image:
-    linear-gradient(#000 0 0),
-    radial-gradient(
-      circle calc(var(--hero-logo-radius) * var(--hero-logo-scale))
-      at 50% calc(var(--hero-logo-center) - var(--hero-scroll) * var(--hero-product-shift)),
-      #000 98%, transparent 100%
-    );
-  -webkit-mask-position: top left;
-  -webkit-mask-size: 100% calc((1 - var(--hero-scroll)) * 100%), 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-image:
-    linear-gradient(#000 0 0),
-    radial-gradient(
-      circle calc(var(--hero-logo-radius) * var(--hero-logo-scale))
-      at 50% calc(var(--hero-logo-center) - var(--hero-scroll) * var(--hero-product-shift)),
-      #000 98%, transparent 100%
-    );
-  mask-position: top left;
-  mask-size: 100% calc((1 - var(--hero-scroll)) * 100%), 100% 100%;
-  mask-repeat: no-repeat;
-  mask-composite: add;
-  will-change: mask-size, -webkit-mask-size;
+  opacity: clamp(.18, calc(1.22 - var(--hero-scroll) * 1.04), 1);
+  scale: calc(1 - var(--hero-scroll) * .018);
+  transform-origin: 50% 48%;
+  will-change: opacity, scale;
 }
 .apple-hero--scroll-motion .unit-copy {
-  translate: 0 calc(var(--hero-scroll) * -460px);
+  translate: 0 calc(var(--hero-scroll) * var(--hero-copy-shift) * -1);
 }
 .apple-hero--scroll-motion .unit-copy > :not(.unit-actions) {
-  filter: opacity(clamp(0, calc(1 - var(--hero-scroll) * 2.8), 1));
+  filter: opacity(clamp(0, calc(1.24 - var(--hero-scroll) * 1.72), 1));
 }
 .apple-hero--scroll-motion .unit-actions {
-  filter: opacity(clamp(0, calc(1.65 - var(--hero-scroll) * 2.6), 1));
+  filter: opacity(clamp(0, calc(1.42 - var(--hero-scroll) * 1.8), 1));
   pointer-events: auto;
 }
+.apple-hero--scroll-motion.is-exiting .unit-actions { visibility: hidden; }
 .apple-hero--scroll-motion .hero-product {
   top: calc(-12px - var(--hero-scroll) * var(--hero-product-shift));
 }
 .apple-hero--scroll-motion .hero-mark-shell,
 .apple-hero--scroll-motion .hero-glow,
 .apple-hero--scroll-motion .hero-orbit {
-  scale: var(--hero-logo-scale);
+  scale: calc(1 - var(--hero-scroll) * .08);
 }
 .apple-hero::before {
   content: '';
@@ -293,7 +282,12 @@
 .hero-orbit--outer { width: min(650px, 52vw); aspect-ratio: 1; }
 .hero-orbit--inner { width: min(540px, 44vw); aspect-ratio: 1; border-color: rgba(255, 255, 255, .09); }
 .hero-floor { display: none; }
-.home-redesign #about { padding-block: 44px 70px; }
+.home-redesign #about {
+  margin-top: -18svh;
+  padding: clamp(56px, 7vh, 76px) 0 clamp(110px, 14vh, 150px);
+  position: relative;
+  z-index: 4;
+}
 .home-redesign .ap-inline-projects { padding-top: 72px; }
 .project-unit { min-height: 900px; }
 .project-unit .unit-copy { padding-top: 48px; }
@@ -483,8 +477,9 @@
   .apple-unit { min-height: 660px; }
   .unit-copy { padding-top: 45px; }
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
-  .apple-hero { min-height: 700px; }
-  .apple-hero--scroll-motion { --hero-logo-center: 223px; --hero-logo-radius: min(220px, 28vw); }
+  .apple-hero { min-height: calc(100svh - 52px); }
+  .hero-scroll-stage { min-height: calc(122svh - 52px); }
+  .apple-hero--scroll-motion { --hero-copy-shift: 62px; height: calc(100svh - 52px); }
   .hero-product { height: 470px; }
   .hero-mark-shell { width: min(440px, 56vw); }
   .hero-product .mark { --mark-size: min(365px, 46vw); }
@@ -513,8 +508,9 @@
   .unit-description { font-size: 14px; }
   .unit-actions { margin-top: 17px; gap: 10px; }
   .apple-button { min-height: 38px; padding-inline: 16px; font-size: 13px; }
-  .apple-hero { min-height: 670px; }
-  .apple-hero--scroll-motion { --hero-logo-center: 195px; --hero-logo-radius: min(157px, 41vw); --hero-product-shift: 105px; }
+  .apple-hero { min-height: calc(100svh - 52px); }
+  .hero-scroll-stage { min-height: calc(116svh - 52px); }
+  .apple-hero--scroll-motion { --hero-copy-shift: 46px; --hero-product-shift: 24px; height: calc(100svh - 52px); }
   .apple-hero .unit-copy { bottom: 32px; }
   .apple-hero .unit-copy h1 { font-size: clamp(34px, 9.5vw, 42px); }
   .apple-hero .unit-eyebrow { margin-bottom: 7px; font-size: 8px; }
@@ -529,7 +525,7 @@
   .hero-orbit--inner { width: 315px; }
   .hero-atmosphere__blue { width: 600px; left: -105px; top: -200px; }
   .hero-atmosphere__violet { right: -410px; top: -80px; }
-  .home-redesign #about { padding-block: 48px 62px; }
+  .home-redesign #about { margin-top: -14svh; padding-block: 52px 76px; }
   .home-redesign .ap-inline-projects { padding-top: 58px; }
   .project-unit { min-height: 760px; }
   .project-unit--rise { min-height: 930px; }
@@ -557,7 +553,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { transform: none; }
-  .apple-hero--scroll-motion { position: relative; top: auto; -webkit-mask: none; mask: none; }
+  .hero-scroll-stage { min-height: 0; }
+  .apple-hero--scroll-motion { position: relative; top: auto; opacity: 1; scale: 1; }
   .apple-hero--scroll-motion .unit-copy,
   .apple-hero--scroll-motion .unit-copy > *,
   .apple-hero--scroll-motion .hero-product,

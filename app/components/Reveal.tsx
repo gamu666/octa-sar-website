@@ -14,7 +14,7 @@ export function Reveal({ className = '', children, ...props }: HTMLAttributes<HT
         setVisible(true);
         observer.disconnect();
       }
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
