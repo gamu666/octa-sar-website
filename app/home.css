@@ -290,7 +290,9 @@
   min-height: 112svh;
   padding: clamp(56px, 7vh, 76px) 0 clamp(110px, 14vh, 150px);
   position: relative;
-  z-index: 4;
+  /* Keep dark copy underneath the blue hero mask so it can only become
+     visible after it reaches the white reveal area. */
+  z-index: 2;
 }
 .home-redesign .ap-inline-projects { padding-top: 72px; }
 .project-unit { min-height: 900px; }
