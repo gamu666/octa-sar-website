@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -11,12 +13,17 @@ export function Mark({ compact = false }: { compact?: boolean }) {
 }
 
 export function SiteHeader({ light = false }: { light?: boolean }) {
+  const returnHome = () => window.scrollTo({
+    top: 0,
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+  });
+
   return (
     <>
       <a className="skip-link" href="#main-content">Үндсэн агуулга руу очих</a>
       <header className={`site-header${light ? ' site-header--light' : ''}`}>
         <div className="site-header__inner shell">
-          <Link className="brand" href="/" aria-label="НАЙМАН САР нүүр хуудас">
+          <Link className="brand" href="/" onClick={returnHome} aria-label="НАЙМАН САР нүүр хуудас">
             <Mark compact />
             <span>НАЙМАН САР</span>
           </Link>

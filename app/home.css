@@ -138,7 +138,7 @@
   /* The masked hero stays fixed over the page while it fades out. Let pointer
      input pass through the invisible part so content below remains usable. */
   pointer-events: none;
-  opacity: clamp(.18, calc(1.22 - var(--hero-scroll) * 1.04), 1);
+  opacity: clamp(0, calc(1.16 - var(--hero-scroll) * 1.16), 1);
   scale: calc(1 - var(--hero-scroll) * .018);
   transform-origin: 50% 48%;
   will-change: opacity, scale;
