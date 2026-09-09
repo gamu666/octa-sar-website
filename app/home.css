@@ -127,7 +127,7 @@
 }
 .apple-hero--scroll-motion {
   --hero-scroll: 0;
-  --hero-copy-shift: 76px;
+  --hero-copy-shift: 34px;
   --hero-product-shift: 38px;
   width: 100%;
   height: calc(100svh - 52px);
@@ -195,7 +195,7 @@
 .apple-hero .unit-copy {
   position: absolute;
   right: 0;
-  bottom: 40px;
+  bottom: clamp(104px, 16svh, 142px);
   left: 0;
   padding-top: 0;
 }
@@ -479,7 +479,7 @@
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
   .apple-hero { min-height: calc(100svh - 52px); }
   .hero-scroll-stage { min-height: calc(122svh - 52px); }
-  .apple-hero--scroll-motion { --hero-copy-shift: 62px; height: calc(100svh - 52px); }
+  .apple-hero--scroll-motion { --hero-copy-shift: 28px; height: calc(100svh - 52px); }
   .hero-product { height: 470px; }
   .hero-mark-shell { width: min(440px, 56vw); }
   .hero-product .mark { --mark-size: min(365px, 46vw); }
@@ -510,8 +510,8 @@
   .apple-button { min-height: 38px; padding-inline: 16px; font-size: 13px; }
   .apple-hero { min-height: calc(100svh - 52px); }
   .hero-scroll-stage { min-height: calc(116svh - 52px); }
-  .apple-hero--scroll-motion { --hero-copy-shift: 46px; --hero-product-shift: 24px; height: calc(100svh - 52px); }
-  .apple-hero .unit-copy { bottom: 32px; }
+  .apple-hero--scroll-motion { --hero-copy-shift: 20px; --hero-product-shift: 24px; height: calc(100svh - 52px); }
+  .apple-hero .unit-copy { bottom: clamp(94px, 12svh, 112px); }
   .apple-hero .unit-copy h1 { font-size: clamp(34px, 9.5vw, 42px); }
   .apple-hero .unit-eyebrow { margin-bottom: 7px; font-size: 8px; }
   .apple-hero .unit-description { max-width: 330px; margin: 8px auto 0; font-size: 15px; line-height: 1.35; }
