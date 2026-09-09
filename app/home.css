@@ -114,7 +114,7 @@
 .apple-text-link span { font-size: 22px; vertical-align: -1px; }
 
 .apple-hero {
-  min-height: calc(100svh - 52px);
+  min-height: clamp(560px, calc(84svh - 52px), 760px);
   color: #fff;
   background:
     radial-gradient(circle at 50% 30%, rgba(219, 241, 255, .54) 0, rgba(133, 194, 244, .3) 20%, transparent 43%),
@@ -130,7 +130,7 @@
   --hero-copy-shift: 34px;
   --hero-product-shift: 38px;
   width: 100%;
-  height: calc(100svh - 52px);
+  height: clamp(560px, calc(84svh - 52px), 760px);
   margin-bottom: 0;
   position: sticky;
   top: 52px;
@@ -195,7 +195,7 @@
 .apple-hero .unit-copy {
   position: absolute;
   right: 0;
-  bottom: clamp(104px, 16svh, 142px);
+  bottom: clamp(36px, 5svh, 52px);
   left: 0;
   padding-top: 0;
 }
@@ -477,9 +477,9 @@
   .apple-unit { min-height: 660px; }
   .unit-copy { padding-top: 45px; }
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
-  .apple-hero { min-height: calc(100svh - 52px); }
+  .apple-hero { min-height: calc(84svh - 52px); }
   .hero-scroll-stage { min-height: calc(122svh - 52px); }
-  .apple-hero--scroll-motion { --hero-copy-shift: 28px; height: calc(100svh - 52px); }
+  .apple-hero--scroll-motion { --hero-copy-shift: 28px; height: calc(84svh - 52px); }
   .hero-product { height: 470px; }
   .hero-mark-shell { width: min(440px, 56vw); }
   .hero-product .mark { --mark-size: min(365px, 46vw); }
@@ -508,10 +508,10 @@
   .unit-description { font-size: 14px; }
   .unit-actions { margin-top: 17px; gap: 10px; }
   .apple-button { min-height: 38px; padding-inline: 16px; font-size: 13px; }
-  .apple-hero { min-height: calc(100svh - 52px); }
+  .apple-hero { min-height: calc(84svh - 52px); }
   .hero-scroll-stage { min-height: calc(116svh - 52px); }
-  .apple-hero--scroll-motion { --hero-copy-shift: 20px; --hero-product-shift: 24px; height: calc(100svh - 52px); }
-  .apple-hero .unit-copy { bottom: clamp(94px, 12svh, 112px); }
+  .apple-hero--scroll-motion { --hero-copy-shift: 20px; --hero-product-shift: 24px; height: calc(84svh - 52px); }
+  .apple-hero .unit-copy { bottom: clamp(20px, 4svh, 34px); }
   .apple-hero .unit-copy h1 { font-size: clamp(34px, 9.5vw, 42px); }
   .apple-hero .unit-eyebrow { margin-bottom: 7px; font-size: 8px; }
   .apple-hero .unit-description { max-width: 330px; margin: 8px auto 0; font-size: 15px; line-height: 1.35; }
