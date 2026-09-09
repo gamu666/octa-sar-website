@@ -121,49 +121,27 @@
     linear-gradient(180deg, #8db9df 0%, #729fcf 42%, #536f9a 100%);
 }
 .hero-scroll-stage {
-  min-height: calc(190svh - 52px);
+  --intro-hold: 180px;
+  --about-enter: 1;
   position: relative;
+  display: flow-root;
   background: var(--apple-white);
 }
+.hero-scroll-stage.has-intro-motion::after {
+  content: '';
+  display: block;
+  height: var(--intro-hold);
+}
+.has-intro-motion .hero-about-scene {
+  position: sticky;
+  top: 52px;
+}
+.hero-about-scene { display: flow-root; background: #fff; }
 .apple-hero--scroll-motion {
-  --hero-scroll: 0;
-  --hero-copy-shift: 34px;
-  --hero-product-shift: 38px;
-  --hero-exit-lift: 140px;
-  --hero-exit-compress-y: .28;
   width: 100%;
   height: clamp(560px, calc(84svh - 52px), 760px);
   margin-bottom: 0;
-  position: sticky;
-  top: 52px;
-  z-index: 3;
-  /* The masked hero stays fixed over the page while it fades out. Let pointer
-     input pass through the invisible part so content below remains usable. */
-  pointer-events: none;
-  opacity: clamp(0, calc(1.16 - var(--hero-scroll) * 1.16), 1);
-  translate: 0 calc(var(--hero-scroll) * var(--hero-exit-lift) * -1);
-  scale: 1 calc(1 - var(--hero-scroll) * var(--hero-exit-compress-y));
-  transform-origin: 50% 0;
-  will-change: opacity, translate, scale;
-}
-.apple-hero--scroll-motion .unit-copy {
-  translate: 0 calc(var(--hero-scroll) * var(--hero-copy-shift) * -1);
-}
-.apple-hero--scroll-motion .unit-copy > :not(.unit-actions) {
-  filter: opacity(clamp(0, calc(1.24 - var(--hero-scroll) * 1.72), 1));
-}
-.apple-hero--scroll-motion .unit-actions {
-  filter: opacity(clamp(0, calc(1.42 - var(--hero-scroll) * 1.8), 1));
-  pointer-events: auto;
-}
-.apple-hero--scroll-motion.is-exiting .unit-actions { visibility: hidden; }
-.apple-hero--scroll-motion .hero-product {
-  top: calc(-12px - var(--hero-scroll) * var(--hero-product-shift));
-}
-.apple-hero--scroll-motion .hero-mark-shell,
-.apple-hero--scroll-motion .hero-glow,
-.apple-hero--scroll-motion .hero-orbit {
-  scale: calc(1 - var(--hero-scroll) * .08);
+  position: relative;
 }
 .apple-hero::before {
   content: '';
@@ -286,13 +264,11 @@
 .hero-orbit--inner { width: min(540px, 44vw); aspect-ratio: 1; border-color: rgba(255, 255, 255, .09); }
 .hero-floor { display: none; }
 .home-redesign #about {
-  margin-top: -100svh;
-  min-height: 112svh;
-  padding: clamp(56px, 7vh, 76px) 0 clamp(110px, 14vh, 150px);
+  margin-top: 0;
+  min-height: 0;
+  padding: 22px 0 90px;
   position: relative;
-  /* Keep dark copy underneath the blue hero mask so it can only become
-     visible after it reaches the white reveal area. */
-  z-index: 2;
+  background: #fff;
 }
 .home-redesign .ap-inline-projects { padding-top: 72px; }
 .project-unit { min-height: 900px; }
@@ -484,9 +460,7 @@
   .unit-copy { padding-top: 45px; }
   .unit-copy h1, .unit-copy h2 { font-size: 48px; }
   .apple-hero { min-height: calc(84svh - 52px); }
-  .hero-scroll-stage { min-height: calc(184svh - 52px); }
-  .home-redesign #about { margin-top: -94svh; min-height: 110svh; }
-  .apple-hero--scroll-motion { --hero-copy-shift: 28px; --hero-exit-lift: 110px; --hero-exit-compress-y: .24; height: calc(84svh - 52px); }
+  .apple-hero--scroll-motion { height: calc(84svh - 52px); margin-bottom: 0; }
   .hero-product { height: 470px; }
   .hero-mark-shell { width: min(440px, 56vw); }
   .hero-product .mark { --mark-size: min(365px, 46vw); }
@@ -516,8 +490,7 @@
   .unit-actions { margin-top: 17px; gap: 10px; }
   .apple-button { min-height: 38px; padding-inline: 16px; font-size: 13px; }
   .apple-hero { min-height: calc(84svh - 52px); }
-  .hero-scroll-stage { min-height: calc(176svh - 52px); }
-  .apple-hero--scroll-motion { --hero-copy-shift: 20px; --hero-product-shift: 24px; --hero-exit-lift: 82px; --hero-exit-compress-y: .2; height: calc(84svh - 52px); }
+  .apple-hero--scroll-motion { height: calc(84svh - 52px); margin-bottom: 0; }
   .apple-hero .unit-copy { bottom: clamp(20px, 4svh, 34px); }
   .apple-hero .unit-copy h1 { font-size: clamp(34px, 9.5vw, 42px); }
   .apple-hero .unit-eyebrow { margin-bottom: 7px; font-size: 8px; }
@@ -532,7 +505,7 @@
   .hero-orbit--inner { width: 315px; }
   .hero-atmosphere__blue { width: 600px; left: -105px; top: -200px; }
   .hero-atmosphere__violet { right: -410px; top: -80px; }
-  .home-redesign #about { margin-top: -86svh; min-height: 108svh; padding-block: 52px 76px; }
+  .home-redesign #about { padding-block: 18px 64px; }
   .home-redesign .ap-inline-projects { padding-top: 58px; }
   .project-unit { min-height: 760px; }
   .project-unit--rise { min-height: 930px; }
@@ -560,7 +533,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { transform: none; }
-  .hero-scroll-stage { min-height: 0; }
+  .hero-scroll-stage.has-intro-motion::after { display: none; }
+  .has-intro-motion .hero-about-scene { position: relative; top: auto; }
   .home-redesign #about { margin-top: 0; }
   .apple-hero--scroll-motion { position: relative; top: auto; opacity: 1; scale: 1; }
   .apple-hero--scroll-motion .unit-copy,
