@@ -313,6 +313,7 @@
 .ap-inline-impact span { color: #5f616c; font-size: 13px; }
 .ap-inline-impact small { color: #737581; font-size: 10px; }
 .ap-project-unit--the-rise .ap-inline-impact {
+  grid-template-columns: auto 1fr;
   border: 1px solid rgba(166,175,255,.16);
   background: rgba(18,19,29,.76);
   color: #f3f3f6;

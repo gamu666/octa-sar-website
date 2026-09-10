@@ -6,6 +6,8 @@ import { Reveal } from './components/Reveal';
 import { ventures } from './lib/ventures';
 import './home.css';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const principles = [
   ['01', 'Хэрэгцээнээс эхэлнэ', 'Бодит амьдралд байгаа асуудлыг олж, хамгийн энгийн зөв шийдлийг хайна.'],
   ['02', 'Итгэлцлийг бүтээнэ', 'Аюулгүй байдал, ойлгомжтой хэрэглээг бүтээгдэхүүний суурь болгоно.'],
@@ -136,7 +138,7 @@ export default function Home() {
                 {isRise && (
                   <div className="rise-ambient" aria-hidden="true">
                     <video autoPlay muted loop playsInline preload="metadata" tabIndex={-1}>
-                      <source src="/media/the-rise-motion.mp4" type="video/mp4" />
+                      <source src={`${basePath}/media/the-rise-motion.mp4`} type="video/mp4" />
                     </video>
                     <span className="rise-ambient__wash" />
                   </div>
@@ -145,7 +147,7 @@ export default function Home() {
                   {isRise && (
                     <div className="rise-brand-lockup">
                       <span className="rise-brand-lockup__mark">
-                        <img src="/brand/the-rise-logo.jpg" alt="" width="40" height="40" />
+                        <img src={`${basePath}/brand/the-rise-logo.jpg`} alt="" width="40" height="40" />
                       </span>
                       <span>THE RISE</span>
                     </div>
@@ -160,7 +162,6 @@ export default function Home() {
                   <p className="ap-inline-impact">
                     <strong>{venture.plannedImpact.value}</strong>
                     <span>{venture.plannedImpact.unit} · төлөвлөсөн бууралт</span>
-                    <small>Бодит үр дүн биш</small>
                   </p>
                 )}
               </article>
