@@ -627,10 +627,28 @@
 
 .apple-page .reveal {
   opacity: 1;
-  transform: translateY(18px);
-  transition: transform .9s cubic-bezier(.22,1,.36,1);
+  translate: 0 0;
+  transform: none;
+  transition: opacity .9s cubic-bezier(.22,1,.36,1), translate .7s cubic-bezier(.22,1,.36,1), scale .3s cubic-bezier(0,0,.5,1);
 }
+.apple-page .reveal[data-motion-ready]:not(.is-visible) { opacity: 0; translate: 0 30px; }
 .apple-page .reveal.is-visible { opacity: 1; transform: translateY(0); }
+.apple-page .ap-project-unit__visual.reveal,
+.apple-page .ap-project-unit__visual.reveal.is-visible { transform: translateX(-50%); }
+
+/* Match the reference's short, non-spring hover response without moving layout. */
+.apple-page .ap-card--principle { scale: 1; }
+.apple-page .ap-card--principle:hover { transform: none; box-shadow: none; }
+.apple-page .ap-project-preview { scale: 1; transition: scale .3s cubic-bezier(0,0,.5,1); }
+.apple-page :is(.ap-button, .apple-button) { transition: background-color .2s ease, color .2s ease, scale .3s cubic-bezier(0,0,.5,1); }
+.apple-page :is(.ap-button, .apple-button):hover { transform: none; }
+@media (hover: hover) and (pointer: fine) {
+  .apple-page .ap-card--principle:hover { scale: 1.0161; }
+  .apple-page .ap-project-unit__visual:hover .ap-project-preview { scale: 1.0161; }
+  .apple-page :is(.ap-button, .apple-button):hover { scale: 1.025; }
+}
+.apple-page :is(.ap-button, .apple-button):active { scale: .98; }
+.apple-page :is(a, button):focus-visible { outline: 2px solid #0071e3; outline-offset: 4px; }
 
 .home-redesign .ap-statement__reveal {
   opacity: var(--about-enter, 1);
@@ -814,6 +832,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .rise-ambient video { display: none; }
+  .apple-page .reveal[data-motion-ready],
+  .apple-page .ap-card--principle:hover,
+  .apple-page .ap-project-preview,
+  .apple-page :is(.ap-button, .apple-button) { opacity: 1; translate: none; scale: 1 !important; transition: none; }
   .apple-page .reveal,
   .work-accordion__panel { animation: none; transform: none; }
   .apple-page .reveal,
