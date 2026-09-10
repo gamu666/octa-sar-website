@@ -133,7 +133,23 @@ export default function Home() {
 
             return (
               <article className={`ap-project-unit ap-project-unit--${venture.slug}`} key={venture.slug}>
+                {isRise && (
+                  <div className="rise-ambient" aria-hidden="true">
+                    <video autoPlay muted loop playsInline preload="metadata" tabIndex={-1}>
+                      <source src="/media/the-rise-motion.mp4" type="video/mp4" />
+                    </video>
+                    <span className="rise-ambient__wash" />
+                  </div>
+                )}
                 <Reveal className="ap-project-unit__copy">
+                  {isRise && (
+                    <div className="rise-brand-lockup">
+                      <span className="rise-brand-lockup__mark">
+                        <img src="/brand/the-rise-logo.jpg" alt="" width="40" height="40" />
+                      </span>
+                      <span>THE RISE</span>
+                    </div>
+                  )}
                   <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
                   <h2>{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
                   <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв хүрээллээс'}</p>
