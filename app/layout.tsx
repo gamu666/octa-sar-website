@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './apple-pages.css';
+import './gallery.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gamu666.github.io/octa-sar-website/'),

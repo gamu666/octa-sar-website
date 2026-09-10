@@ -634,7 +634,7 @@
 .apple-page .reveal[data-motion-ready]:not(.is-visible) { opacity: 0; translate: 0 30px; }
 .apple-page .reveal.is-visible { opacity: 1; transform: translateY(0); }
 .apple-page .ap-project-unit__visual.reveal,
-.apple-page .ap-project-unit__visual.reveal.is-visible { transform: translateX(-50%); }
+.apple-page .ap-project-unit__visual.reveal.is-visible { transform: translateY(0); }
 
 /* Match the reference's short, non-spring hover response without moving layout. */
 .apple-page .ap-card--principle { scale: 1; }

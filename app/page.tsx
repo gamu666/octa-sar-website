@@ -179,6 +179,7 @@ export default function Home() {
       </section>
 
       <section className="ap-principles" aria-labelledby="principles-title">
+        <div className="ap-principles-panel ap-shell">
         <div className="ap-section-heading ap-shell">
           <p className="ap-eyebrow">Бид хэрхэн бүтээдэг вэ</p>
           <h2 id="principles-title">Дөрвөн зарчим.</h2>
@@ -194,6 +195,7 @@ export default function Home() {
               </div>
             </Reveal>
           ))}
+        </div>
         </div>
       </section>
 
