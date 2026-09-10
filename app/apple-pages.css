@@ -260,29 +260,31 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(180deg, #090a10 0, rgba(9,10,16,.97) 16%, rgba(9,10,16,.56) 38%, rgba(9,10,16,.72) 74%, #090a10 100%);
+  background: linear-gradient(180deg, #090a10 0, rgba(9,10,16,.97) 25%, rgba(9,10,16,.3) 48%, rgba(9,10,16,.1) 100%);
 }
 .rise-ambient video {
-  width: min(980px, 76vw);
-  height: auto;
+  width: 100%;
+  height: 78%;
   position: absolute;
-  top: 132px;
-  right: -7%;
-  opacity: .26;
-  filter: saturate(.86) contrast(1.03);
-  -webkit-mask-image: radial-gradient(ellipse 66% 58% at 60% 48%, #000 0 46%, transparent 82%);
-  mask-image: radial-gradient(ellipse 66% 58% at 60% 48%, #000 0 46%, transparent 82%);
+  left: 0;
+  bottom: 0;
+  object-fit: cover;
+  object-position: center center;
+  opacity: .58;
+  filter: saturate(.96) contrast(1.08);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%, #000 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 22%, #000 100%);
 }
 .rise-ambient__wash {
   position: absolute;
-  width: 58%;
-  aspect-ratio: 1;
-  right: -12%;
-  top: 16%;
+  width: 72%;
+  aspect-ratio: 1.6;
+  left: -8%;
+  bottom: -18%;
   z-index: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(214,58,242,.1), rgba(108,76,244,.08) 32%, rgba(74,126,219,.035) 55%, transparent 72%);
-  filter: blur(34px);
+  background: radial-gradient(circle, rgba(108,76,244,.12), rgba(74,126,219,.06) 42%, transparent 72%);
+  filter: blur(44px);
 }
 .ap-project-unit__visual { width: min(1220px, calc(100% - 48px)); height: 570px; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
 .ap-project-unit__visual.reveal { transform: translate(-50%, 10px); }
@@ -620,7 +622,7 @@
   .ap-card-grid--three .ap-card { min-height: 260px; }
   .ap-project-unit { min-height: 780px; }
   .ap-project-unit__visual { height: 500px; }
-  .rise-ambient video { width: 92vw; right: -22%; top: 170px; opacity: .2; }
+  .rise-ambient video { width: 100%; height: 76%; left: 0; bottom: 0; opacity: .52; }
   .ap-detail-hero { min-height: 800px; }
   .ap-detail-hero__visual { height: 520px; }
   .ap-overview { padding-block: 110px; }
@@ -722,8 +724,8 @@
   .ap-phone { width: 28%; height: 52%; right: 0; padding: 12% 2% 4%; border-radius: 24px; }
   .ap-inline-impact { width: calc(100% - 32px); padding: 18px 20px; bottom: 16px; grid-template-columns: 1fr; gap: 4px; text-align: center; }
   .ap-inline-impact strong { font-size: 27px; }
-  .rise-ambient::before { background: linear-gradient(180deg, #090a10 0, rgba(9,10,16,.98) 24%, rgba(9,10,16,.7) 56%, #090a10 100%); }
-  .rise-ambient video { width: 128vw; top: 168px; right: -48%; opacity: .14; }
+  .rise-ambient::before { background: linear-gradient(180deg, #090a10 0, rgba(9,10,16,.98) 28%, rgba(9,10,16,.38) 52%, rgba(9,10,16,.12) 100%); }
+  .rise-ambient video { width: 100%; height: 70%; left: 0; bottom: 0; opacity: .46; object-position: 42% center; }
   .ap-work-grid { grid-template-columns: 1fr; gap: 8px; }
   .ap-work-tile { min-height: 560px; }
   .ap-work-copy { padding-top: 38px; }
