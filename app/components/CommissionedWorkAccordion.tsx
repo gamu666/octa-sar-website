@@ -10,7 +10,6 @@ const works = [
 function LivePreview({ work }: { work: typeof works[number] }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(.5);
-  const [interactive, setInteractive] = useState(false);
   useEffect(() => {
     const node = viewport.current;
     if (!node) return;
@@ -25,10 +24,8 @@ function LivePreview({ work }: { work: typeof works[number] }) {
         <a href={work.url} target="_blank" rel="noreferrer" aria-label={`${work.name} сайтыг нээх`}>↗</a>
       </div>
       <div className="work-gallery__viewport" ref={viewport}>
-        <iframe src={work.url} title={`${work.name} live веб`} loading="eager" referrerPolicy="strict-origin-when-cross-origin" tabIndex={interactive ? 0 : -1} style={{ transform: `scale(${scale})`, pointerEvents: interactive ? 'auto' : 'none' }} />
-        {!interactive && <button className="work-gallery__activate" onClick={() => setInteractive(true)} aria-label={`${work.name} live цонхыг ажиллуулах`}><span>Live үзэх ↗</span></button>}
+        <iframe src={work.url} title={`${work.name} live веб`} loading="eager" referrerPolicy="strict-origin-when-cross-origin" style={{ transform: `scale(${scale})` }} />
       </div>
-      {interactive && <button className="work-gallery__exit" onClick={() => setInteractive(false)}>Live удирдлагыг хаах</button>}
     </div>
   );
 }
