@@ -55,16 +55,14 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
       <div className="site-footer__brand">
         <Link className="brand" href="/" aria-label="НАЙМАН САР нүүр хуудас"><Mark compact /><span>НАЙМАН САР</span></Link>
       </div>
+      <p className="site-footer__tagline">Санааг бодит болгоно.</p>
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>
         <div className="site-footer__socials" role="navigation" aria-label="Сошиал сувгууд">
           <a href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer">Instagram ↗</a>
           <a href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer">Facebook ↗</a>
         </div>
-        <div className="site-footer__closing">
-          <span>Санааг бодит болгоно.</span>
-          <span>© 2026 НАЙМАН САР</span>
-        </div>
+        <span>© 2026 НАЙМАН САР</span>
       </div>
     </footer>
   );
