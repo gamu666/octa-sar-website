@@ -1,4 +1,18 @@
-/* Reference: light inset feature tiles and a native horizontal work gallery. */
+/* Text entrances: 30px rise, 0.7s movement, 0.9s fade, 0.15s cadence. */
+.home-redesign .reveal.text-reveal,
+.home-redesign .reveal.text-reveal[data-motion-ready]:not(.is-visible) { opacity: 1; translate: none; transform: none; }
+.home-redesign .text-reveal > * {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity .9s cubic-bezier(.22,1,.36,1), translate .7s cubic-bezier(.22,1,.36,1);
+}
+.home-redesign .text-reveal[data-motion-ready]:not(.is-visible) > * { opacity: 0; translate: 0 30px; }
+.home-redesign .text-reveal > :nth-child(2) { transition-delay: .15s; }
+.home-redesign .text-reveal > :nth-child(3) { transition-delay: .3s; }
+.home-redesign .text-reveal > :nth-child(4) { transition-delay: .45s; }
+@media (prefers-reduced-motion: reduce) {
+  .home-redesign .text-reveal[data-motion-ready] > * { opacity: 1; translate: none; transition: none; }
+}
 .home-redesign { --display-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Segoe UI", sans-serif; font-family: var(--display-font); -webkit-font-smoothing: antialiased; }
 .home-redesign .ap-statement h2,
 .home-redesign .ap-section-heading h2 { font-family: var(--display-font); font-size: 48px; font-weight: 600; line-height: 1.08333; letter-spacing: -.003em; text-transform: none; }

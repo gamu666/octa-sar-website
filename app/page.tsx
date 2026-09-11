@@ -125,10 +125,10 @@ export default function Home() {
       </div>
 
       <section className="ap-inline-projects" id="projects" aria-labelledby="projects-title">
-        <div className="ap-section-heading ap-shell">
+        <Reveal className="ap-section-heading ap-shell text-reveal">
           <p className="ap-eyebrow">Хөгжүүлэлтийн шатанд</p>
           <h2 id="projects-title">Тэргүүлэх төслүүд.</h2>
-        </div>
+        </Reveal>
         <div className="ap-project-list">
           {ventures.map((venture) => {
             const isRise = venture.slug === 'the-rise';
@@ -171,19 +171,19 @@ export default function Home() {
       </section>
 
       <section className="ap-selected-work" id="selected-work" aria-labelledby="selected-work-title">
-        <div className="ap-section-heading ap-shell">
+        <Reveal className="ap-section-heading ap-shell text-reveal">
           <p className="ap-eyebrow">Web · Identity · Product</p>
           <h2 id="selected-work-title">Захиалгат ажлууд.</h2>
-        </div>
+        </Reveal>
         <CommissionedWorkAccordion />
       </section>
 
       <section className="ap-principles" aria-labelledby="principles-title">
         <div className="ap-principles-panel ap-shell">
-        <div className="ap-section-heading ap-shell">
+        <Reveal className="ap-section-heading ap-shell text-reveal">
           <p className="ap-eyebrow">Бид хэрхэн бүтээдэг вэ</p>
           <h2 id="principles-title">Дөрвөн зарчим.</h2>
-        </div>
+        </Reveal>
         <div className="ap-card-grid ap-shell">
           {principles.map(([index, title, text]) => (
             <Reveal className={`ap-card ap-card--principle ap-card--principle-${index}`} key={index}>
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       <section className="ap-callout" id="contact">
-        <Reveal className="ap-callout__copy">
+        <Reveal className="ap-callout__copy text-reveal">
           <p className="ap-eyebrow">НАЙМАН САР-тай холбоо барих</p>
           <h2>Сайн санаа байна уу?</h2>
           <p>Ярилцаад шууд эхэлье.</p>
