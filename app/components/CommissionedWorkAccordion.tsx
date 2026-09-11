@@ -63,8 +63,8 @@ export function CommissionedWorkAccordion() {
         ))}
       </div>
       <div className="work-gallery__controls ap-shell">
-        <button onClick={() => move(-1)} disabled={edges.start} aria-label="Өмнөх ажил" aria-controls="work-gallery-track">‹</button>
-        <button onClick={() => move(1)} disabled={edges.end} aria-label="Дараагийн ажил" aria-controls="work-gallery-track">›</button>
+        <button onClick={() => move(-1)} disabled={edges.start} aria-label="Өмнөх ажил" aria-controls="work-gallery-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7" /></svg></button>
+        <button onClick={() => move(1)} disabled={edges.end} aria-label="Дараагийн ажил" aria-controls="work-gallery-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7" /></svg></button>
       </div>
     </div>
   );
