@@ -230,6 +230,41 @@
   background: linear-gradient(110deg, #5b8ee8, #7a5cff 52%, #e04cf6);
   box-shadow: 0 15px 36px rgba(108,76,244,.34);
 }
+.cercle-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #050506;
+  pointer-events: none;
+}
+.cercle-ambient video {
+  width: min(62%, 1080px);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  object-fit: cover;
+  object-position: 50% 50%;
+  opacity: .72;
+  filter: saturate(.82) contrast(1.04) brightness(.7);
+  transform: scale(1.015);
+  -webkit-mask-image:
+    linear-gradient(90deg, #000 0%, #000 58%, rgba(0,0,0,.72) 74%, rgba(0,0,0,.22) 91%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(0,0,0,.08) 20%, rgba(0,0,0,.52) 34%, #000 48%, #000 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, #000 0%, #000 58%, rgba(0,0,0,.72) 74%, rgba(0,0,0,.22) 91%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(0,0,0,.08) 20%, rgba(0,0,0,.52) 34%, #000 48%, #000 100%);
+  mask-composite: intersect;
+}
+.cercle-ambient__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #050506 0%, rgba(5,5,6,.97) 20%, rgba(5,5,6,.7) 34%, rgba(5,5,6,.18) 55%, rgba(5,5,6,.05) 100%),
+    radial-gradient(ellipse 62% 76% at 19% 70%, transparent 0%, rgba(5,5,6,.08) 54%, rgba(5,5,6,.82) 100%);
+}
 .rise-brand-lockup {
   min-height: 42px;
   margin: 0 auto 14px;
@@ -669,6 +704,7 @@
   .ap-card-grid--three .ap-card { min-height: 260px; }
   .ap-project-unit { min-height: 780px; }
   .ap-project-unit__visual { height: 500px; }
+  .cercle-ambient video { width: 76%; opacity: .65; }
   .rise-ambient video { width: 100%; height: 78%; left: 0; bottom: 0; opacity: .52; }
   .ap-detail-hero { min-height: 800px; }
   .ap-detail-hero__visual { height: 520px; }
@@ -760,6 +796,19 @@
   .ap-project-unit { min-height: 650px; }
   .ap-inline-projects .ap-project-unit--the-rise { min-height: 760px; }
   .ap-project-unit__copy { padding-top: 42px; }
+  .cercle-ambient video {
+    width: 100%;
+    height: 68%;
+    top: auto;
+    bottom: 0;
+    object-position: 50% center;
+    opacity: .58;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.2) 18%, rgba(0,0,0,.76) 36%, #000 52%, #000 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.2) 18%, rgba(0,0,0,.76) 36%, #000 52%, #000 100%);
+  }
+  .cercle-ambient__veil {
+    background: linear-gradient(180deg, #050506 0%, rgba(5,5,6,.98) 28%, rgba(5,5,6,.6) 45%, rgba(5,5,6,.12) 68%, rgba(5,5,6,.05) 100%);
+  }
   .rise-brand-lockup { margin-bottom: 10px; }
   .rise-brand-lockup__mark { width: 34px; height: 34px; border-radius: 9px; }
   .rise-brand-lockup__mark img { border-radius: 7px; }
@@ -831,6 +880,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cercle-ambient video,
   .rise-ambient video { display: none; }
   .apple-page .reveal[data-motion-ready],
   .apple-page .ap-card--principle:hover,

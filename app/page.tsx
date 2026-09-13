@@ -132,9 +132,18 @@ export default function Home() {
         <div className="ap-project-list">
           {ventures.map((venture) => {
             const isRise = venture.slug === 'the-rise';
+            const isCercle = venture.slug === 'manai-cercle';
 
             return (
               <article className={`ap-project-unit ap-project-unit--${venture.slug}`} key={venture.slug}>
+                {isCercle && (
+                  <div className="cercle-ambient" aria-hidden="true">
+                    <video autoPlay muted loop playsInline preload="metadata" tabIndex={-1}>
+                      <source src={`${basePath}/media/manai-cercle-ambient.mp4`} type="video/mp4" />
+                    </video>
+                    <span className="cercle-ambient__veil" />
+                  </div>
+                )}
                 {isRise && (
                   <div className="rise-ambient" aria-hidden="true">
                     <video autoPlay muted loop playsInline preload="metadata" tabIndex={-1}>
