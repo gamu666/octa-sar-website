@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const works = [
+  { id: 'altan-od-cinematic', name: 'Алтан Од Cinematic', meta: 'Cinematic product experience · 2026', summary: 'Алтан Заан Анар болон Алтан Од Вьетнам гаврын бүтээгдэхүүнийг cinematic 3D хөдөлгөөн, дүрслэлээр танилцуулсан.', url: 'https://gamu666.github.io/altan-od-cinematic/', address: 'gamu666.github.io/altan-od-cinematic' },
   { id: 'hunnu-tattoo', name: 'Hunnu Tattoo Studio', meta: 'Online booking experience · 2026', summary: 'Үйлчилгээ, артист, өдөр цаг, санааны зураг, хүсэлт баталгаажуулалтыг нэг веб урсгалд нэгтгэсэн.', url: 'https://hunnutattoo.com/', address: 'hunnutattoo.com' },
   { id: 'dudu-prime', name: 'Dudu Prime', meta: 'Real estate platform · 2026', summary: 'Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг агентын нэг веб орчинд төвлөрүүлсэн.', url: 'https://gamu666.github.io/dudu-prime/', address: 'gamu666.github.io/dudu-prime' },
-  { id: 'altan-od-cinematic', name: 'Алтан Од Cinematic', meta: 'Cinematic product experience · 2026', summary: 'Алтан Заан Анар болон Алтан Од Вьетнам гаврын бүтээгдэхүүнийг cinematic 3D хөдөлгөөн, дүрслэлээр танилцуулсан.', url: 'https://gamu666.github.io/altan-od-cinematic/', address: 'gamu666.github.io/altan-od-cinematic' },
 ];
 
 function LivePreview({ work }: { work: typeof works[number] }) {
