@@ -40,7 +40,10 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
     <>
       <a className="skip-link" href="#main-content">Үндсэн агуулга руу очих</a>
       <header className={`site-header${light ? ' site-header--light' : ''}`}>
-        <div className="site-header__inner shell">
+        <div
+          className="site-header__inner shell"
+          style={light ? { backdropFilter: 'blur(38px) saturate(115%) brightness(.62)', WebkitBackdropFilter: 'blur(38px) saturate(115%) brightness(.62)' } : undefined}
+        >
           <Link className="brand" href="/" onClick={returnHome} aria-label="НАЙМАН САР нүүр хуудас">
             <Mark compact />
             <span>НАЙМАН САР</span>
