@@ -42,7 +42,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
       <header className={`site-header${light ? ' site-header--light' : ''}`}>
         <div
           className="site-header__inner shell"
-          style={light ? { backdropFilter: 'blur(52px) saturate(125%) brightness(.78)', WebkitBackdropFilter: 'blur(52px) saturate(125%) brightness(.78)' } : undefined}
+          style={light ? { backdropFilter: 'blur(30px) saturate(125%) brightness(.78)', WebkitBackdropFilter: 'blur(30px) saturate(125%) brightness(.78)' } : undefined}
         >
           <Link className="brand" href="/" onClick={returnHome} aria-label="НАЙМАН САР нүүр хуудас">
             <Mark compact />
