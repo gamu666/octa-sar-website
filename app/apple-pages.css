@@ -258,6 +258,13 @@
     linear-gradient(180deg, transparent 0%, rgba(0,0,0,.08) 20%, rgba(0,0,0,.52) 34%, #000 48%, #000 100%);
   mask-composite: intersect;
 }
+.cercle-ambient video::-webkit-media-controls,
+.cercle-ambient video::-webkit-media-controls-start-playback-button,
+.rise-ambient video::-webkit-media-controls,
+.rise-ambient video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
 .cercle-ambient__veil {
   position: absolute;
   inset: 0;

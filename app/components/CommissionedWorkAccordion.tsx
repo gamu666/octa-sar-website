@@ -8,15 +8,15 @@ const works = [
   { id: 'dudu-prime', name: 'Dudu Prime', meta: 'Real estate platform · 2026', summary: 'Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг агентын нэг веб орчинд төвлөрүүлсэн.', url: 'https://gamu666.github.io/dudu-prime/', address: 'gamu666.github.io/dudu-prime', poster: '/work/dudu-prime-home.png', gradient: 'radial-gradient(circle at 52% 25%, rgba(31,92,184,.72), transparent 42%), linear-gradient(135deg, #080f22 0%, #102e69 52%, #07172d 100%)' },
 ];
 
-function LivePreview({ work, active, galleryReady }: { work: typeof works[number]; active: boolean; galleryReady: boolean }) {
+function LivePreview({ work, active }: { work: typeof works[number]; active: boolean }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(.5);
-  const [requested, setRequested] = useState(false);
+  const [requested, setRequested] = useState(active);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (galleryReady && active) setRequested(true);
-  }, [active, galleryReady]);
+    if (active) setRequested(true);
+  }, [active]);
 
   useEffect(() => {
     const node = viewport.current;
@@ -40,7 +40,7 @@ function LivePreview({ work, active, galleryReady }: { work: typeof works[number
           <iframe
             src={work.url}
             title={`${work.name} live веб`}
-            loading="lazy"
+            loading={active ? 'eager' : 'lazy'}
             tabIndex={active ? 0 : -1}
             referrerPolicy="strict-origin-when-cross-origin"
             style={{ transform: `scale(${scale})` }}
@@ -54,24 +54,10 @@ function LivePreview({ work, active, galleryReady }: { work: typeof works[number
 
 export function CommissionedWorkAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [galleryReady, setGalleryReady] = useState(false);
-  const galleryRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const node = galleryRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      setGalleryReady(true);
-      observer.disconnect();
-    }, { rootMargin: '240px 0px' });
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
 
   const move = (direction: number) => setActiveIndex((current) => (current + direction + works.length) % works.length);
   return (
-    <div className="work-gallery" ref={galleryRef} role="region" aria-label="Захиалгат ажлууд" aria-roledescription="carousel">
+    <div className="work-gallery" role="region" aria-label="Захиалгат ажлууд" aria-roledescription="carousel">
       <div className="work-gallery__atmosphere" aria-hidden="true">
         {works.map((work, index) => <span className={index === activeIndex ? 'is-active' : ''} key={work.id} style={{ background: work.gradient }} />)}
       </div>
@@ -83,7 +69,7 @@ export function CommissionedWorkAccordion() {
             const rawPosition = (index - activeIndex + works.length) % works.length;
             const position = rawPosition === 0 ? 'active' : rawPosition === 1 ? 'next' : 'previous';
             return <article className={`work-gallery__card is-${position}`} aria-hidden={position !== 'active'} key={work.id}>
-              <LivePreview work={work} active={position === 'active'} galleryReady={galleryReady} />
+              <LivePreview work={work} active={position === 'active'} />
               <div className="work-gallery__copy"><p className="work-gallery__meta">{work.meta}</p><h3>{work.name}</h3><p>{work.summary}</p><a href={work.url} target="_blank" rel="noreferrer">Сайтыг нээх ↗</a></div>
             </article>;
           })}

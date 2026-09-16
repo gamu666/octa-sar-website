@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AutoplayLoopVideo } from './components/AutoplayLoopVideo';
 import { CommissionedWorkAccordion } from './components/CommissionedWorkAccordion';
 import { HeroScrollMotion } from './components/HeroScrollMotion';
 import { Mark, SiteFooter, SiteHeader } from './components/SiteChrome';
@@ -138,17 +139,13 @@ export default function Home() {
               <article className={`ap-project-unit ap-project-unit--${venture.slug}`} key={venture.slug}>
                 {isCercle && (
                   <div className="cercle-ambient" aria-hidden="true">
-                    <video autoPlay muted loop playsInline preload="metadata" tabIndex={-1}>
-                      <source src={`${basePath}/media/manai-cercle-ambient.mp4`} type="video/mp4" />
-                    </video>
+                    <AutoplayLoopVideo src={`${basePath}/media/manai-cercle-ambient.mp4`} />
                     <span className="cercle-ambient__veil" />
                   </div>
                 )}
                 {isRise && (
                   <div className="rise-ambient" aria-hidden="true">
-                    <video autoPlay muted loop playsInline preload="metadata" tabIndex={-1}>
-                      <source src={`${basePath}/media/the-rise-motion.mp4`} type="video/mp4" />
-                    </video>
+                    <AutoplayLoopVideo src={`${basePath}/media/the-rise-motion.mp4`} />
                     <span className="rise-ambient__wash" />
                   </div>
                 )}
