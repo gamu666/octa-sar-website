@@ -12,24 +12,28 @@
 .home-redesign .site-header--light {
   height: 64px;
   padding: 8px 10px;
+  position: fixed;
+  left: 0;
+  right: 0;
   border: 0;
   background: transparent;
-  color: var(--apple-ink);
+  color: #fff;
   backdrop-filter: none;
 }
-.home-redesign .site-header--light .site-header__inner { width: min(1420px, calc(100% - 24px)); max-width: none; height: 48px; padding: 0 14px; border: 1px solid rgba(255,255,255,.62); border-radius: 999px; background: rgba(245,245,247,.72); box-shadow: 0 8px 30px rgba(0,0,0,.1); backdrop-filter: saturate(180%) blur(22px); -webkit-backdrop-filter: saturate(180%) blur(22px); }
+.home-redesign .site-header--light .site-header__inner { width: min(1420px, calc(100% - 24px)); max-width: none; height: 48px; padding: 0 14px; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; background: rgba(32,38,48,.52); box-shadow: 0 8px 30px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.1); backdrop-filter: saturate(135%) blur(22px); -webkit-backdrop-filter: saturate(135%) blur(22px); }
 .home-redesign .site-header--light .mark { --mark-size: 33px; }
-.home-redesign .site-header--light .brand { gap: 9px; font-size: 13px; letter-spacing: .025em; transition: opacity .2s ease, transform .2s ease; }
+.home-redesign .site-header--light .mark > img { filter: invert(1); }
+.home-redesign .site-header--light .brand { gap: 9px; color: #fff; font-size: 13px; letter-spacing: .025em; transition: opacity .2s ease, transform .2s ease; }
 .home-redesign .site-header--light .brand:hover { opacity: .72; transform: translateY(-1px); }
-.home-redesign .site-header--light .desktop-nav { gap: 6px; color: #333336; font-size: 13px; font-weight: 520; }
+.home-redesign .site-header--light .desktop-nav { gap: 6px; color: rgba(255,255,255,.88); font-size: 13px; font-weight: 520; }
 .home-redesign .site-header--light .desktop-nav a { min-height: 32px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 999px; letter-spacing: -.01em; transition: background .2s ease, color .2s ease, transform .2s ease; }
-.home-redesign .site-header--light .desktop-nav a:hover { background: rgba(29,29,31,.065); color: #1d1d1f; transform: translateY(-1px); }
-.home-redesign .site-header--light .desktop-nav a.is-active { background: #1d1d1f; color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+.home-redesign .site-header--light .desktop-nav a:hover { background: rgba(255,255,255,.12); color: #fff; transform: translateY(-1px); }
+.home-redesign .site-header--light .desktop-nav a.is-active { background: rgba(0,0,0,.42); color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
 .home-redesign .site-header--light .desktop-nav a::after { display: none; }
 .home-redesign .site-header--light .nav-cta { padding: 0 14px; border: 0; background: #1d1d1f; color: #fff; }
 .home-redesign .site-header--light .nav-cta:hover { background: #000; color: #fff; }
-.home-redesign .site-header--light .header-icon { color: #1d1d1f; }
-.home-redesign .site-header--light .header-icon:hover { background: rgba(29,29,31,.07); color: #000; }
+.home-redesign .site-header--light .header-icon { color: #fff; }
+.home-redesign .site-header--light .header-icon:hover { background: rgba(255,255,255,.12); color: #fff; }
 
 .apple-unit {
   min-height: 692px;
@@ -127,7 +131,7 @@
   --about-enter: 1;
   position: relative;
   display: flow-root;
-  background: var(--apple-white);
+  background: #8db9df;
 }
 .hero-scroll-stage.has-intro-motion::after {
   content: '';
