@@ -4,7 +4,7 @@ import './apple-pages.css';
 import './gallery.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gamu666.github.io/octa-sar-website/'),
+  metadataBase: new URL('https://naimansar.com/'),
   title: {
     default: 'НАЙМАН САР — Утга учиртай санааг үнэ цэнтэй бүтээл болгоно',
     template: '%s — НАЙМАН САР',
