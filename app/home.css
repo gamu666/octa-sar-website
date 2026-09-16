@@ -20,7 +20,7 @@
   color: #fff;
   backdrop-filter: none;
 }
-.home-redesign .site-header--light .site-header__inner { width: min(1420px, calc(100% - 24px)); max-width: none; height: 48px; padding: 0 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.26); border-radius: 999px; background: rgba(42,48,58,.34); box-shadow: 0 8px 30px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12); }
+.home-redesign .site-header--light .site-header__inner { width: min(1420px, calc(100% - 24px)); max-width: none; height: 48px; padding: 0 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.26); border-radius: 999px; background: rgba(42,48,58,.204); box-shadow: 0 8px 30px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12); }
 .home-redesign .site-header--light .mark { --mark-size: 33px; }
 .home-redesign .site-header--light .mark > img { filter: invert(1); }
 .home-redesign .site-header--light .brand { gap: 9px; color: #fff; font-size: 13px; letter-spacing: .025em; transition: opacity .2s ease, transform .2s ease; }
