@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -13,6 +14,23 @@ export function Mark({ compact = false }: { compact?: boolean }) {
 }
 
 export function SiteHeader({ light = false }: { light?: boolean }) {
+  const [activeSection, setActiveSection] = useState('');
+  useEffect(() => {
+    const sections = ['projects', 'selected-work', 'contact']
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    if (!sections.length) return;
+    const update = () => {
+      const marker = window.scrollY + Math.min(window.innerHeight * .42, 360);
+      let current = '';
+      sections.forEach((section) => { if (section.offsetTop <= marker) current = section.id; });
+      setActiveSection(current);
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); };
+  }, []);
   const returnHome = () => window.scrollTo({
     top: 0,
     behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
@@ -28,9 +46,9 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             <span>НАЙМАН САР</span>
           </Link>
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
-            <Link href="/#projects">Төслүүд</Link>
-            <Link href="/#selected-work">Захиалгат ажил</Link>
-            <Link href="/#contact">Холбоо барих</Link>
+            <Link className={activeSection === 'projects' ? 'is-active' : ''} href="/#projects">Төслүүд</Link>
+            <Link className={activeSection === 'selected-work' ? 'is-active' : ''} href="/#selected-work">Захиалгат ажил</Link>
+            <Link className={activeSection === 'contact' ? 'is-active' : ''} href="/#contact">Холбоо барих</Link>
           </nav>
           <div className="site-header__actions" aria-label="Сошиал ба хэрэглэгчийн хэсэг">
             <a className="header-icon" href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer" aria-label="Facebook">

@@ -10,19 +10,21 @@
 }
 
 .home-redesign .site-header--light {
-  height: 52px;
+  height: 64px;
+  padding: 8px 10px;
   border: 0;
-  background: rgba(250, 250, 252, .8);
+  background: transparent;
   color: var(--apple-ink);
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: none;
 }
-.home-redesign .site-header--light .site-header__inner { width: calc(100% - 96px); max-width: 1680px; }
+.home-redesign .site-header--light .site-header__inner { width: min(1420px, calc(100% - 24px)); max-width: none; height: 48px; padding: 0 14px; border: 1px solid rgba(255,255,255,.62); border-radius: 999px; background: rgba(245,245,247,.72); box-shadow: 0 8px 30px rgba(0,0,0,.1); backdrop-filter: saturate(180%) blur(22px); -webkit-backdrop-filter: saturate(180%) blur(22px); }
 .home-redesign .site-header--light .mark { --mark-size: 33px; }
 .home-redesign .site-header--light .brand { gap: 9px; font-size: 13px; letter-spacing: .025em; transition: opacity .2s ease, transform .2s ease; }
 .home-redesign .site-header--light .brand:hover { opacity: .72; transform: translateY(-1px); }
 .home-redesign .site-header--light .desktop-nav { gap: 6px; color: #333336; font-size: 13px; font-weight: 520; }
 .home-redesign .site-header--light .desktop-nav a { min-height: 32px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 999px; letter-spacing: -.01em; transition: background .2s ease, color .2s ease, transform .2s ease; }
 .home-redesign .site-header--light .desktop-nav a:hover { background: rgba(29,29,31,.065); color: #1d1d1f; transform: translateY(-1px); }
+.home-redesign .site-header--light .desktop-nav a.is-active { background: #1d1d1f; color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
 .home-redesign .site-header--light .desktop-nav a::after { display: none; }
 .home-redesign .site-header--light .nav-cta { padding: 0 14px; border: 0; background: #1d1d1f; color: #fff; }
 .home-redesign .site-header--light .nav-cta:hover { background: #000; color: #fff; }
@@ -452,7 +454,7 @@
 .reveal.is-visible { transform: translateY(0); }
 
 @media (max-width: 900px) {
-  .home-redesign .site-header--light { height: 52px; }
+  .home-redesign .site-header--light { height: 60px; padding: 6px 4px; }
   .home-redesign .site-header--light .desktop-nav { display: flex; gap: 3px; font-size: 10px; }
   .home-redesign .site-header--light .desktop-nav a { padding-inline: 7px; }
   .home-redesign .site-header--light .nav-cta { padding-inline: 9px; }
@@ -476,21 +478,26 @@
 
 @media (max-width: 620px) {
   .home-redesign .site-header--light .site-header__inner {
-    width: calc(100% - 20px);
-    grid-template-columns: 34px minmax(0, 1fr) 34px;
-    gap: 0;
+    width: calc(100% - 8px);
+    height: 48px;
+    padding-inline: 7px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 3px;
   }
-  .home-redesign .site-header--light .mark { --mark-size: 30px; }
-  .home-redesign .site-header--light .brand { justify-self: start; gap: 0; font-size: 11px; }
+  .home-redesign .site-header--light .mark { --mark-size: 25px; }
+  .home-redesign .site-header--light .brand { justify-self: start; gap: 4px; font-size: clamp(7px, 2.1vw, 9px); letter-spacing: 0; }
+  .home-redesign .site-header--light .brand > span:last-child { display: inline; white-space: nowrap; }
   .home-redesign .site-header--light .desktop-nav {
     margin: 0;
     justify-self: center;
     justify-content: center;
     gap: 2px;
-    font-size: clamp(7.5px, 2.1vw, 9px);
+    font-size: clamp(6.5px, 1.8vw, 8px);
   }
-  .home-redesign .site-header--light .desktop-nav a { min-height: 30px; padding-inline: 3px; }
-  .home-redesign .site-header--light .site-header__actions { justify-self: end; }
+  .home-redesign .site-header--light .desktop-nav a { min-height: 28px; padding-inline: 3px; }
+  .home-redesign .site-header--light .site-header__actions { justify-self: end; gap: 0; }
+  .home-redesign .site-header--light .header-icon { width: 23px; height: 23px; display: grid; }
+  .home-redesign .site-header--light .header-icon svg { width: 20px; height: 20px; }
   .home-redesign .site-header--light .nav-cta { padding-inline: 6px; }
   .apple-unit { min-height: 650px; margin-bottom: 10px; }
   .unit-copy { width: calc(100% - 28px); padding-top: 44px; }
