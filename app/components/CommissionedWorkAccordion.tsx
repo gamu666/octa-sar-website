@@ -3,14 +3,21 @@
 import { useEffect, useRef, useState } from 'react';
 
 const works = [
-  { id: 'altan-od-cinematic', name: 'Алтан Од Cinematic', meta: 'Cinematic product experience · 2026', summary: 'Алтан Заан Анар болон Алтан Од Вьетнам гаврын бүтээгдэхүүнийг cinematic 3D хөдөлгөөн, дүрслэлээр танилцуулсан.', url: 'https://gamu666.github.io/altan-od-cinematic/', address: 'gamu666.github.io/altan-od-cinematic', gradient: 'radial-gradient(circle at 50% 28%, rgba(164,59,28,.72), transparent 38%), linear-gradient(135deg, #180a12 0%, #512015 48%, #210a22 100%)' },
-  { id: 'hunnu-tattoo', name: 'Hunnu Tattoo Studio', meta: 'Online booking experience · 2026', summary: 'Үйлчилгээ, артист, өдөр цаг, санааны зураг, хүсэлт баталгаажуулалтыг нэг веб урсгалд нэгтгэсэн.', url: 'https://hunnutattoo.com/', address: 'hunnutattoo.com', gradient: 'radial-gradient(circle at 52% 28%, rgba(132,69,47,.64), transparent 40%), linear-gradient(135deg, #150f12 0%, #3d211e 50%, #171319 100%)' },
-  { id: 'dudu-prime', name: 'Dudu Prime', meta: 'Real estate platform · 2026', summary: 'Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг агентын нэг веб орчинд төвлөрүүлсэн.', url: 'https://gamu666.github.io/dudu-prime/', address: 'gamu666.github.io/dudu-prime', gradient: 'radial-gradient(circle at 52% 25%, rgba(31,92,184,.72), transparent 42%), linear-gradient(135deg, #080f22 0%, #102e69 52%, #07172d 100%)' },
+  { id: 'altan-od-cinematic', name: 'Алтан Од Cinematic', meta: 'Cinematic product experience · 2026', summary: 'Алтан Заан Анар болон Алтан Од Вьетнам гаврын бүтээгдэхүүнийг cinematic 3D хөдөлгөөн, дүрслэлээр танилцуулсан.', url: 'https://gamu666.github.io/altan-od-cinematic/', address: 'gamu666.github.io/altan-od-cinematic', poster: null, gradient: 'radial-gradient(circle at 50% 28%, rgba(164,59,28,.72), transparent 38%), linear-gradient(135deg, #180a12 0%, #512015 48%, #210a22 100%)' },
+  { id: 'hunnu-tattoo', name: 'Hunnu Tattoo Studio', meta: 'Online booking experience · 2026', summary: 'Үйлчилгээ, артист, өдөр цаг, санааны зураг, хүсэлт баталгаажуулалтыг нэг веб урсгалд нэгтгэсэн.', url: 'https://hunnutattoo.com/', address: 'hunnutattoo.com', poster: '/work/hunnu-website-booking.png', gradient: 'radial-gradient(circle at 52% 28%, rgba(132,69,47,.64), transparent 40%), linear-gradient(135deg, #150f12 0%, #3d211e 50%, #171319 100%)' },
+  { id: 'dudu-prime', name: 'Dudu Prime', meta: 'Real estate platform · 2026', summary: 'Хайлт, газрын зураг, хадгалалт, харьцуулалт, дэлгэрэнгүй мэдээллийг агентын нэг веб орчинд төвлөрүүлсэн.', url: 'https://gamu666.github.io/dudu-prime/', address: 'gamu666.github.io/dudu-prime', poster: '/work/dudu-prime-home.png', gradient: 'radial-gradient(circle at 52% 25%, rgba(31,92,184,.72), transparent 42%), linear-gradient(135deg, #080f22 0%, #102e69 52%, #07172d 100%)' },
 ];
 
-function LivePreview({ work, active }: { work: typeof works[number]; active: boolean }) {
+function LivePreview({ work, active, galleryReady }: { work: typeof works[number]; active: boolean; galleryReady: boolean }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(.5);
+  const [requested, setRequested] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (galleryReady && active) setRequested(true);
+  }, [active, galleryReady]);
+
   useEffect(() => {
     const node = viewport.current;
     if (!node) return;
@@ -24,8 +31,22 @@ function LivePreview({ work, active }: { work: typeof works[number]; active: boo
         <span aria-hidden="true">● ● ●</span><span>{work.address}</span>
         <a href={work.url} target="_blank" rel="noreferrer" aria-label={`${work.name} сайтыг нээх`}>↗</a>
       </div>
-      <div className="work-gallery__viewport" ref={viewport}>
-        <iframe src={work.url} title={`${work.name} live веб`} loading="eager" tabIndex={active ? 0 : -1} referrerPolicy="strict-origin-when-cross-origin" style={{ transform: `scale(${scale})` }} />
+      <div className={`work-gallery__viewport${loaded ? ' is-loaded' : ''}`} ref={viewport}>
+        <div className="work-gallery__placeholder" style={{ background: work.gradient }} aria-hidden="true">
+          {work.poster ? <img src={work.poster} alt="" loading="lazy" /> : <strong>АЛТАН ОД</strong>}
+          <span>{requested ? 'Live preview ачаалж байна…' : work.name}</span>
+        </div>
+        {requested && (
+          <iframe
+            src={work.url}
+            title={`${work.name} live веб`}
+            loading="lazy"
+            tabIndex={active ? 0 : -1}
+            referrerPolicy="strict-origin-when-cross-origin"
+            style={{ transform: `scale(${scale})` }}
+            onLoad={() => setLoaded(true)}
+          />
+        )}
       </div>
     </div>
   );
@@ -33,9 +54,24 @@ function LivePreview({ work, active }: { work: typeof works[number]; active: boo
 
 export function CommissionedWorkAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [galleryReady, setGalleryReady] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = galleryRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setGalleryReady(true);
+      observer.disconnect();
+    }, { rootMargin: '240px 0px' });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   const move = (direction: number) => setActiveIndex((current) => (current + direction + works.length) % works.length);
   return (
-    <div className="work-gallery" role="region" aria-label="Захиалгат ажлууд" aria-roledescription="carousel">
+    <div className="work-gallery" ref={galleryRef} role="region" aria-label="Захиалгат ажлууд" aria-roledescription="carousel">
       <div className="work-gallery__atmosphere" aria-hidden="true">
         {works.map((work, index) => <span className={index === activeIndex ? 'is-active' : ''} key={work.id} style={{ background: work.gradient }} />)}
       </div>
@@ -47,7 +83,7 @@ export function CommissionedWorkAccordion() {
             const rawPosition = (index - activeIndex + works.length) % works.length;
             const position = rawPosition === 0 ? 'active' : rawPosition === 1 ? 'next' : 'previous';
             return <article className={`work-gallery__card is-${position}`} aria-hidden={position !== 'active'} key={work.id}>
-              <LivePreview work={work} active={position === 'active'} />
+              <LivePreview work={work} active={position === 'active'} galleryReady={galleryReady} />
               <div className="work-gallery__copy"><p className="work-gallery__meta">{work.meta}</p><h3>{work.name}</h3><p>{work.summary}</p><a href={work.url} target="_blank" rel="noreferrer">Сайтыг нээх ↗</a></div>
             </article>;
           })}

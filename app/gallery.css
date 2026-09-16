@@ -60,7 +60,15 @@
 .work-gallery__bar > span:first-child { color: #666; font-size: 8px; }
 .work-gallery__bar a { color: #fff; font-size: 20px; }
 .work-gallery__viewport { width: 100%; aspect-ratio: 1200 / 780; position: relative; overflow: hidden; background: #111; }
-.work-gallery__viewport iframe { width: 1200px; height: 780px; border: 0; display: block; transform-origin: top left; background: #fff; }
+.work-gallery__viewport iframe { width: 1200px; height: 780px; position: relative; z-index: 2; border: 0; display: block; opacity: 0; transform-origin: top left; background: #fff; transition: opacity .35s ease; }
+.work-gallery__viewport.is-loaded iframe { opacity: 1; }
+.work-gallery__placeholder { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; align-content: center; gap: 10px; overflow: hidden; color: #fff; text-align: center; transition: opacity .3s ease, visibility .3s ease; }
+.work-gallery__placeholder::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.42)); }
+.work-gallery__placeholder img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: top center; filter: saturate(.88) brightness(.72); }
+.work-gallery__placeholder strong, .work-gallery__placeholder span { position: relative; z-index: 1; }
+.work-gallery__placeholder strong { font-size: clamp(24px, 4vw, 48px); letter-spacing: .12em; }
+.work-gallery__placeholder span { color: rgba(255,255,255,.78); font-size: 12px; }
+.work-gallery__viewport.is-loaded .work-gallery__placeholder { opacity: 0; visibility: hidden; }
 .work-gallery__copy { padding: 22px 16px 0; }
 .work-gallery__card:not(.is-active) .work-gallery__copy { opacity: 0; visibility: hidden; transform: translateY(14px); }
 .work-gallery__card .work-gallery__copy { transition: opacity .45s ease .18s, transform .65s cubic-bezier(.22,1,.36,1) .12s, visibility .45s; }
@@ -96,7 +104,8 @@
   .work-gallery__browser { border-radius: 20px; }
   .work-gallery__copy { padding-inline: 4px; }
   .work-gallery__controls { top: clamp(118px, 34vw, 175px); padding-inline: 6px; }
-  .work-gallery__controls button { width: 44px; height: 44px; }
+  .work-gallery__controls button { width: 46px; height: 46px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  .work-gallery__viewport iframe { pointer-events: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .work-gallery__card,
