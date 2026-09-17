@@ -11,11 +11,10 @@ const works = [
 function LivePreview({ work, active }: { work: typeof works[number]; active: boolean }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(.5);
-  const [requested, setRequested] = useState(active);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (active) setRequested(true);
+    if (!active) setLoaded(false);
   }, [active]);
 
   useEffect(() => {
@@ -34,14 +33,14 @@ function LivePreview({ work, active }: { work: typeof works[number]; active: boo
       <div className={`work-gallery__viewport${loaded ? ' is-loaded' : ''}`} ref={viewport}>
         <div className="work-gallery__placeholder" style={{ background: work.gradient }} aria-hidden="true">
           {work.poster ? <img src={work.poster} alt="" loading="lazy" /> : <strong>АЛТАН ОД</strong>}
-          <span>{requested ? 'Live preview ачаалж байна…' : work.name}</span>
+          <span>{active ? 'Live preview ачаалж байна…' : work.name}</span>
         </div>
-        {requested && (
+        {active && (
           <iframe
             src={work.url}
             title={`${work.name} live веб`}
-            loading={active ? 'eager' : 'lazy'}
-            tabIndex={active ? 0 : -1}
+            loading="eager"
+            tabIndex={0}
             referrerPolicy="strict-origin-when-cross-origin"
             style={{ transform: `scale(${scale})` }}
             onLoad={() => setLoaded(true)}
