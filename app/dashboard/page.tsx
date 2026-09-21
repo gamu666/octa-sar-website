@@ -3,16 +3,16 @@ import { RequestDashboard } from '../components/RequestDashboard';
 import { SiteHeader } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
-  title: 'Ирсэн хүсэлтүүд',
-  description: 'НАЙМАН САР-ын админ хүсэлтийн самбар.',
+  title: 'Миний хүсэлтүүд',
+  description: 'НАЙМАН САР-д илгээсэн хүсэлтүүдээ харах хувийн орчин.',
   robots: { index: false, follow: false },
 };
 
-export default function AdminPage() {
+export default function DashboardPage() {
   return (
-    <main id="main-content" className="admin-page apple-page">
+    <main id="main-content" className="dashboard-page apple-page">
       <SiteHeader light />
-      <RequestDashboard admin />
+      <RequestDashboard />
     </main>
   );
 }

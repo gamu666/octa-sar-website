@@ -60,7 +60,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             <a className="header-icon" href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.1" /><circle cx="12" cy="12" r="4.05" /><circle cx="17.55" cy="6.65" r="1" fill="currentColor" stroke="none" /></svg>
             </a>
-            <Link className="header-icon header-icon--account" href="/admin" aria-label="Хэрэглэгчийн нэвтрэх хэсэг">
+            <Link className="header-icon header-icon--account" href="/dashboard" aria-label="Хэрэглэгчийн нэвтрэх хэсэг">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.25" /><circle cx="12" cy="9" r="3.1" /><path d="M6.45 18.15c1.23-2.55 3.08-3.82 5.55-3.82s4.32 1.27 5.55 3.82" /></svg>
             </Link>
           </div>

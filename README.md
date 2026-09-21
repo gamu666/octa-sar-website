@@ -9,12 +9,24 @@
 - `/ventures` — төслийн багц
 - `/ventures/manai-cercle` — дахин ашиглах боломжтой төслийн дэлгэрэнгүй загвар
 - `/contact` — хамтын ажиллагааны хүсэлт
+- `/dashboard` — бүртгэлтэй хэрэглэгчийн өөрийн хүсэлтүүд
+- `/admin` — зөвхөн эрхтэй админы бүх хүсэлтийн самбар
 
 Төслийн агуулга `app/lib/ventures.ts` файлд төвлөрсөн. Шинэ төсөл нэмэхэд ижил өгүүлэмж, бүтэцтэй дэлгэрэнгүй хуудас автоматаар үүснэ.
 
 ## Одоогийн төлөв
 
-- Сайт нийтэд нээлттэй; GitHub эх кодын repository хувийн хандалттай.
+- Сайт болон GitHub эх кодын repository нийтэд нээлттэй. Хүсэлтүүд repository-д биш Supabase мэдээллийн санд хадгалагдана.
 - Хэрэглэгчийн өгсөн логог эх хувиас нь өндөр нягтаршилтай, тунгалаг дэвсгэртэй тэмдэг болгон салгаж ашигласан; `НАЙМАН САР` нэрийг сайт дээр тусад нь харуулсан.
-- Холбоо барих маягт одоогоор зөвхөн UX загвар: мэдээлэл илгээхгүй, хадгалахгүй.
+- Холбоо барих маягтыг ашиглахын өмнө хэрэглэгч цахим шуудан, нууц үгээр бүртгүүлж нэвтэрнэ. Хэрэглэгч зөвхөн өөрийн хүсэлтийг, админ бүх хүсэлтийг харна.
 - Албан ёсны домэйн, цахим шуудан, аналитик, хууль зүйн мэдээллийг дараагийн шатанд баталгаажуулна.
+
+## Supabase холболт
+
+1. Тусдаа Supabase project үүсгээд `supabase/migrations/20260920000000_contact_requests.sql` migration-ийг ажиллуулна.
+2. Supabase Auth-ийн Site URL-ийг `https://naimansar.com` болгож, `https://naimansar.com/dashboard/` redirect URL-г зөвшөөрнө.
+3. GitHub repository-ийн **Settings → Secrets and variables → Actions** хэсэгт project URL-г `NEXT_PUBLIC_SUPABASE_URL`, publishable key-г `NEXT_PUBLIC_SUPABASE_ANON_KEY` гэсэн repository variable-уудаар нэмнэ. Publishable key нь browser-д ашиглах зориулалттай бөгөөд RLS бодлогоор өгөгдөл хамгаалагдана.
+4. Сайтын эзэмшигч `/dashboard/` дээр өөрийн цахим шуудангаар бүртгүүлж баталгаажуулсны дараа түүний `auth.users.id`-г `public.site_admins.user_id` хүснэгтэд нэг удаа нэмнэ.
+5. GitHub Pages workflow-г дахин ажиллуулаад хэрэглэгч, админ хоёр эрхээр туршина.
+
+Browser-д зөвхөн publishable key ашиглана. Supabase service-role key болон database нууц үгийг repository, GitHub Pages variable эсвэл frontend кодод огт оруулахгүй.

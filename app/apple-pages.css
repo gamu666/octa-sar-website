@@ -630,6 +630,55 @@
 .apple-page .button--dark { min-height: 42px; padding: 0 20px; border-color: var(--ap-blue); border-radius: 999px; background: var(--ap-blue); color: #fff; }
 .apple-page .button--dark:hover { background: #0077ed; color: #fff; }
 .apple-page .form-submit p { color: var(--ap-muted); }
+.apple-page .form-submit .contact-form__feedback--error { color: #b42318; }
+.contact-form__account { margin: 0 0 30px; color: #6e6e73; font-size: 12px; }
+.contact-form__account a { color: #0071e3; font-weight: 600; }
+.account-access { padding: 42px; display: grid; grid-template-columns: .8fr 1fr; gap: 54px; border-radius: 24px; background: var(--ap-bg); }
+.account-access h2 { margin: 10px 0 16px; color: #1d1d1f; font-size: clamp(34px,3.5vw,50px); letter-spacing: -.045em; }
+.account-access > div > p:last-child { margin: 0; color: #6e6e73; line-height: 1.6; }
+.account-access__form { display: grid; gap: 16px; }
+.account-access__form label { display: grid; gap: 8px; color: #515154; font-size: 12px; font-weight: 600; }
+.account-access__form input { height: 48px; padding: 0 14px; border: 1px solid #d2d2d7; border-radius: 11px; outline: 0; background: #fff; color: #1d1d1f; font: inherit; font-size: 15px; }
+.account-access__form input:focus { border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,.12); }
+.account-access__form button { min-height: 46px; border: 0; border-radius: 999px; background: #0071e3; color: #fff; cursor: pointer; font: inherit; font-size: 14px; font-weight: 650; }
+.account-access__form button:disabled { cursor: wait; opacity: .6; }
+.account-access__form .account-access__switch { min-height: 32px; background: transparent; color: #0071e3; font-weight: 500; }
+.account-access__message { margin: 0; color: #b42318; font-size: 12px; line-height: 1.5; }
+
+.dashboard-page,.admin-page { min-height: 100svh; background: #f5f5f7; }
+.request-dashboard { min-height: calc(100svh - 52px); padding-block: 96px 130px; }
+.request-dashboard > .account-access { margin-top: 30px; }
+.request-dashboard__header { display: flex; justify-content: space-between; gap: 40px; align-items: flex-start; }
+.request-dashboard__header h1 { margin: 12px 0 9px; color: #1d1d1f; font-size: clamp(46px,6vw,80px); line-height: .96; letter-spacing: -.058em; }
+.request-dashboard__header p:last-child { margin: 0; color: #6e6e73; }
+.request-dashboard__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; }
+.request-dashboard__actions a,.request-dashboard__actions button,.request-dashboard__toolbar button { min-height: 40px; padding: 0 16px; border: 1px solid rgba(29,29,31,.14); border-radius: 999px; background: #fff; color: #1d1d1f; cursor: pointer; font: inherit; font-size: 13px; display: inline-flex; align-items: center; }
+.request-dashboard__actions a:first-child { border-color: #0071e3; background: #0071e3; color: #fff; }
+.request-dashboard__toolbar { margin-top: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #6e6e73; font-size: 13px; }
+.request-dashboard__empty,.request-dashboard__error { margin-top: 56px; padding: 58px 26px; border-radius: 24px; background: #fff; color: #6e6e73; text-align: center; }
+.request-dashboard__error { color: #b42318; }
+.request-dashboard__list { margin-top: 16px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.request-card { min-width: 0; padding: 30px; border-radius: 25px; background: #fff; color: #1d1d1f; box-shadow: 0 22px 64px rgba(29,29,31,.055); }
+.request-card__top { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #86868b; font-size: 11px; }
+.request-card__status { padding: 6px 10px; border-radius: 999px; background: #e9f4ff; color: #0066cc; font-weight: 650; }
+.request-card__status--in_progress { background: #fff4d8; color: #8a5a00; }
+.request-card__status--closed { background: #e8f7ec; color: #217a3e; }
+.request-card h2 { margin: 28px 0 5px; font-size: 27px; letter-spacing: -.035em; }
+.request-card > a { color: #0071e3; font-size: 13px; }
+.request-card__organisation { margin: 8px 0 0; color: #86868b; font-size: 12px; }
+.request-card__message { margin: 24px 0 0; color: #424245; font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.request-card__select { margin-top: 26px; padding-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(29,29,31,.1); color: #6e6e73; font-size: 12px; }
+.request-card__select select { height: 38px; padding: 0 34px 0 12px; border: 1px solid #d2d2d7; border-radius: 10px; background: #fff; color: #1d1d1f; }
+
+@media (max-width: 760px) {
+  .account-access { padding: 28px 20px; grid-template-columns: 1fr; gap: 38px; }
+  .request-dashboard { padding-block: 80px 90px; }
+  .request-dashboard__header { display: grid; }
+  .request-dashboard__actions { justify-content: flex-start; }
+  .request-dashboard__toolbar { margin-top: 46px; }
+  .request-dashboard__list { grid-template-columns: 1fr; }
+  .request-card { padding: 24px 20px; border-radius: 20px; }
+}
 .apple-page .prepared-brief { border-color: var(--ap-line); }
 
 .apple-page .site-footer--light,
