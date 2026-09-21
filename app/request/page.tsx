@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RequestPage() {
   return (
-    <main className="apple-page" id="main-content">
+    <main className="apple-page apple-page--home-header" id="main-content">
       <SiteHeader light />
       <section className="ap-hero ap-hero--contact" aria-labelledby="request-title">
         <div className="ap-hero__copy">

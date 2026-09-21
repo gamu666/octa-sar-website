@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="apple-page" id="main-content">
+    <main className="apple-page apple-page--home-header" id="main-content">
       <SiteHeader light />
       <section className="ap-hero ap-hero--contact" aria-labelledby="contact-title">
         <div className="ap-hero__copy">
@@ -19,7 +19,7 @@ export default function ContactPage() {
         </div>
       </section>
       <section className="ap-contact-links ap-shell" aria-label="Холбоо барих мэдээлэл">
-        <a className="ap-contact-link" href="tel:+97680114941"><span>Утас</span><strong>8011 4941</strong><i>Залгах ↗</i></a>
+        <a className="ap-contact-link" href="tel:+97680114941"><span>Утас</span><strong>+976 8011 4941</strong><i>Залгах ↗</i></a>
         <a className="ap-contact-link" href="mailto:gaorm0206@gmail.com"><span>Имэйл</span><strong>gaorm0206@gmail.com</strong><i>Имэйл бичих ↗</i></a>
         <a className="ap-contact-link" href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@naiman__sar</strong><i>Нээх ↗</i></a>
         <a className="ap-contact-link" href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer"><span>Facebook</span><strong>НАЙМАН САР</strong><i>Нээх ↗</i></a>
