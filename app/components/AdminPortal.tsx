@@ -137,7 +137,7 @@ export function AdminPortal() {
           </label>
           {message && <p className="admin-login__message" role="status">{message}</p>}
           <button type="submit" disabled={isLoading}>{isLoading ? 'Нэвтэрч байна…' : 'Нэвтрэх'}</button>
-          <Link href="/#contact">Нэвтрэх эрх авах</Link>
+          <Link href="/request">Нэвтрэх эрх авах</Link>
         </form>
       </section>
     );

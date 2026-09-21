@@ -51,7 +51,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
             <Link className={activeSection === 'projects' ? 'is-active' : ''} href="/#projects">Төслүүд</Link>
             <Link className={activeSection === 'selected-work' ? 'is-active' : ''} href="/#selected-work">Захиалгат ажил</Link>
-            <Link className={activeSection === 'contact' ? 'is-active' : ''} href="/#contact">Холбоо барих</Link>
+            <Link href="/contact">Холбоо барих</Link>
           </nav>
           <div className="site-header__actions" aria-label="Сошиал ба хэрэглэгчийн хэсэг">
             <a className="header-icon" href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer" aria-label="Facebook">

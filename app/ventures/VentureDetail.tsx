@@ -117,7 +117,7 @@ export function VentureDetail({ venture }: { venture: Venture }) {
         <Reveal className="ap-callout__copy">
           <p className="ap-eyebrow">Холбоо барих</p>
           <h2>Хамтдаа дараагийн алхмыг бүтээе.</h2>
-          <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Холбоо барих</Link>
+          <Link className="ap-button" href={`/request?venture=${venture.slug}`}>Хамтрах хүсэлт</Link>
         </Reveal>
       </section>
 

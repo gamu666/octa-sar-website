@@ -78,7 +78,7 @@ export function RequestDashboard({ admin = false }: { admin?: boolean }) {
           <p>{session.user.email}</p>
         </div>
         <div className="request-dashboard__actions">
-          {!admin && <Link href="/contact">Шинэ хүсэлт</Link>}
+          {!admin && <Link href="/request">Шинэ хүсэлт</Link>}
           {!admin && isAdmin && <Link href="/admin">Админ хэсэг</Link>}
           {admin && <Link href="/dashboard">Миний dashboard</Link>}
           <button type="button" onClick={() => { void logOut(); }}>Гарах</button>

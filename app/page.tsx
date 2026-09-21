@@ -161,7 +161,7 @@ export default function Home() {
                   <p className="ap-status"><i /> {venture.status} · Төсөл {venture.index}</p>
                   <h2>{isRise ? 'Цааснаас систем рүү' : 'Manai Cercle'}</h2>
                   <p>{isRise ? 'THE RISE-ийн үйл ажиллагааны цахим шилжилт.' : 'Зөв хүнээ. Зөв хүрээллээс'}</p>
-                  <Link className="ap-button" href={`/contact?venture=${venture.slug}`}>Дэлгэрэнгүй</Link>
+                  <Link className="ap-button" href={`/request?venture=${venture.slug}`}>Дэлгэрэнгүй</Link>
                 </Reveal>
                 <Reveal className="ap-project-unit__visual"><InlineProjectPreview slug={venture.slug} /></Reveal>
                 {venture.plannedImpact && (
@@ -210,7 +210,7 @@ export default function Home() {
           <p className="ap-eyebrow">НАЙМАН САР-тай холбоо барих</p>
           <h2>Сайн санаа байна уу?</h2>
           <p>Ярилцаад шууд эхэлье.</p>
-          <Link className="ap-button" href="/contact">Холбоо барих</Link>
+          <Link className="ap-button" href="/request">Хамтрах хүсэлт</Link>
         </Reveal>
       </section>
 
