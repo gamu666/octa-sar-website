@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AdminPage() {
   return (
-    <main id="main-content" className="admin-page apple-page">
+    <main id="main-content" className="admin-page apple-page apple-page--home-header">
       <SiteHeader light />
       <RequestDashboard admin />
     </main>

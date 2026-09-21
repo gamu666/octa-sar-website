@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <main id="main-content" className="dashboard-page apple-page">
+    <main id="main-content" className="dashboard-page apple-page apple-page--home-header">
       <SiteHeader light />
       <RequestDashboard />
     </main>
