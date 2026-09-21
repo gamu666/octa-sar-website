@@ -54,6 +54,7 @@
 .work-gallery__card.is-active { z-index: 3; opacity: 1; filter: none; transform: translateX(-50%) scale(1); }
 .work-gallery__card.is-previous { z-index: 1; transform: translateX(-116%) scale(.72) rotateY(7deg); }
 .work-gallery__card.is-next { z-index: 2; transform: translateX(16%) scale(.72) rotateY(-7deg); }
+.work-gallery__card.is-hidden { z-index: 0; opacity: 0; visibility: hidden; transform: translateX(-50%) scale(.56); }
 .work-gallery__card:not(.is-active) { pointer-events: none; }
 .work-gallery__browser { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 26px; background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.4); }
 .work-gallery__bar { height: 34px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #a1a1a6; font-size: 10px; }

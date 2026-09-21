@@ -67,7 +67,13 @@ export function CommissionedWorkAccordion() {
         }}>
           {works.map((work, index) => {
             const rawPosition = (index - activeIndex + works.length) % works.length;
-            const position = rawPosition === 0 ? 'active' : rawPosition === 1 ? 'next' : 'previous';
+            const position = rawPosition === 0
+              ? 'active'
+              : rawPosition === 1
+                ? 'next'
+                : rawPosition === works.length - 1
+                  ? 'previous'
+                  : 'hidden';
             return <article className={`work-gallery__card work-gallery__card--${work.id} is-${position}`} aria-hidden={position !== 'active'} key={work.id}>
               <LivePreview work={work} active={position === 'active'} />
               <div className="work-gallery__copy"><p className="work-gallery__meta">{work.meta}</p><h3>{work.name}</h3><p>{work.summary}</p><a href={work.url} target="_blank" rel="noreferrer">Сайтыг нээх ↗</a></div>
