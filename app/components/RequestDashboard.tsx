@@ -35,7 +35,7 @@ export function RequestDashboard({ admin = false }: { admin?: boolean }) {
         return;
       }
 
-      const response = await databaseRequest('contact_requests?select=id,user_id,name,email,organisation,message,status,created_at&order=created_at.desc&limit=100');
+      const response = await databaseRequest('contact_requests?select=id,user_id,name,email,phone,organisation,message,status,created_at&order=created_at.desc&limit=100');
       if (!response.ok) throw new Error('Хүсэлтүүдийг ачаалж чадсангүй.');
       setRequests(await response.json() as ContactRequest[]);
 
@@ -104,6 +104,7 @@ export function RequestDashboard({ admin = false }: { admin?: boolean }) {
                   </div>
                   <h2>{request.name}</h2>
                   {admin && <a href={`mailto:${request.email}`}>{request.email}</a>}
+                  {admin && <a href={`tel:${request.phone.replace(/\s/g, '')}`}>{request.phone}</a>}
                   {request.organisation && <p className="request-card__organisation">{request.organisation}</p>}
                   <p className="request-card__message">{request.message}</p>
                   {admin && (

@@ -43,9 +43,10 @@ grant execute on function private.is_site_admin() to authenticated;
 
 create table if not exists public.contact_requests (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null references auth.users(id) on delete cascade,
+  user_id uuid references auth.users(id) on delete cascade,
   name text not null check (char_length(trim(name)) between 1 and 120),
   email text not null check (char_length(email) between 3 and 254),
+  phone text not null constraint contact_requests_phone_length_check check (char_length(trim(phone)) between 8 and 24),
   organisation text check (char_length(organisation) <= 160),
   message text not null check (char_length(trim(message)) between 1 and 5000),
   status text not null default 'new' check (status in ('new', 'in_progress', 'closed')),
@@ -62,8 +63,9 @@ alter table public.contact_requests enable row level security;
 alter table public.contact_requests force row level security;
 revoke all on public.contact_requests from anon, authenticated;
 grant select on public.contact_requests to authenticated;
-grant insert (user_id, name, email, organisation, message) on public.contact_requests to authenticated;
+grant insert (user_id, name, email, phone, organisation, message) on public.contact_requests to authenticated;
 grant update (status) on public.contact_requests to authenticated;
+grant insert (name, email, phone, organisation, message) on public.contact_requests to anon;
 
 create policy "Clients see their own requests and admins see all"
 on public.contact_requests for select to authenticated
@@ -75,6 +77,10 @@ with check (
   (select auth.uid()) = user_id
   and lower(email) = lower((select auth.jwt() ->> 'email'))
 );
+
+create policy "Visitors submit contact requests"
+on public.contact_requests for insert to anon
+with check (user_id is null);
 
 create policy "Only admins update request status"
 on public.contact_requests for update to authenticated

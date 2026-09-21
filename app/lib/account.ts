@@ -13,9 +13,10 @@ export type AccountSession = {
 
 export type ContactRequest = {
   id: string;
-  user_id: string;
+  user_id: string | null;
   name: string;
   email: string;
+  phone: string;
   organisation: string | null;
   message: string;
   status: 'new' | 'in_progress' | 'closed';
@@ -147,6 +148,15 @@ export async function databaseRequest(path: string, init: RequestInit = {}): Pro
   return fetch(`${url}/rest/v1/${path}`, {
     ...init,
     headers: { ...authHeaders(session.access_token), ...(init.headers ?? {}) },
+    cache: 'no-store',
+  });
+}
+
+export async function publicDatabaseRequest(path: string, init: RequestInit = {}): Promise<Response> {
+  requireConfig();
+  return fetch(`${url}/rest/v1/${path}`, {
+    ...init,
+    headers: { ...authHeaders(), ...(init.headers ?? {}) },
     cache: 'no-store',
   });
 }
