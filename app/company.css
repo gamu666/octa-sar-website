@@ -1,10 +1,10 @@
 .about-trigger { padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; text-underline-offset: 4px; }
 .about-trigger:hover { text-decoration: underline; }
 .about-trigger:focus-visible, .company-modal__close:focus-visible { outline: 2px solid #0071e3; outline-offset: 5px; border-radius: 6px; }
-.site-footer__about { display: grid; gap: 12px; justify-items: end; }
-.site-footer__legal { grid-column: 1 / -1; margin: 0; padding-top: 16px; border-top: 1px solid currentColor; border-color: rgba(128,128,128,.2); font-size: 11px; line-height: 1.7; }
-.site-footer__legal span { white-space: nowrap; margin-left: 8px; }
-.company-modal { position: fixed; inset: 0; width: min(460px, calc(100vw - 40px)); max-height: calc(100dvh - 64px); box-sizing: border-box; margin: auto; padding: 40px 32px 32px; overflow: auto; color: #1d1d1f; background: rgba(250,250,252,.94); backdrop-filter: blur(24px) saturate(150%); border: 1px solid rgba(255,255,255,.7); border-radius: 24px; box-shadow: 0 24px 80px rgba(0,0,0,.22); text-align: left; font-family: inherit; font-size: 15px; line-height: 1.7; letter-spacing: normal; }
+
+.site-footer__legal { grid-column: 1 / -1; margin: -14px 0 0; padding: 0; border: 0; text-align: center; font-size: clamp(15px, 1.3vw, 18px); font-weight: 700; line-height: 1.6; color: #0071e3; }
+
+.company-modal { position: fixed; inset: 0; width: min(460px, calc(100vw - 40px)); max-height: calc(100dvh - 64px); box-sizing: border-box; margin: auto; padding: 44px 36px 32px; overflow: auto; color: #1d1d1f; background: rgba(250,250,252,.94); backdrop-filter: blur(24px) saturate(150%); border: 1px solid rgba(255,255,255,.7); border-radius: 24px; box-shadow: 0 24px 80px rgba(0,0,0,.22); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.7; letter-spacing: normal; }
 .company-modal[open] { animation: company-open .22s cubic-bezier(.2,.8,.2,1) both; }
 .company-modal::backdrop { background: rgba(16,20,28,.3); backdrop-filter: blur(5px); animation: company-backdrop .22s ease both; }
 .company-modal[data-closing] { animation: company-close .18s ease both; }
@@ -12,8 +12,8 @@
 .company-modal__close { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(29,29,31,.07); color: #515156; cursor: pointer; }
 .company-modal__close:hover { background: rgba(29,29,31,.12); }
 .company-modal .company-modal__eyebrow { margin: 0 0 10px; color: #6e6e73; font-size: 12px; font-weight: 500; }
-.company-modal.company-modal.company-modal h2 { margin: 0 0 18px; font-size: 28px; line-height: 1.2; letter-spacing: -.025em; }
-.company-modal.company-modal.company-modal p { margin: 0; color: #515156; font-size: 15px; font-weight: 400; line-height: 1.7; }
+.company-modal h2 { margin: 0 0 18px; font-size: 30px; font-weight: 600; line-height: 1.2; letter-spacing: -.025em; }
+.company-modal p { margin: 0; color: #515156; font-size: 15px; font-weight: 400; line-height: 1.7; }
 .company-modal .company-modal__legal { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(29,29,31,.12); color: #1d1d1f; font-size: 13px; }
 body:has(.company-modal[open]) { overflow: hidden; }
 .company-info { padding-block: 32px; border-top: 1px solid var(--ap-line); }
@@ -25,5 +25,24 @@ body:has(.company-modal[open]) { overflow: hidden; }
 @keyframes company-open { from { opacity: 0; transform: translateY(6px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes company-close { to { opacity: 0; transform: translateY(4px) scale(.98); } }
 @keyframes company-backdrop { from { opacity: 0; } to { opacity: 1; } }
-@media (max-width: 700px) { .site-footer__about { justify-items: start; } .company-modal { padding: 40px 24px 28px; border-radius: 22px; } }
+@media (max-width: 700px) { .company-modal { padding: 40px 24px 28px; border-radius: 22px; } }
 @media (prefers-reduced-motion: reduce) { .company-modal[open], .company-modal[data-closing], .company-modal::backdrop { animation: none; } }
+
+/* Match the existing pill navigation, including the About button. */
+.site-header .desktop-nav .about-trigger { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 0 12px; border-radius: 999px; white-space: nowrap; letter-spacing: -.01em; transition: background .2s ease, color .2s ease; }
+.site-header .desktop-nav .about-trigger:hover { text-decoration: none; background: rgba(255,255,255,.12); }
+.apple-page:not(.apple-page--home-header) .desktop-nav .about-trigger:hover { background: rgba(29,29,31,.065); }
+.home-redesign .site-footer--light .site-footer__meta { grid-column: 1 / -1; height: auto; min-height: 0; padding-top: 18px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; border-top: 1px solid rgba(29,29,31,.12); text-align: left; }
+.home-redesign .site-footer--light .site-footer__socials { display: flex; gap: 22px; margin-inline: auto; }
+@media (max-width: 900px) { .site-header .desktop-nav .about-trigger { padding-inline: 7px; } }
+@media (max-width: 620px) {
+  :is(.home-redesign, .apple-page--home-header) .site-header.site-header--light { height: 92px; }
+  :is(.home-redesign, .apple-page--home-header) .site-header.site-header--light .site-header__inner { height: 76px; padding: 8px 12px; border-radius: 24px; grid-template-columns: 1fr auto; grid-template-rows: 26px 28px; gap: 6px; }
+  :is(.home-redesign, .apple-page--home-header) .site-header.site-header--light .brand { font-size: 10px; }
+  :is(.home-redesign, .apple-page--home-header) .site-header.site-header--light .site-header__actions { grid-column: 2; grid-row: 1; }
+  :is(.home-redesign, .apple-page--home-header) .site-header.site-header--light .desktop-nav { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; justify-content: center; gap: 4px; font-size: 11px; }
+  :is(.home-redesign, .apple-page--home-header) .site-header.site-header--light .desktop-nav :is(a, .about-trigger) { min-height: 28px; padding: 0 7px; }
+  .home-redesign .site-footer--light .site-footer__meta { display: grid; grid-template-columns: 1fr auto; gap: 12px 16px; }
+  .home-redesign .site-footer--light .site-footer__socials { grid-column: 1 / -1; grid-row: 1; margin: 0; }
+  .site-footer__legal { margin-top: -4px; font-size: 15px; }
+}

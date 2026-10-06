@@ -1,15 +1,19 @@
 'use client';
 
-import { useId, useRef } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export const companyRelationship = 'Naimansar нь ОКТА САР ХХК-ийн үйл ажиллагааны нэр юм.';
 
 export function AboutModal() {
+  const [open, setOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const titleId = useId();
   const descriptionId = useId();
+
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
 
   const close = () => {
     const card = dialog.current;
@@ -17,6 +21,7 @@ export function AboutModal() {
     card.dataset.closing = 'true';
     timer.current = setTimeout(() => {
       card.close();
+      setOpen(false);
       delete card.dataset.closing;
       timer.current = null;
       trigger.current?.focus({ preventScroll: true });
@@ -25,8 +30,8 @@ export function AboutModal() {
 
   return (
     <>
-      <button ref={trigger} className="about-trigger" type="button" aria-haspopup="dialog" onClick={() => dialog.current?.showModal()}>Бидний тухай</button>
-      <dialog ref={dialog} className="company-modal" aria-labelledby={titleId} aria-describedby={descriptionId}
+      <button ref={trigger} className="about-trigger" type="button" aria-haspopup="dialog" onClick={() => setOpen(true)}>Бидний тухай</button>
+      {open && createPortal(<dialog ref={(node) => { dialog.current = node; if (node && !node.open) node.showModal(); }} className="company-modal" aria-labelledby={titleId} aria-describedby={descriptionId}
         onCancel={(event) => { event.preventDefault(); close(); }}
         onClick={(event) => {
           if (event.target !== event.currentTarget) return;
@@ -37,10 +42,10 @@ export function AboutModal() {
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
         </button>
         <p className="company-modal__eyebrow">Бидний тухай</p>
-        <h2 id={titleId}>НАЙМАН САР</h2>
-        <p id={descriptionId}>Бид санааг бодит бүтээгдэхүүн болгох үе шат бүрд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.</p>
+        <h2 id={titleId}>Санааг бодит болгоно.</h2>
+        <p id={descriptionId}>НАЙМАН САР нь веб систем, дижитал бүтээгдэхүүн, брэндийн шийдэл бүтээдэг. Бид стратеги, дизайн, технологийг нэгтгэн санааг хэрэглэхэд хялбар, үнэ цэнтэй бүтээгдэхүүн болгоно.</p>
         <p className="company-modal__legal">{companyRelationship}</p>
-      </dialog>
+      </dialog>, document.body)}
     </>
   );
 }

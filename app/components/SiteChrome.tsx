@@ -53,6 +53,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
             <Link className={activeSection === 'projects' ? 'is-active' : ''} href="/#projects">Төслүүд</Link>
             <Link className={activeSection === 'selected-work' ? 'is-active' : ''} href="/#selected-work">Захиалгат ажил</Link>
             <Link href="/contact">Холбоо барих</Link>
+            <AboutModal />
           </nav>
           <div className="site-header__actions" aria-label="Сошиал ба хэрэглэгчийн хэсэг">
             <a className="header-icon" href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer" aria-label="Facebook">
@@ -77,16 +78,16 @@ export function SiteFooter({ light = false }: { light?: boolean }) {
       <div className="site-footer__brand">
         <Link className="brand" href="/" aria-label="НАЙМАН САР нүүр хуудас"><Mark compact /><span>НАЙМАН САР</span></Link>
       </div>
-      <div className="site-footer__about"><p className="site-footer__tagline">Санааг бодит болгоно.</p><AboutModal /></div>
+      <p className="site-footer__tagline">Санааг бодит болгоно.</p>
       <div className="site-footer__meta">
         <span>Улаанбаатар, Монгол Улс</span>
         <div className="site-footer__socials" role="navigation" aria-label="Сошиал сувгууд">
           <a href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer">Instagram ↗</a>
           <a href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer">Facebook ↗</a>
         </div>
-        <span>© 2026 НАЙМАН САР</span>
+        <span>© 2026 ОКТА САР ХХК</span>
       </div>
-      <p className="site-footer__legal">{companyRelationship} <span>naimansar.com</span></p>
+      <p className="site-footer__legal">{companyRelationship}</p>
     </footer>
   );
 }
