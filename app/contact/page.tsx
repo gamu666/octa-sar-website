@@ -19,15 +19,10 @@ export default function ContactPage() {
         </div>
       </section>
       <section className="ap-contact-links ap-shell" aria-label="Холбоо барих мэдээлэл">
-        <a className="ap-contact-link" href="tel:+97680114941"><span>Утас</span><strong>+976 8011 4941</strong><i>Залгах ↗</i></a>
+        <a className="ap-contact-link" href="tel:+97699250070"><span>Утас</span><strong>+976 9925 0070</strong><i>Залгах ↗</i></a>
         <a className="ap-contact-link" href="mailto:gaorm0206@gmail.com"><span>Имэйл</span><strong>gaorm0206@gmail.com</strong><i>Имэйл бичих ↗</i></a>
         <a className="ap-contact-link" href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@naiman__sar</strong><i>Нээх ↗</i></a>
         <a className="ap-contact-link" href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer"><span>Facebook</span><strong>НАЙМАН САР</strong><i>Нээх ↗</i></a>
-      </section>
-      <section className="company-info ap-shell" aria-labelledby="company-info-title">
-        <h2 id="company-info-title">Компанийн мэдээлэл</h2>
-        <dl><div><dt>Хуулийн этгээд</dt><dd>ОКТА САР ХХК</dd></div><div><dt>Үйл ажиллагааны нэр</dt><dd>Naimansar</dd></div></dl>
-        <p>Naimansar нь ОКТА САР ХХК-ийн үйл ажиллагааны нэр юм.</p>
       </section>
       <section className="ap-contact-request ap-shell">
         <div><p className="ap-eyebrow">Хамтран ажиллах</p><h2>Төслийн хүсэлт илгээх үү?</h2></div>

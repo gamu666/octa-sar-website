@@ -44,6 +44,10 @@ export function AboutModal() {
         <p className="company-modal__eyebrow">Бидний тухай</p>
         <h2 id={titleId}>Санааг бодит болгоно.</h2>
         <p id={descriptionId}>НАЙМАН САР нь веб систем, дижитал бүтээгдэхүүн, брэндийн шийдэл бүтээдэг. Бид стратеги, дизайн, технологийг нэгтгэн санааг хэрэглэхэд хялбар, үнэ цэнтэй бүтээгдэхүүн болгоно.</p>
+        <section className="company-modal__info" aria-label="Компанийн мэдээлэл">
+          <h3>Компанийн мэдээлэл</h3>
+          <dl><div><dt>Хуулийн этгээд</dt><dd>ОКТА САР ХХК</dd></div><div><dt>Үйл ажиллагааны нэр</dt><dd>Naimansar</dd></div></dl>
+        </section>
         <p className="company-modal__legal">{companyRelationship}</p>
       </dialog>, document.body)}
     </>

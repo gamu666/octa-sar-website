@@ -68,7 +68,7 @@ export function PartnerForm() {
         </label>
         <label>
           <span>Эргэж холбогдох утас *</span>
-          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" required minLength={8} maxLength={24} placeholder="+976 8011 4941" />
+          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" required minLength={8} maxLength={24} placeholder="+976 9925 0070" />
         </label>
         <label className="form-grid__wide">
           <span>Байгууллага</span>
