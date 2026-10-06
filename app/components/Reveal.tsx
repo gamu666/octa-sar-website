@@ -1,27 +1,26 @@
 'use client';
 
-import { HTMLAttributes, useEffect, useRef, useState } from 'react';
+import { HTMLAttributes, useEffect, useRef } from 'react';
 
 export function Reveal({ className = '', children, ...props }: HTMLAttributes<HTMLDivElement>) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-      setVisible(true);
+      node.classList.add('is-visible');
       return;
     }
     // Keep server-rendered content readable; arm only offscreen entrances.
     if (node.getBoundingClientRect().top < window.innerHeight * .94) {
-      setVisible(true);
+      node.classList.add('is-visible');
       return;
     }
     node.dataset.motionReady = 'true';
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        setVisible(true);
+        node.classList.add('is-visible');
         observer.disconnect();
       }
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
@@ -32,5 +31,5 @@ export function Reveal({ className = '', children, ...props }: HTMLAttributes<HT
     };
   }, []);
 
-  return <div ref={ref} className={`reveal${visible ? ' is-visible' : ''}${className ? ` ${className}` : ''}`} {...props}>{children}</div>;
+  return <div ref={ref} className={`reveal${className ? ` ${className}` : ''}`} {...props}>{children}</div>;
 }

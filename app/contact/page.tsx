@@ -24,6 +24,11 @@ export default function ContactPage() {
         <a className="ap-contact-link" href="https://www.instagram.com/naiman__sar/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@naiman__sar</strong><i>Нээх ↗</i></a>
         <a className="ap-contact-link" href="https://www.facebook.com/profile.php?id=61594140354144" target="_blank" rel="noreferrer"><span>Facebook</span><strong>НАЙМАН САР</strong><i>Нээх ↗</i></a>
       </section>
+      <section className="company-info ap-shell" aria-labelledby="company-info-title">
+        <h2 id="company-info-title">Компанийн мэдээлэл</h2>
+        <dl><div><dt>Хуулийн этгээд</dt><dd>ОКТА САР ХХК</dd></div><div><dt>Үйл ажиллагааны нэр</dt><dd>Naimansar</dd></div></dl>
+        <p>Naimansar нь ОКТА САР ХХК-ийн үйл ажиллагааны нэр юм.</p>
+      </section>
       <section className="ap-contact-request ap-shell">
         <div><p className="ap-eyebrow">Хамтран ажиллах</p><h2>Төслийн хүсэлт илгээх үү?</h2></div>
         <Link className="ap-button" href="/request">Хамтрах хүсэлт ↗</Link>

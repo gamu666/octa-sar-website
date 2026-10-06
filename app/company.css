@@ -1,0 +1,29 @@
+.about-trigger { padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; text-underline-offset: 4px; }
+.about-trigger:hover { text-decoration: underline; }
+.about-trigger:focus-visible, .company-modal__close:focus-visible { outline: 2px solid #0071e3; outline-offset: 5px; border-radius: 6px; }
+.site-footer__about { display: grid; gap: 12px; justify-items: end; }
+.site-footer__legal { grid-column: 1 / -1; margin: 0; padding-top: 16px; border-top: 1px solid currentColor; border-color: rgba(128,128,128,.2); font-size: 11px; line-height: 1.7; }
+.site-footer__legal span { white-space: nowrap; margin-left: 8px; }
+.company-modal { position: fixed; inset: 0; width: min(460px, calc(100vw - 40px)); max-height: calc(100dvh - 64px); box-sizing: border-box; margin: auto; padding: 40px 32px 32px; overflow: auto; color: #1d1d1f; background: rgba(250,250,252,.94); backdrop-filter: blur(24px) saturate(150%); border: 1px solid rgba(255,255,255,.7); border-radius: 24px; box-shadow: 0 24px 80px rgba(0,0,0,.22); text-align: left; font-family: inherit; font-size: 15px; line-height: 1.7; letter-spacing: normal; }
+.company-modal[open] { animation: company-open .22s cubic-bezier(.2,.8,.2,1) both; }
+.company-modal::backdrop { background: rgba(16,20,28,.3); backdrop-filter: blur(5px); animation: company-backdrop .22s ease both; }
+.company-modal[data-closing] { animation: company-close .18s ease both; }
+.company-modal[data-closing]::backdrop { animation: company-backdrop .18s ease reverse both; }
+.company-modal__close { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(29,29,31,.07); color: #515156; cursor: pointer; }
+.company-modal__close:hover { background: rgba(29,29,31,.12); }
+.company-modal .company-modal__eyebrow { margin: 0 0 10px; color: #6e6e73; font-size: 12px; font-weight: 500; }
+.company-modal.company-modal.company-modal h2 { margin: 0 0 18px; font-size: 28px; line-height: 1.2; letter-spacing: -.025em; }
+.company-modal.company-modal.company-modal p { margin: 0; color: #515156; font-size: 15px; font-weight: 400; line-height: 1.7; }
+.company-modal .company-modal__legal { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(29,29,31,.12); color: #1d1d1f; font-size: 13px; }
+body:has(.company-modal[open]) { overflow: hidden; }
+.company-info { padding-block: 32px; border-top: 1px solid var(--ap-line); }
+.company-info h2 { margin: 0 0 20px; font-size: 20px; letter-spacing: -.02em; }
+.company-info dl { display: flex; flex-wrap: wrap; gap: 20px 48px; margin: 0; font-size: 14px; }
+.company-info dt { color: var(--ap-muted); margin-bottom: 6px; }
+.company-info dd { margin: 0; font-weight: 500; }
+.company-info p { margin: 20px 0 0; color: var(--ap-muted); font-size: 13px; line-height: 1.7; }
+@keyframes company-open { from { opacity: 0; transform: translateY(6px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes company-close { to { opacity: 0; transform: translateY(4px) scale(.98); } }
+@keyframes company-backdrop { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 700px) { .site-footer__about { justify-items: start; } .company-modal { padding: 40px 24px 28px; border-radius: 22px; } }
+@media (prefers-reduced-motion: reduce) { .company-modal[open], .company-modal[data-closing], .company-modal::backdrop { animation: none; } }

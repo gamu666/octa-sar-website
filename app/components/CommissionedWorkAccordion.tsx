@@ -16,10 +16,6 @@ function LivePreview({ work, active }: { work: typeof works[number]; active: boo
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!active) setLoaded(false);
-  }, [active]);
-
-  useEffect(() => {
     const node = viewport.current;
     if (!node) return;
     const observer = new ResizeObserver(([entry]) => setScale(entry.contentRect.width / 1200));
@@ -76,7 +72,7 @@ export function CommissionedWorkAccordion() {
                   ? 'previous'
                   : 'hidden';
             return <article className={`work-gallery__card work-gallery__card--${work.id} is-${position}`} aria-hidden={position !== 'active'} key={work.id}>
-              <LivePreview work={work} active={position === 'active'} />
+              <LivePreview key={`${work.id}-${position === 'active'}`} work={work} active={position === 'active'} />
               <div className="work-gallery__copy"><p className="work-gallery__meta">{work.meta}</p><h3>{work.name}</h3><p>{work.summary}</p><a href={work.url} target="_blank" rel="noreferrer">Сайтыг нээх ↗</a></div>
             </article>;
           })}

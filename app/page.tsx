@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AboutModal } from './components/AboutModal';
 import { AutoplayLoopVideo } from './components/AutoplayLoopVideo';
 import { CommissionedWorkAccordion } from './components/CommissionedWorkAccordion';
 import { HeroScrollMotion } from './components/HeroScrollMotion';
@@ -114,7 +115,7 @@ export default function Home() {
 
           <section className="ap-statement ap-shell" id="about" aria-labelledby="about-title">
           <div className="ap-statement__reveal">
-            <p className="ap-eyebrow">Бидний тухай</p>
+            <div className="ap-eyebrow"><AboutModal /></div>
             <h2 id="about-title">Санаанаас бодит бүтээгдэхүүн хүртэл.</h2>
             <p>
               НАЙМАН САР нь санааг хэрэглэгчдэд хүрэх бодит бүтээгдэхүүн болгон хөгжүүлэх бүхий л үе шатанд стратеги, дизайн, технологийн шийдлийг нэгдсэн байдлаар хэрэгжүүлдэг.

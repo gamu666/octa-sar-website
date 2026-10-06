@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './apple-pages.css';
 import './gallery.css';
+import './company.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://naimansar.com/'),

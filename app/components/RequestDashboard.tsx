@@ -19,31 +19,26 @@ export function RequestDashboard({ admin = false }: { admin?: boolean }) {
   const [error, setError] = useState('');
   const [updatingId, setUpdatingId] = useState<string | null>(null);
 
-  const load = useCallback(async () => {
-    if (!session) return;
-    setLoading(true);
-    setError('');
-    try {
-      const membershipResponse = await databaseRequest(`site_admins?select=user_id&user_id=eq.${session.user.id}&limit=1`);
-      if (!membershipResponse.ok) throw new Error('Эрхийн мэдээллийг шалгаж чадсангүй.');
-      const memberships = await membershipResponse.json() as { user_id: string }[];
-      const hasAdminRole = memberships.length > 0;
-      setIsAdmin(hasAdminRole);
-
-      if (admin && !hasAdminRole) {
-        setRequests([]);
-        return;
-      }
-
-      const response = await databaseRequest('contact_requests?select=id,user_id,name,email,phone,organisation,message,status,created_at&order=created_at.desc&limit=100');
-      if (!response.ok) throw new Error('Хүсэлтүүдийг ачаалж чадсангүй.');
-      setRequests(await response.json() as ContactRequest[]);
-
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : 'Мэдээлэл ачаалж чадсангүй.');
-    } finally {
-      setLoading(false);
-    }
+  const load = useCallback(() => {
+    if (!session) return Promise.resolve();
+    return databaseRequest(`site_admins?select=user_id&user_id=eq.${session.user.id}&limit=1`)
+      .then(async (membershipResponse) => {
+        if (!membershipResponse.ok) throw new Error('Эрхийн мэдээллийг шалгаж чадсангүй.');
+        const memberships = await membershipResponse.json() as { user_id: string }[];
+        const hasAdminRole = memberships.length > 0;
+        setIsAdmin(hasAdminRole);
+        if (admin && !hasAdminRole) {
+          setRequests([]);
+          return;
+        }
+        const response = await databaseRequest('contact_requests?select=id,user_id,name,email,phone,organisation,message,status,created_at&order=created_at.desc&limit=100');
+        if (!response.ok) throw new Error('Хүсэлтүүдийг ачаалж чадсангүй.');
+        setRequests(await response.json() as ContactRequest[]);
+      })
+      .catch((cause: unknown) => {
+        setError(cause instanceof Error ? cause.message : 'Мэдээлэл ачаалж чадсангүй.');
+      })
+      .finally(() => setLoading(false));
   }, [admin, session]);
 
   useEffect(() => { void load(); }, [load]);
@@ -92,7 +87,7 @@ export function RequestDashboard({ admin = false }: { admin?: boolean }) {
         <>
           <div className="request-dashboard__toolbar">
             <span>{requests.length} хүсэлт</span>
-            <button type="button" onClick={() => { void load(); }}>Шинэчлэх ↻</button>
+            <button type="button" onClick={() => { setLoading(true); setError(''); void load(); }}>Шинэчлэх ↻</button>
           </div>
           {requests.length === 0 ? <p className="request-dashboard__empty">Одоогоор хүсэлт алга.</p> : (
             <div className="request-dashboard__list">
