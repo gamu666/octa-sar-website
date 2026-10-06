@@ -52,7 +52,7 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           <nav className="desktop-nav" aria-label="Үндсэн цэс">
             <Link className={activeSection === 'projects' ? 'is-active' : ''} href="/#projects">Төслүүд</Link>
             <Link className={activeSection === 'selected-work' ? 'is-active' : ''} href="/#selected-work">Захиалгат ажил</Link>
-            <Link href="/contact">Холбоо барих</Link>
+            <AboutModal contact />
             <AboutModal />
           </nav>
           <div className="site-header__actions" aria-label="Сошиал ба хэрэглэгчийн хэсэг">

@@ -47,3 +47,12 @@ body:has(.company-modal[open]) { overflow: hidden; }
 .company-modal__info dt { margin-bottom: 5px; color: #6e6e73; font-size: 11px; }
 .company-modal__info dd { margin: 0; font-weight: 600; }
 .company-modal .company-modal__legal { border-top: 0; padding-top: 0; margin-top: 20px; }
+
+.company-modal--contact { width: min(620px, calc(100vw - 40px)); }
+.company-modal__contacts { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
+.company-modal__contacts a { display: grid; gap: 6px; padding: 18px; border: 1px solid rgba(29,29,31,.08); border-radius: 16px; background: rgba(255,255,255,.65); color: #1d1d1f; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+.company-modal__contacts a:hover { background: #fff; border-color: rgba(0,113,227,.3); }
+.company-modal__contacts span { color: #6e6e73; font-size: 11px; }
+.company-modal__contacts strong { font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.company-modal__contacts i { color: #0071e3; font-size: 12px; font-style: normal; }
+@media (max-width: 480px) { .company-modal__contacts { gap: 8px; } .company-modal__contacts a { padding: 14px 12px; } .company-modal__contacts strong { font-size: 12px; } }
