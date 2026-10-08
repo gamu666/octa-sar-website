@@ -56,12 +56,12 @@
 .work-gallery__card.is-next { z-index: 2; transform: translateX(16%) scale(.72) rotateY(-7deg); }
 .work-gallery__card.is-hidden { z-index: 0; opacity: 0; visibility: hidden; transform: translateX(-50%) scale(.56); }
 .work-gallery__card:not(.is-active) { pointer-events: none; }
-.work-gallery__browser { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 26px; background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.4); }
+.work-gallery__browser { position: relative; overflow: clip; border: 1px solid rgba(255,255,255,.2); border-radius: 26px; background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.4); }
 .work-gallery__bar { height: 34px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #a1a1a6; font-size: 10px; }
 .work-gallery__bar > span:first-child { color: #666; font-size: 8px; }
 .work-gallery__bar a { color: #fff; font-size: 20px; }
-.work-gallery__viewport { width: 100%; aspect-ratio: 1200 / 780; position: relative; overflow: hidden; background: #111; }
-.work-gallery__viewport iframe { width: 1200px; height: 780px; position: relative; z-index: 2; border: 0; display: block; opacity: 0; transform-origin: top left; background: #fff; transition: opacity .35s ease; }
+.work-gallery__viewport { width: 100%; aspect-ratio: 1200 / 780; position: relative; overflow: clip; background: #111; }
+.work-gallery__viewport iframe { width: 1200px; height: 780px; position: absolute; top: 0; left: 0; z-index: 2; border: 0; display: block; opacity: 0; transform-origin: top left; background: #fff; transition: opacity .35s ease; }
 .work-gallery__viewport.is-loaded iframe { opacity: 1; }
 .work-gallery__placeholder { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; align-content: center; gap: 10px; overflow: hidden; color: #fff; text-align: center; transition: opacity .3s ease, visibility .3s ease; }
 .work-gallery__placeholder::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.42)); }
